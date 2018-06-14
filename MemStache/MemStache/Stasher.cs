@@ -6,6 +6,7 @@ using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
 namespace MemStache
@@ -134,6 +135,67 @@ namespace MemStache
             int numRowsAffected = (DB.Find<Stash>(item.key) == null) ? DB.Insert(item) : DB.Update(item);//If record found, update; else, insert
             return numRowsAffected;
         }
+
+        public string Serialize(string input)
+        {
+            return JsonConvert.SerializeObject(input);
+        }
+        public string Deserialize(string input)
+        {
+            return JsonConvert.DeserializeObject<string>(input);
+        }
+        public byte[] Protect(string input)
+        {
+            byte[] arInput = GetBytes(input);
+            return Protect(arInput);
+        }
+            public byte[] Protect(byte[] input)
+        {
+            return DataProtector.Protect(input);
+        }
+        public byte[] Unprotect(byte[] input)
+        {
+            return DataProtector.Unprotect(input);
+        }
+        public string UnprotectToStr(byte[] input)
+        {
+            return GetString(DataProtector.Unprotect(input));
+        }
+        public byte[] Compress(byte[] input)
+        {
+            using (MemoryStream memory = new MemoryStream())
+            {
+                using (GZipStream gzip = new GZipStream(memory,
+                    CompressionMode.Compress, true))
+                {
+                    gzip.Write(input, 0, input.Length);
+                }
+                return memory.ToArray();
+            }
+        }
+        public byte[] Uncompress(byte[] input)
+        {
+            using (GZipStream stream = new GZipStream(new MemoryStream(input),
+                CompressionMode.Decompress))
+            {
+                const int size = 4096;
+                byte[] buffer = new byte[size];
+                using (MemoryStream memory = new MemoryStream())
+                {
+                    int count = 0;
+                    do
+                    {
+                        count = stream.Read(buffer, 0, size);
+                        if (count > 0)
+                        {
+                            memory.Write(buffer, 0, count);
+                        }
+                    }
+                    while (count > 0);
+                    return memory.ToArray();
+                }
+            }
+        }
         #region Helpers
 
         private byte[] GetBytes(string str)
@@ -142,13 +204,13 @@ namespace MemStache
             System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
-        private string GetString(byte[] bytes)
+        public string GetString(byte[] bytes)
         {
             char[] chars = new char[bytes.Length / sizeof(char)];
             System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
             return new string(chars);
         }
-        public static string Hash(string input)
+        private static string Hash(string input)
         {
             var md5Hasher = MD5.Create();
             var data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(input));

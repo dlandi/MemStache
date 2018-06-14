@@ -258,6 +258,28 @@ namespace MemStache.UnitTests
             Assert.AreEqual(hash1, hash2);
         }
 
+        [TestMethod]
+        public void TestProcessingSteps()
+        {
+            string input = "This is a test of the public broadcasting system.";
 
-    }
+            StacheMeister Meister = new StacheMeister("memstache.demo");
+
+            string strSerialized = Meister.Serialized.Serialize(input);
+            //byte[] arSerialzed = Meister.Serialized.GetBytes(input);
+            byte[] arProtected = Meister.Serialized.Protect(strSerialized);
+            byte[] arCompressed = Meister.Serialized.Compress(arProtected);
+            byte[] arUncompressed = Meister.Serialized.Uncompress(arCompressed);
+            //byte[] arUnprotected = Meister.Serialized.Unprotect(arUncompressed);
+            string output = Meister.Serialized.UnprotectToStr(arUncompressed);
+
+            //string output = Meister.Serialized.GetString(arUnprotected);
+            output = Meister.Serialized.Deserialize(output);
+
+            Assert.AreEqual(input, output);
+
+        }
+
+
+        }
 }
