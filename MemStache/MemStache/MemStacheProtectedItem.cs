@@ -12,7 +12,7 @@ namespace MemStache
     {
         string ProtectedData { get; }
     }
-    public sealed class MemStacheProtectedItem<T>: MemStacheItem, IDisposable,  IMemStacheProtectedItem<T> where T : class
+    public sealed class MemStacheProtectedItem<T>: MemStacheItemBase<T>, IDisposable,  IMemStacheProtectedItem<T> where T : class
     {
         public IDataProtector DataProtector { get; set; }
         private int _hitCount = 0;
@@ -58,12 +58,12 @@ namespace MemStache
             _hitCount = 0;
             return count;
         }
-        public static MemStacheProtectedItem<T> Create(T obj, IDataProtector DataProtector)
+        public static MemStacheProtectedItem<T> Create(T obj, IDataProtector dataProtector)
         {
-            return new MemStacheProtectedItem<T>(DataProtector)
+            return new MemStacheProtectedItem<T>(dataProtector)
             {
                 Timestamp = DateTimeOffset.Now,
-                Data = obj
+                Data = obj,
             };
         }
         //public void SaveItem(PersistCacheRepository<PersistRecord> DbRepo)

@@ -7,8 +7,6 @@ using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
 using Microsoft.CSharp;
 
-using Stache = MemStache.MemStache<string, MemStache.IMemStacheProtectedItem<string>>;
-
 namespace MemStache
 {
     public enum StacheItemEnum
@@ -18,41 +16,58 @@ namespace MemStache
         stchProtected,          //In-Mem Cache, Serialized and Protected
     };
 
-    public class MemStache<T, MemStacheItemType>  where T : class where MemStacheItemType : IMemStacheItem<T>
+    public class MemStache<T, MemStacheItemType>  where T : class where MemStacheItemType : MemStacheItemBase<T>  //IMemStacheItem<T>
     {
         private Func<string, Task<T>> GetCacheItemData { get; }
         private Func<string, string, Task> SaveCacheItemData { get; }
         private const int LimitedCacheThreshold = 1000;
 
-        private readonly ConcurrentDictionary<string, WeakReference<IMemStacheItem<T>>> _weakCache;
-        private readonly ConcurrentDictionary<string, IMemStacheItem<T>> _limitedCache;
+        private readonly ConcurrentDictionary<string, WeakReference<MemStacheItemType>> _weakCache;
+        private readonly ConcurrentDictionary<string, MemStacheItemType> _limitedCache;
         private readonly ConcurrentDictionary<string, Task<T>> _pendingTasks;
 
         private static ConcurrentDictionary<string, MemStacheItemInfo<T>> ItemMetaData { get; }
                        = new ConcurrentDictionary<string, MemStacheItemInfo<T>>();
 
-        private MemStache(Func<string, string, Task> _SaveCacheItemData, Func<string, Task<T>> _GetCacheItemData = null)
+        private StacheItemEnum _stacheItemEnum = StacheItemEnum.stchBasic;
+        public StacheItemEnum Category
         {
+            get { return _stacheItemEnum; }
+            private set { _stacheItemEnum = value; }
+        }
+        
+        private MemStache(StacheItemEnum category = StacheItemEnum.stchBasic, Func<string, string, Task> _SaveCacheItemData = null, Func<string, Task<T>> _GetCacheItemData = null)
+        {
+            _stacheItemEnum = category;
             SaveCacheItemData = _SaveCacheItemData;
             GetCacheItemData = _GetCacheItemData;
-            _weakCache = new ConcurrentDictionary<string, WeakReference<IMemStacheItem<T>>>(StringComparer.Ordinal);
-            _limitedCache = new ConcurrentDictionary<string, IMemStacheItem<T>>(StringComparer.Ordinal);
+            _weakCache = new ConcurrentDictionary<string, WeakReference<MemStacheItemType>>(StringComparer.Ordinal);
+            _limitedCache = new ConcurrentDictionary<string, MemStacheItemType>(StringComparer.Ordinal);
             _pendingTasks = new ConcurrentDictionary<string, Task<T>>(StringComparer.Ordinal);
         }
-
-        public static MemStache<X, IMemStacheItem<X>> Create<X>(StacheItemEnum stacheItemEnum = StacheItemEnum.stchBasic,
+        //MemStache<X, IMemStacheItem<X>>
+        public static dynamic Create<X>(StacheItemEnum category = StacheItemEnum.stchBasic,
                                                                  Func<string,string, Task> saveCacheItemData = null,
                                                                  Func<string, Task<X>> getCacheItemData = null)
                                                                  where X : class
         {
-            MemStache<X, IMemStacheItem<X>> result = null;
+            try
+            {
+                //MemStache<X, IMemStacheItem<X>> result = null;
+                dynamic result = null;                
 
-            if (stacheItemEnum == StacheItemEnum.stchSerialized)
-                result = new MemStache<X, IMemStacheSerializedItem<X>>(saveCacheItemData, getCacheItemData);
-            else
-                result = new MemStache<X, IMemStacheProtectedItem<X>>(saveCacheItemData, getCacheItemData);
-            
-            return result;
+                if (category == StacheItemEnum.stchSerialized)
+                    result = new MemStache<X, MemStacheSerializedItem<X>>(category, saveCacheItemData, getCacheItemData);
+                else
+                    result = new MemStache<X, MemStacheProtectedItem<X>>(category, saveCacheItemData, getCacheItemData);
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error: {0}" + e.Message);
+                throw;
+            }
         }
 
         public bool RegisterItem(MemStacheItemInfo<T> itemInfo)
@@ -81,11 +96,11 @@ namespace MemStache
             }
             saveCacheItemData = saveCacheItemData ?? SaveCacheItemData;
 
-            WeakReference<IMemStacheItem<T>> cachedReference;
+            WeakReference<MemStacheItemType> cachedReference;
 
             if (_weakCache.TryGetValue(key, out cachedReference))
             {
-                IMemStacheItem<T> cachedValue;
+                MemStacheItemType cachedValue;
                 if (cachedReference.TryGetTarget(out cachedValue) || cachedValue != null)
                 {
                     if (cachedValue.Timestamp < expiration)
@@ -121,18 +136,23 @@ namespace MemStache
 
                         foreach (var k in keysToRemove)
                         {
-                            IMemStacheItem<T> unused;
+                            MemStacheItemType unused;
                             _limitedCache.TryRemove(k, out unused);
                         }
                     }
-
-                    IMemStacheItem<T> reference = Activator.CreateInstance(typeof(IMemStacheItem<T>)) as IMemStacheItem<T>;
-                    _weakCache[key] = new WeakReference<IMemStacheItem<T>>(reference);
+                    // MemStacheProtectedItem<T> Create(T obj, IDataProtector dataProtector)
+                    //MemStacheItemType reference = Activator.CreateInstance(typeof(MemStacheItemType),false) as MemStacheItemType;
+                    MemStacheItemType reference = CreateItem(actualValue);
+                    _weakCache[key] = new WeakReference<MemStacheItemType>(reference);
                     _limitedCache[key] = reference;
 
                     if (saveCacheItemData != null)
                     {
-                        saveCacheItemData(key, key).Wait();
+                        if (typeof(IMemStacheSerializedItem<T>).IsAssignableFrom(reference.GetType()))
+                        {
+                            string _data = (reference as IMemStacheSerializedItem<T>).SerializedData;
+                            saveCacheItemData(key, _data).Wait();
+                        }
                     }
 
                     return actualValue;
@@ -150,14 +170,27 @@ namespace MemStache
 
         }
 
-        public static implicit operator MemStache<T, MemStacheItemType>(MemStache<T, IMemStacheSerializedItem<T>> v)
+        private MemStacheItemType CreateItem(T data)
         {
-            return v;
+            MemStacheItemType result = null;
+            if (this.Category == StacheItemEnum.stchProtected)
+            {
+                IDataProtector dataProtector = null;
+
+                var x = MemStacheProtectedItem<T>.Create(data, dataProtector);
+            }
+
+            return result;
         }
 
-        public static implicit operator MemStache<T, MemStacheItemType>(MemStache<T, IMemStacheProtectedItem<T>> v)
-        {
-            return v;
-        }
+        //public static implicit operator MemStache<T, MemStacheItemType>(MemStache<T, IMemStacheSerializedItem<T>> v)
+        //{
+        //    return new MemStache<T, MemStacheItemType>(v.SaveCacheItemData, v.GetCacheItemData);
+        //}
+
+        //public static implicit operator MemStache<T, MemStacheItemType>(MemStache<T, IMemStacheProtectedItem<T>> v)
+        //{
+        //    return new MemStache<T, MemStacheItemType>(v.SaveCacheItemData, v.GetCacheItemData);
+        //}
     }
 }

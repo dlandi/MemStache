@@ -11,7 +11,7 @@ namespace MemStache
     {
         string SerializedData { get; }
     }
-    public sealed class MemStacheSerializedItem<T> : MemStacheItem, IDisposable, IMemStacheSerializedItem<T> where T : class
+    public sealed class MemStacheSerializedItem<T> : MemStacheItemBase<T>, IDisposable, IMemStacheSerializedItem<T> where T : class
     {
         private int _hitCount = 0;
         public new DateTimeOffset Timestamp

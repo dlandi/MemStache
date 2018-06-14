@@ -18,9 +18,9 @@ namespace MemStache
     /// <summary>
     /// Abstract Base Class
     /// </summary>
-    public abstract class MemStacheItem
+    public abstract class MemStacheItemBase<T>: IMemStacheItem<T> where T : class
     {
-        public dynamic Data { get; }
+        public T Data { get; }
         public DateTimeOffset Timestamp { get; }
         public virtual void AddRef() { }
         public virtual int ResetRef() { return -1; }
@@ -29,7 +29,7 @@ namespace MemStache
     /// Basic Cache Item with no serialization or encryption
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public sealed class MemStacheItem<T> : MemStacheItem, IDisposable, IMemStacheItem<T> where T : class
+    public sealed class MemStacheItem<T> : MemStacheItemBase<T>, IDisposable, IMemStacheItem<T> where T : class
     {
         private int _hitCount = 0;
         public new DateTimeOffset Timestamp
