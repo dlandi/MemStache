@@ -24,19 +24,10 @@ namespace MemStache
         /// <summary>
         /// Stasher employing the Serialization Plan
         /// </summary>
-        public Stasher Serialized { get; set; }
+        public Stasher Stasher { get; set; }
         /// <summary>
         /// Stasher employing the Serialization and Compression Plan
         /// </summary>
-        public Stasher Compressed { get; set; }
-        /// <summary>
-        /// Stasher employing the Protection Plan
-        /// </summary>
-        public Stasher Protected { get; set; }
-        /// <summary>
-        /// Stasher employing the Protection and Compression Plan
-        /// </summary>
-        public Stasher PrctCmpr { get; set; }
 
         public StacheMeister(string purpose, ServiceCollection services = null)
         {
@@ -56,10 +47,7 @@ namespace MemStache
         }
         public void DefaultStashers()
         {
-            Serialized = new Stasher("Stasher.Serialized", StashPlan.spSerialize, DB, DataProtector, Cache);
-            Compressed = new Stasher("Stasher.Serialized.Compressed", StashPlan.spSerializeCompress, DB, DataProtector, Cache);
-            Protected = new Stasher("Stasher.Protected", StashPlan.spProtect, DB, DataProtector, Cache);
-            PrctCmpr = new Stasher("Stasher.Protected.Compressed", StashPlan.spProtectCompress, DB, DataProtector, Cache);
+            Stasher = new Stasher("Stasher.Default", StashPlan.spSerialize, DB, DataProtector, Cache);
         }
 
         public Stasher MakeStasher(string purpose, StashPlan plan = StashPlan.spSerialize)

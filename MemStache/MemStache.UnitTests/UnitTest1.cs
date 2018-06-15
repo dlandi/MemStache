@@ -7,6 +7,7 @@ using System;
 using Stache = MemStache.MemStache<string, MemStache.MemStacheProtectedItem<string>>;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Reflection;
 
 namespace MemStache.UnitTests
 {
@@ -239,18 +240,15 @@ namespace MemStache.UnitTests
         public void TestMeisterStaches()
         {
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            //Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
-            //Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
-
             var payload = new Stash() { key = "test01", value = "This is a test" };
 
             var hash1 = Stasher.Hash(payload.value);
 
-            Meister.Serialized["test01"] = payload;
+            Meister.Stasher["test01"] = payload;
 
             //payload.value = "";
 
-            payload = Meister.Serialized["test01"];
+            payload = Meister.Stasher["test01"];
 
             Console.WriteLine("Payload Test: {0}", payload.value);
 
@@ -265,21 +263,153 @@ namespace MemStache.UnitTests
 
             StacheMeister Meister = new StacheMeister("memstache.demo");
 
-            string strSerialized = Meister.Serialized.Serialize(input);
+            string strSerialized = Meister.Stasher.Serialize(input);
             //byte[] arSerialzed = Meister.Serialized.GetBytes(input);
-            byte[] arProtected = Meister.Serialized.Protect(strSerialized);
-            byte[] arCompressed = Meister.Serialized.Compress(arProtected);
-            byte[] arUncompressed = Meister.Serialized.Uncompress(arCompressed);
+            byte[] arProtected = Meister.Stasher.Protect(strSerialized);
+            byte[] arCompressed = Meister.Stasher.Compress(arProtected);
+            byte[] arUncompressed = Meister.Stasher.Uncompress(arCompressed);
             //byte[] arUnprotected = Meister.Serialized.Unprotect(arUncompressed);
-            string output = Meister.Serialized.UnprotectToStr(arUncompressed);
+            string output = Meister.Stasher.UnprotectToStr(arUncompressed);
 
             //string output = Meister.Serialized.GetString(arUnprotected);
-            output = Meister.Serialized.Deserialize(output);
+            output = Meister.Stasher.Deserialize(output);
 
             Assert.AreEqual(input, output);
 
         }
 
+        [TestMethod]
+        public void TestObjectCache()
+        {
+            // the string name must be fully qualified for GetType to work
+            dynamic st = new Stash() { key = "test01", value = "This is a test" };
+            Assembly assem = st.GetType().Assembly;
+            string TypeName = st.GetType().FullName;
+            Type t = assem.GetType(TypeName);
+            //Type t = Type.GetType(TypeName);
+            var obj = Activator.CreateInstance(t);
+
+
+            string serType = JsonConvert.SerializeObject(st.GetType());
+            string strType = JsonConvert.DeserializeObject<string>(serType);
+            Type StashType = JsonConvert.DeserializeObject<Type>(serType);
+            string serStashObj = JsonConvert.SerializeObject(st);
+            var st2 = JsonConvert.DeserializeObject(serStashObj,StashType);
+
+
+            return;
+
 
         }
+
+        public class Stock
+        {
+            public int Id { get; set; } = 1;
+            public string Symbol { get; set; } = "LANDI";
+        }
+
+        public class Valuation
+        {
+            public int Id { get; set; } = 100;
+            public int StockId { get; set; } = 1;
+            public DateTime Time { get; set; } = DateTime.UtcNow;
+            public decimal Price { get; set; } = 100.34m;
+        }
+
+        [TestMethod]
+        public void TestSerialization2()
+        {
+            StacheMeister Meister = new StacheMeister("memstache.demo");
+            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
+
+            Valuation valuation1 = new Valuation();
+
+            var payload = new Stash() { key = "test01", Object = valuation1 };
+            var typeName = payload.StoredType;
+
+            var hash1 = Stasher.Hash(payload.value);
+
+            stash["test01"] = payload;
+
+            //payload.value = "";
+            if (payload == null)
+                Console.WriteLine("Payload is nulls");
+
+
+            payload = stash["test01"];
+
+            Valuation valuation2 = payload.Object as Valuation;
+
+            Console.WriteLine("Payload Test: {0}", payload.value);
+
+            var hash2 = Stasher.Hash(payload.value);
+            Assert.AreEqual(hash1, hash2);
+
+        }
+        [TestMethod]
+        public void TestSerializeAndCompress()
+        {
+            StacheMeister Meister = new StacheMeister("memstache.demo");
+            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerializeCompress);
+            Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
+
+            Valuation valuation1 = new Valuation();
+
+            var payload = new Stash() { key = "test01", stashPlan=StashPlan.spSerializeCompress, Object = valuation1 };
+            var typeName = payload.StoredType;
+
+            var hash1 = Stasher.Hash(payload.value);
+
+            stash["test01"] = payload;
+
+            //payload.value = "";
+            if (payload == null)
+                Console.WriteLine("Payload is nulls");
+
+
+            payload = stash["test01"];
+
+            Valuation valuation2 = payload.Object as Valuation;
+
+            Console.WriteLine("Payload Test: {0}", payload.value);
+
+            var hash2 = Stasher.Hash(payload.value);
+            Assert.AreEqual(hash1, hash2);
+
+        }
+
+        [TestMethod]
+        public void TestSerializeAndCompressAndEncrypt()
+        {
+            StacheMeister Meister = new StacheMeister("memstache.demo");
+            Stasher stash = Meister.MakeStasher("test", StashPlan.spProtectCompress);
+            Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
+
+            Valuation valuation1 = new Valuation();
+
+            var payload = new Stash() { key = "test01", stashPlan = StashPlan.spProtectCompress, Object = valuation1 };
+            var typeName = payload.StoredType;
+
+            var hash1 = Stasher.Hash(payload.value);
+
+            stash["test01"] = payload;
+
+            //payload.value = "";
+            if (payload == null)
+                Console.WriteLine("Payload is nulls");
+
+
+            payload = stash["test01"];
+
+            Valuation valuation2 = payload.Object as Valuation;
+
+            Console.WriteLine("Payload Test: {0}", payload.value);
+
+            var hash2 = Stasher.Hash(payload.value);
+            Assert.AreEqual(hash1, hash2);
+
+        }
+
+    }
 }
