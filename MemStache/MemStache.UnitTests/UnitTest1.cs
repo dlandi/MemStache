@@ -3,6 +3,7 @@ using MemStache;
 using System.Diagnostics;
 using System;
 
+
 //using Stache = MemStache.MemStache<string, MemStache.IMemStacheProtectedItem<string>>;
 using Stache = MemStache.MemStache<string, MemStache.MemStacheProtectedItem<string>>;
 using System.Threading.Tasks;
@@ -68,7 +69,7 @@ namespace MemStache.UnitTests
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
 
-            Console.WriteLine("TIME ELAPSED: " + elapsedTime );
+            Console.WriteLine("TIME ELAPSED: " + elapsedTime);
         }
 
         [ClassCleanup()]
@@ -85,150 +86,154 @@ namespace MemStache.UnitTests
 
         #endregion
 
-/*
-        [TestMethod]
-        public void InitMemStache()
-        {
-            try
-            {
-                stash =
-                Stache.Create<string>(StacheItemEnum.stchProtected,
-                              //The Setter Lambda
-                              async (key, data) =>
-                              {
-                                  await Task.Delay(1000);
-                                  string s = string.Format("MemStacheItem Setter: {0}",
-                                                            DateTime.UtcNow.ToLongTimeString());
-                                  Console.WriteLine("Save Data: {0}", s);
+        /*
+                [TestMethod]
+                public void InitMemStache()
+                {
+                    try
+                    {
+                        stash =
+                        Stache.Create<string>(StacheItemEnum.stchProtected,
+                                      //The Setter Lambda
+                                      async (key, data) =>
+                                      {
+                                          await Task.Delay(1000);
+                                          string s = string.Format("MemStacheItem Setter: {0}",
+                                                                    DateTime.UtcNow.ToLongTimeString());
+                                          Console.WriteLine("Save Data: {0}", s);
 
-                              },
-                              //The Getter Lambda
-                              async (key) =>
-                              {
-                                  await Task.Delay(1000);
-                                  string s = string.Format("MemStacheItem Getter - Key: {0}; Value: {1}",
-                                                           key, DateTime.UtcNow.ToLongTimeString());
-                                  Console.WriteLine("Get Data: {0}", s);
-                                  if (key != null)
-                                      return s;
+                                      },
+                                      //The Getter Lambda
+                                      async (key) =>
+                                      {
+                                          await Task.Delay(1000);
+                                          string s = string.Format("MemStacheItem Getter - Key: {0}; Value: {1}",
+                                                                   key, DateTime.UtcNow.ToLongTimeString());
+                                          Console.WriteLine("Get Data: {0}", s);
+                                          if (key != null)
+                                              return s;
 
-                                  return null;
-                              }
-          );
-                
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error: {0}"+e.Message);
-                //throw;
-            }
-            
-            Console.WriteLine("Success: MemStache Created");
-        }
-        [TestMethod]
-        public void RegisterMemCacheItemInfo()
-        {
-            var stash =
-            Stache.Create<string>(StacheItemEnum.stchProtected,
-                          //The Setter Lambda
-                          async (key, data) =>
-                          {
-                              await Task.Delay(1000);
-                              string ss = string.Format("MemStacheItem Setter: {0}",
-                                                        DateTime.UtcNow.ToLongTimeString());
-                              Console.WriteLine("Save Data: {0}", ss);
+                                          return null;
+                                      }
+                  );
 
-                          },
-                          //The Getter Lambda
-                          async (key) =>
-                          {
-                              await Task.Delay(1000);
-                              string s1 = string.Format("MemStacheItem Getter - Key: {0}; Value: {1}",
-                                                       key, DateTime.UtcNow.ToLongTimeString());
-                              Console.WriteLine("Get Data: {0}", s1);
-                              if (key != null)
-                                  return s1;
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Error: {0}"+e.Message);
+                        //throw;
+                    }
 
-                              return null;
-                          }
-                          );
+                    Console.WriteLine("Success: MemStache Created");
+                }
+                [TestMethod]
+                public void RegisterMemCacheItemInfo()
+                {
+                    var stash =
+                    Stache.Create<string>(StacheItemEnum.stchProtected,
+                                  //The Setter Lambda
+                                  async (key, data) =>
+                                  {
+                                      await Task.Delay(1000);
+                                      string ss = string.Format("MemStacheItem Setter: {0}",
+                                                                DateTime.UtcNow.ToLongTimeString());
+                                      Console.WriteLine("Save Data: {0}", ss);
 
-            string k = "test01";
-            stash.RegisterItem(
-                            new MemStacheItemInfo<string>(
-                                k,
-                                DateTimeOffset.Now,
-                                          //The Setter Lambda
-                                          async (key, data) =>
-                                          {
-                                              await Task.Delay(1000);
-                                              string s2 = string.Format("StacheItemInfo Setter: {0}",
-                                                                        DateTime.UtcNow.ToLongTimeString());
-                                              Console.WriteLine("Save Data: {0}", s2);
+                                  },
+                                  //The Getter Lambda
+                                  async (key) =>
+                                  {
+                                      await Task.Delay(1000);
+                                      string s1 = string.Format("MemStacheItem Getter - Key: {0}; Value: {1}",
+                                                               key, DateTime.UtcNow.ToLongTimeString());
+                                      Console.WriteLine("Get Data: {0}", s1);
+                                      if (key != null)
+                                          return s1;
 
-                                          },
-                                          //The Getter Lambda
-                                          async (key) =>
-                                          {
-                                              await Task.Delay(1000);
-                                              string s4 = string.Format("StacheItemInfo Getter - Key: {0}; Value: {1}",
-                                                                       key, DateTime.UtcNow.ToLongTimeString());
-                                              Console.WriteLine("Get Data: {0}", s4);
-                                              if (key != null)
-                                                  return s4;
+                                      return null;
+                                  }
+                                  );
 
-                                              return null;
-                                          }
-                                    )                                
-                                );
+                    string k = "test01";
+                    stash.RegisterItem(
+                                    new MemStacheItemInfo<string>(
+                                        k,
+                                        DateTimeOffset.Now,
+                                                  //The Setter Lambda
+                                                  async (key, data) =>
+                                                  {
+                                                      await Task.Delay(1000);
+                                                      string s2 = string.Format("StacheItemInfo Setter: {0}",
+                                                                                DateTime.UtcNow.ToLongTimeString());
+                                                      Console.WriteLine("Save Data: {0}", s2);
 
-            //var stch = stash as Stache;
-            stash.GetOrAdd(k).Wait();
+                                                  },
+                                                  //The Getter Lambda
+                                                  async (key) =>
+                                                  {
+                                                      await Task.Delay(1000);
+                                                      string s4 = string.Format("StacheItemInfo Getter - Key: {0}; Value: {1}",
+                                                                               key, DateTime.UtcNow.ToLongTimeString());
+                                                      Console.WriteLine("Get Data: {0}", s4);
+                                                      if (key != null)
+                                                          return s4;
+
+                                                      return null;
+                                                  }
+                                            )                                
+                                        );
+
+                    //var stch = stash as Stache;
+                    stash.GetOrAdd(k).Wait();
 
 
-        }
-*/
+                }
+        */
 
         [TestMethod]
         public void CreateMemStache()
         {
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            Stasher stash = Meister.MakeStasher("test",StashPlan.spSerialize);
-            Console.WriteLine("Purpose: {0}",stash.Purpose);
+            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Console.WriteLine("Purpose: {0}", stash.Purpose);
         }
 
         [TestMethod]
         public void TestSerialization()
         {
+            string key = "test01";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+            var rowcount = Meister.DB.Delete<Stash>(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
-            var payload = new Stash() { key = "test01", value="This is a test" };
+            var payload = new Stash() { key = key, Object = "This is a test" };
 
             var hash1 = Stasher.Hash(payload.value);
 
-            stash["test01"] = payload;
+            stash[key] = payload;
 
             payload.value = "";
 
-            payload = stash["test01"];
+            payload = stash[key];
 
             Console.WriteLine("Payload Test: {0}", payload.value);
 
             var hash2 = Stasher.Hash(payload.value);
-            Assert.AreEqual(hash1,hash2);
+            Assert.AreEqual(hash1, hash2);
 
         }
 
         [TestMethod]
         public void TestDBInsert()
         {
+            string key = "test02";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+            var rowcount = Meister.DB.Delete<Stash>(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
-            string key = "test02";
+
             stash.DbAddOrUpdate(new Stash() { key = key, value = s, serialized = true });
             //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(1000);
@@ -236,71 +241,10 @@ namespace MemStache.UnitTests
             Console.WriteLine("Payload Test: {0}", result.value);
         }
 
-        [TestMethod]
-        public void TestMeisterStaches()
-        {
-            StacheMeister Meister = new StacheMeister("memstache.demo");
-            var payload = new Stash() { key = "test01", value = "This is a test" };
-
-            var hash1 = Stasher.Hash(payload.value);
-
-            Meister.Stasher["test01"] = payload;
-
-            //payload.value = "";
-
-            payload = Meister.Stasher["test01"];
-
-            Console.WriteLine("Payload Test: {0}", payload.value);
-
-            var hash2 = Stasher.Hash(payload.value);
-            Assert.AreEqual(hash1, hash2);
-        }
-
-        [TestMethod]
-        public void TestProcessingSteps()
-        {
-            string input = "This is a test of the public broadcasting system.";
-
-            StacheMeister Meister = new StacheMeister("memstache.demo");
-
-            string strSerialized = Meister.Stasher.Serialize(input);
-            //byte[] arSerialzed = Meister.Serialized.GetBytes(input);
-            byte[] arProtected = Meister.Stasher.Protect(strSerialized);
-            byte[] arCompressed = Meister.Stasher.Compress(arProtected);
-            byte[] arUncompressed = Meister.Stasher.Uncompress(arCompressed);
-            //byte[] arUnprotected = Meister.Serialized.Unprotect(arUncompressed);
-            string output = Meister.Stasher.UnprotectToStr(arUncompressed);
-
-            //string output = Meister.Serialized.GetString(arUnprotected);
-            output = Meister.Stasher.Deserialize(output);
-
-            Assert.AreEqual(input, output);
-
-        }
-
-        [TestMethod]
-        public void TestObjectCache()
-        {
-            // the string name must be fully qualified for GetType to work
-            dynamic st = new Stash() { key = "test01", value = "This is a test" };
-            Assembly assem = st.GetType().Assembly;
-            string TypeName = st.GetType().FullName;
-            Type t = assem.GetType(TypeName);
-            //Type t = Type.GetType(TypeName);
-            var obj = Activator.CreateInstance(t);
 
 
-            string serType = JsonConvert.SerializeObject(st.GetType());
-            string strType = JsonConvert.DeserializeObject<string>(serType);
-            Type StashType = JsonConvert.DeserializeObject<Type>(serType);
-            string serStashObj = JsonConvert.SerializeObject(st);
-            var st2 = JsonConvert.DeserializeObject(serStashObj,StashType);
 
 
-            return;
-
-
-        }
 
         public class Stock
         {
@@ -319,25 +263,27 @@ namespace MemStache.UnitTests
         [TestMethod]
         public void TestSerialization2()
         {
+            string key = "test03";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+            var rowcount = Meister.DB.Delete<Stash>(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = "test01", Object = valuation1 };
+            var payload = new Stash() { key = key, Object = valuation1 };
             var typeName = payload.StoredType;
 
             var hash1 = Stasher.Hash(payload.value);
 
-            stash["test01"] = payload;
+            stash[key] = payload;
 
             //payload.value = "";
             if (payload == null)
                 Console.WriteLine("Payload is nulls");
 
 
-            payload = stash["test01"];
+            payload = stash[key];
 
             Valuation valuation2 = payload.Object as Valuation;
 
@@ -350,25 +296,27 @@ namespace MemStache.UnitTests
         [TestMethod]
         public void TestSerializeAndCompress()
         {
+            string key = "test04";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+            var rowcount = Meister.DB.Delete<Stash>(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerializeCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = "test01", stashPlan=StashPlan.spSerializeCompress, Object = valuation1 };
+            var payload = new Stash() { key = key, stashPlan = StashPlan.spSerializeCompress, Object = valuation1 };
             var typeName = payload.StoredType;
 
             var hash1 = Stasher.Hash(payload.value);
 
-            stash["test01"] = payload;
+            stash[key] = payload;
 
             //payload.value = "";
             if (payload == null)
                 Console.WriteLine("Payload is nulls");
 
 
-            payload = stash["test01"];
+            payload = stash[key];
 
             Valuation valuation2 = payload.Object as Valuation;
 
@@ -382,25 +330,27 @@ namespace MemStache.UnitTests
         [TestMethod]
         public void TestSerializeAndCompressAndEncrypt()
         {
+            string key = "test05";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+            var rowcount = Meister.DB.Delete<Stash>(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spProtectCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = "test01", stashPlan = StashPlan.spProtectCompress, Object = valuation1 };
+            var payload = new Stash() { key = key, stashPlan = StashPlan.spProtectCompress, Object = valuation1 };
             var typeName = payload.StoredType;
 
             var hash1 = Stasher.Hash(payload.value);
 
-            stash["test01"] = payload;
+            stash[key] = payload;
 
             //payload.value = "";
             if (payload == null)
                 Console.WriteLine("Payload is nulls");
 
 
-            payload = stash["test01"];
+            payload = stash[key];
 
             Valuation valuation2 = payload.Object as Valuation;
 
@@ -410,6 +360,146 @@ namespace MemStache.UnitTests
             Assert.AreEqual(hash1, hash2);
 
         }
+
+
+        [TestMethod]
+        public void StacheMeisterSerialization()
+        {
+            string key = "test06";
+            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerialize);
+            var rowcount = Meister.DB.Delete<Stash>(key);
+
+            Valuation valuation1 = new Valuation();
+
+            Meister[key] = valuation1;
+
+            Valuation valuation2 = Meister[key] as Valuation;
+
+            string v1 = JsonConvert.SerializeObject(valuation1);
+            string v2 = JsonConvert.SerializeObject(valuation2);
+
+            Assert.AreEqual(v1, v2);
+
+        }
+        [TestMethod]
+        public void StacheMeisterSerializeAndCompress()
+        {
+            string key = "test07";
+            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerializeCompress);
+            var rowcount = Meister.DB.Delete<Stash>(key);
+
+            Valuation valuation1 = new Valuation();
+
+            Meister[key] = valuation1;
+
+            Valuation valuation2 = Meister[key] as Valuation;
+
+            string v1 = JsonConvert.SerializeObject(valuation1);
+            string v2 = JsonConvert.SerializeObject(valuation2);
+
+            Assert.AreEqual(v1, v2);
+
+        }
+
+        [TestMethod]
+        public void StacheMeisterSerializeAndCompressAndEncrypt()
+        {
+            string key = "test08";
+            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spProtectCompress);
+            var rowcount = Meister.DB.Delete<Stash>(key);
+
+            Valuation valuation1 = new Valuation();
+
+            Meister[key] = valuation1;
+
+            Valuation valuation2 = Meister[key] as Valuation;
+
+            string v1 = JsonConvert.SerializeObject(valuation1);
+            string v2 = JsonConvert.SerializeObject(valuation2);
+
+            Assert.AreEqual(v1, v2);
+
+        }
+
+
+        public class Address
+            {
+                public string Street { get; set; }
+                public string City { get; set; }
+                public string State { get; set; }
+                public string Country { get; set; }
+        }
+
+        public class Dept
+        {
+            public string Name { get; set; }
+            public string Branch { get; set; }
+            public int Division { get; set; }
+            public string Country { get; set; }
+            public bool Eligible { get; set; }
+
+        }
+
+        public class Person
+        {
+            public string Name { get; set; }
+            public int Age { get; set; }
+            public Address Address { get; set; }
+        }
+        
+        public class Employee
+        {
+            public int Id { get; set; }
+            public Dept Department { get; set; }
+            public Person Person { get; set; }
+        }
+        public Employee CreateEmployee()
+        {
+            return new Employee()
+            {
+                Id = 1,
+                Department = new Dept()
+                {
+                    Branch = "Main",
+                    Country = "USA",
+                    Division = 1,
+                    Eligible = true,
+                    Name = "Sales"
+                },
+                Person = new Person()
+                {
+                    Name = "Sam Adams",
+                    Age = 33,
+                    Address = new Address()
+                    {
+                        Street = "123 Main Street",
+                        City = "Ashburn",
+                        State = "VA",
+                        Country ="USA"
+                    }
+                }
+            };
+        }
+        [TestMethod]
+        public void TestObjectGraph()
+        {
+            string key = "test08";
+            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spProtectCompress);
+            var rowcount = Meister.DB.Delete<Stash>(key);
+
+            Employee emp1 = CreateEmployee();
+            string v1 = JsonConvert.SerializeObject(emp1);
+
+            Meister[key] = emp1;
+
+            Employee emp2 = Meister[key] as Employee;
+
+
+            string v2 = JsonConvert.SerializeObject(emp2);
+
+            Assert.AreEqual(v1, v2);
+        }
+
 
     }
 }

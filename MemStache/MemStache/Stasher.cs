@@ -124,8 +124,9 @@ namespace MemStache
                 {
                     return GetItemCommon(key);
                 }
-                catch
+                catch (Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     return null;
                 }
             }
@@ -165,13 +166,13 @@ namespace MemStache
             {
                 throw;
             }
-            Type serializedType = GetSerializedType(item.StoredType);
+            Type serializedType = GetStoredType(item.StoredType);
             item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));
             item.encrypted = false;
             item.serialized = false;
             return item;
         }
-        private Type GetSerializedType(string typeName)
+        private Type GetStoredType(string typeName)
         {
             Type type = JsonConvert.DeserializeObject<Type>(typeName);
             return type;
@@ -191,6 +192,9 @@ namespace MemStache
         }
         protected Stash CloneItem(Stash stash)
         {
+            StashPlan itemPlan = GetPlanFromValue(stash.Plan);
+            if(this.Plan != itemPlan)
+                throw new Exception("Cache Item Plan does not match container's Plan.");
             return new Stash()
             {
                 compressed = stash.compressed,
@@ -202,7 +206,7 @@ namespace MemStache
                 size = stash.size,
                 value = stash.value,
                 StoredType = stash.StoredType,
-                stashPlan = GetPlanFromValue(stash.Plan)
+                stashPlan = itemPlan //GetPlanFromValue(stash.Plan)
             };
         }
         private StashPlan GetPlanFromValue(int value)
@@ -229,13 +233,13 @@ namespace MemStache
 
         #region Item Processing Functions
 
-        public string Serialize(string input)
+        public string SerializeToBase64(dynamic input)
         {
-            return JsonConvert.SerializeObject(input);
+            return EncodeTo64(JsonConvert.SerializeObject(input));
         }
-        public string Deserialize(string input)
+        public dynamic DeserializeFromBase64(string input, Type itemType)
         {
-            return JsonConvert.DeserializeObject<string>(input);
+            return JsonConvert.DeserializeObject(DecodeFrom64(input), itemType);
         }
         public byte[] Protect(string input)
         {
@@ -302,6 +306,9 @@ namespace MemStache
                 }
             }
         }
+
+
+
         public string UncompressStr(string inputStr)
         {
             byte[] input = GetBytes(inputStr);
@@ -364,7 +371,7 @@ namespace MemStache
         {
             if (item.serialized)
             {
-                Type serializedType = GetSerializedType(item.StoredType);
+                Type serializedType = GetStoredType(item.StoredType);
                 item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));//deserialized data assigned to Object property.
                 item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
@@ -391,15 +398,13 @@ namespace MemStache
 
         Stash GetItemSerializeCompress(Stash item)
         {
-            // string base64 = Convert.ToBase64String(bytes);
-            //byte[] bytes = Convert.FromBase64String(base64);
             byte[] itembytes = Convert.FromBase64String(item.value);
             byte[] arCompressed = Uncompress(itembytes);
             item.value = Convert.ToBase64String(arCompressed);
             item.value = DecodeFrom64(item.value);
             if (item.serialized)
             {
-                Type serializedType = GetSerializedType(item.StoredType);
+                Type serializedType = GetStoredType(item.StoredType);
                 item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));//deserialized data assigned to Object property.
                 item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
@@ -414,8 +419,6 @@ namespace MemStache
                 item.value = JsonConvert.SerializeObject(item.value);
             item.value = EncodeTo64(item.value);
             byte[] itembytes = Convert.FromBase64String(item.value);
-            // string base64 = Convert.ToBase64String(bytes);
-            //byte[] bytes = Convert.FromBase64String(base64);
 
             byte[] arCompressed = Compress(itembytes);
             item.value = Convert.ToBase64String(arCompressed);
@@ -445,13 +448,13 @@ namespace MemStache
 
                 throw;
             }
-            //byte[] arUnprotected = Meister.Serialized.Unprotect(arUncompressed);
             item.value = UnprotectToStr(arUncompressed);
             item.value = DecodeFrom64(item.value);
             if (item.serialized)
             {
-                Type serializedType = GetSerializedType(item.StoredType);
-                item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));//deserialized data assigned to Object property.
+                Type serializedType = GetStoredType(item.StoredType);
+                dynamic deserialized = JsonConvert.DeserializeObject(item.value, serializedType);
+                item.SetPrivateObject(deserialized);//deserialized data assigned to Object property.
                 item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
             }
@@ -465,19 +468,15 @@ namespace MemStache
                 item.value = JsonConvert.SerializeObject(item.value);
 
             string str64 = EncodeTo64(item.value);
-           // string base64 = Convert.ToBase64String(bytes);
-            //byte[] bytes = Convert.FromBase64String(base64);
 
             byte[] arProtected = Protect(str64);
             byte[] arCompressed = Compress(arProtected);
 
-            //byte[] ar = Protect(item.value);
             item.value = Convert.ToBase64String(arCompressed);//GetString(arCompressed);
 
             item.encrypted = false;
             item.serialized = true;
             Cache.Set<Stash>(key, item);
-            Stash item2 = Cache.Get<Stash>(key);
             DbAddOrUpdate(item);
         }
 

@@ -25,12 +25,41 @@ namespace MemStache
         /// Stasher employing the Serialization Plan
         /// </summary>
         public Stasher Stasher { get; set; }
+        public StashPlan Plan { get; set; } = StashPlan.spSerialize;
         /// <summary>
         /// Stasher employing the Serialization and Compression Plan
         /// </summary>
 
-        public StacheMeister(string purpose, ServiceCollection services = null)
+        public dynamic this[string key]
         {
+            get
+            {
+                try
+                {
+                    return this.Stasher[key].Object;  //NOTE: Refactor to break the reference to the  wrapping stash object
+                                                        // by calling "deserialize Value" here
+                }
+                catch
+                {
+                    return null;
+                }
+            }
+            set
+            {
+
+                var stash = new Stash()
+                {
+                    key = key,
+                    stashPlan = this.Plan,
+                    Object = value
+                };
+                this.Stasher[key]=stash;
+            }
+        }
+
+        public StacheMeister(string purpose, StashPlan plan = StashPlan.spSerialize, ServiceCollection services = null)
+        {
+            Plan = plan;
             Purpose = purpose;
             DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "memstache.db"); // Get an absolute path to the database file
             DB = new SQLiteConnection(DatabasePath);
@@ -47,7 +76,7 @@ namespace MemStache
         }
         public void DefaultStashers()
         {
-            Stasher = new Stasher("Stasher.Default", StashPlan.spSerialize, DB, DataProtector, Cache);
+            Stasher = new Stasher("Stasher.Default", this.Plan, DB, DataProtector, Cache);
         }
 
         public Stasher MakeStasher(string purpose, StashPlan plan = StashPlan.spSerialize)

@@ -1981,6 +1981,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "Tynamix.ObjectFiller/1.5.4.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Tynamix.ObjectFiller.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Tynamix.ObjectFiller.dll": {}
+        }
+      },
       "MemStache/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6595,6 +6607,27 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
+    "Tynamix.ObjectFiller/1.5.4.1": {
+      "sha512": "3Sm3X4FATuzaiexea9/Ynfizt1Ev6eFgJV0I2h1U7GMDvzIPAuYMaXcbtdiCTYPjuOOnMxzFaSJ7LesA2t5wxg==",
+      "type": "package",
+      "path": "tynamix.objectfiller/1.5.4.1",
+      "files": [
+        "lib/net35/Tynamix.ObjectFiller.dll",
+        "lib/net35/Tynamix.ObjectFiller.xml",
+        "lib/net40/Tynamix.ObjectFiller.dll",
+        "lib/net40/Tynamix.ObjectFiller.xml",
+        "lib/net45/Tynamix.ObjectFiller.dll",
+        "lib/net45/Tynamix.ObjectFiller.xml",
+        "lib/net451/Tynamix.ObjectFiller.dll",
+        "lib/net451/Tynamix.ObjectFiller.xml",
+        "lib/net452/Tynamix.ObjectFiller.dll",
+        "lib/net452/Tynamix.ObjectFiller.xml",
+        "lib/netstandard1.0/Tynamix.ObjectFiller.dll",
+        "lib/netstandard1.0/Tynamix.ObjectFiller.xml",
+        "tynamix.objectfiller.1.5.4.1.nupkg.sha512",
+        "tynamix.objectfiller.nuspec"
+      ]
+    },
     "MemStache/1.0.0": {
       "type": "project",
       "path": "../MemStache/MemStache.csproj",
@@ -6607,7 +6640,8 @@
       "MSTest.TestFramework >= 1.2.1",
       "MemStache >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.7.0",
-      "Microsoft.NETCore.App >= 2.1.0"
+      "Microsoft.NETCore.App >= 2.1.0",
+      "Tynamix.ObjectFiller >= 1.5.4.1"
     ]
   },
   "packageFolders": {
@@ -6671,6 +6705,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Tynamix.ObjectFiller": {
+            "target": "Package",
+            "version": "[1.5.4.1, )"
           }
         },
         "imports": [
