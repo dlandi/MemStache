@@ -675,7 +675,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -1511,7 +1512,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -2348,7 +2350,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -3010,7 +3013,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -3846,7 +3850,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -4683,7 +4688,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -5519,7 +5525,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -6356,7 +6363,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -10634,7 +10642,8 @@
     "UAP,Version=v10.0.16299": [
       "MemStache.Mobile >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.1",
-      "Xamarin.Forms >= 3.0.0.482510"
+      "Xamarin.Forms >= 3.0.0.482510",
+      "sqlite-net-sqlcipher >= 1.5.176-beta"
     ]
   },
   "packageFolders": {
@@ -10685,6 +10694,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.0.0.482510, )"
+          },
+          "sqlite-net-sqlcipher": {
+            "target": "Package",
+            "version": "[1.5.176-beta, )"
           }
         },
         "imports": [

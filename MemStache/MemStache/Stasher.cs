@@ -134,7 +134,7 @@ namespace MemStache
             {
                 Stash clone = CloneItem(value);
                 SetItemCommon(clone);
-                value.Dispose();
+                //value.Dispose();
             }
         }
         public string DatabasePath { get; set; }
@@ -342,6 +342,8 @@ namespace MemStache
             if (item == null) item = DbGet(key);
             if (item == null) return null;
 
+            item.stashPlan = GetPlanFromValue(item.Plan);//if DBGet fired then we need to re-hydrate this prop
+            
             if (item.stashPlan == StashPlan.spSerialize)
                 return GetItemSerializationOnly(item);
             else

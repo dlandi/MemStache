@@ -1553,7 +1553,8 @@
     ".NETStandard,Version=v2.0": [
       "MemStache >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
-      "Xamarin.Forms >= 3.0.0.482510"
+      "Xamarin.Forms >= 3.0.0.482510",
+      "sqlite-net-sqlcipher >= 1.5.176-beta"
     ]
   },
   "packageFolders": {
@@ -1610,6 +1611,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.0.0.482510, )"
+          },
+          "sqlite-net-sqlcipher": {
+            "target": "Package",
+            "version": "[1.5.176-beta, )"
           }
         },
         "imports": [

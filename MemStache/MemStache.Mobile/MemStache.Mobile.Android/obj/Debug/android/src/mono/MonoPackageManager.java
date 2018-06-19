@@ -163,6 +163,7 @@ class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.Android.dll",
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
+		"MemStache.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

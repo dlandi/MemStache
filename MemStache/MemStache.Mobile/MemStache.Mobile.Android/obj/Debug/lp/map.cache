@@ -58,3 +58,7 @@ System.Security.Principal.Windows
 System.Text.Encodings.Web
 System.Memory
 System.Reflection.Extensions
+SQLitePCLRaw.batteries_green
+SQLitePCLRaw.lib.e_sqlite3
+SQLitePCLRaw.provider.e_sqlite3
+MemStache

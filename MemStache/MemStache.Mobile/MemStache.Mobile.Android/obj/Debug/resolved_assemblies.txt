@@ -95,6 +95,7 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\o
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Security.SecureString.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Web.Services.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Xml.XPath.XDocument.dll
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\MemStache.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Memory.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Threading.Tasks.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\System.Globalization.dll

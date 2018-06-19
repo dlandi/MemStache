@@ -143,8 +143,11 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-sqlcipher">
+      <Version>1.5.176-beta</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1"/>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MemStache.Mobile\MemStache.Mobile.csproj">

@@ -11,7 +11,8 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Forms": "3.0.0.482510"
+          "Xamarin.Forms": "3.0.0.482510",
+          "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "runtime": {
           "MemStache.Mobile.dll": {}

@@ -1,5 +1,6 @@
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.Microsoft.Win32.Registry.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Collections.Concurrent.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Collections.Immutable.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Collections.NonGeneric.SR.resw
@@ -30,6 +31,7 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Linq.Parallel.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Linq.Queryable.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Linq.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Memory.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Net.Http.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Net.HttpListener.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Net.Mail.SR.resw
@@ -72,8 +74,11 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Cng.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Csp.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Encoding.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Pkcs.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Primitives.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.X509Certificates.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Xml.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Principal.Windows.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Text.Encoding.CodePages.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Text.RegularExpressions.SR.resw
@@ -84,3 +89,12 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Threading.Thread.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Transactions.Local.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.ValueTuple.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.AspNetCore.Cryptography.Internal\en-US\Microsoft.AspNetCore.Cryptography.Internal.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.AspNetCore.DataProtection.Abstractions\en-US\Microsoft.AspNetCore.DataProtection.Abstractions.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.AspNetCore.DataProtection\en-US\Microsoft.AspNetCore.DataProtection.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.AspNetCore.Http.Abstractions\en-US\Microsoft.AspNetCore.Http.Abstractions.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.Extensions.DependencyInjection.Abstractions\en-US\Microsoft.Extensions.DependencyInjection.Abstractions.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.Extensions.DependencyInjection\en-US\Microsoft.Extensions.DependencyInjection.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.Extensions.Logging.Abstractions\en-US\Microsoft.Extensions.Logging.Abstractions.Resource.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.Extensions.Options\en-US\Microsoft.Extensions.Options.Resources.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Microsoft.Extensions.Primitives\en-US\Microsoft.Extensions.Primitives.Resources.resw
