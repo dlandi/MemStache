@@ -10,5 +10,4 @@ A Flexible, Powerful Cache Library with these features
 		- Security On-Disk
 		- All Code written in .NET Standard 2.
 		- Leverage .NET Standard DI Framework.
-		- Leverage Thread Safety throught Immutable Classses
 		- A Small Intuitive Developer API
