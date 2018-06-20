@@ -454,7 +454,7 @@ namespace MemStache
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
-        public string GetString(byte[] bytes)
+        private string GetString(byte[] bytes)
         {
             if (bytes.Length % 2 != 0) // if input length is odd, add a #0
             {
