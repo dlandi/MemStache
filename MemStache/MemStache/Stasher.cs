@@ -88,12 +88,6 @@ namespace MemStache
             }
         }
 
-        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
-        // ~Stash() {
-        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
-        //   Dispose(false);
-        // }
-
         // This code added to correctly implement the disposable pattern.
         public void Dispose()
         {
@@ -150,45 +144,10 @@ namespace MemStache
             Plan = plan;
         }
 
-        public Stash GetItem(string key)
-        {
-            Stash item = Cache.Get<Stash>(key);            
-            if(item == null) item = DbGet(key);
-            if (item == null) return null;
-            try
-            {
-                string s = item.value;
-                byte[] t = GetBytes(s);
-                byte[] x = DataProtector.Unprotect(t);                
-                item.value = GetString(x);
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
-            Type serializedType = GetStoredType(item.StoredType);
-            item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));
-            item.encrypted = false;
-            item.serialized = false;
-            return item;
-        }
         private Type GetStoredType(string typeName)
         {
             Type type = JsonConvert.DeserializeObject<Type>(typeName);
             return type;
-        }
-        public void SetItem(Stash item)
-        {
-            string key = item.key;
-            if(!item.serialized)//don't serialize twice.  The first time was in the Stash Object Property Setter
-                item.value = JsonConvert.SerializeObject(item.value);
-            byte[] x = DataProtector.Protect(GetBytes(item.value));
-            item.value = GetString(x);
-            item.encrypted = true;            
-            item.serialized = true;
-            Cache.Set<Stash>(key, item);
-            Stash item2 = Cache.Get<Stash>(key);
-            DbAddOrUpdate(item);
         }
         protected Stash CloneItem(Stash stash)
         {
@@ -233,14 +192,6 @@ namespace MemStache
 
         #region Item Processing Functions
 
-        public string SerializeToBase64(dynamic input)
-        {
-            return EncodeTo64(JsonConvert.SerializeObject(input));
-        }
-        public dynamic DeserializeFromBase64(string input, Type itemType)
-        {
-            return JsonConvert.DeserializeObject(DecodeFrom64(input), itemType);
-        }
         public byte[] Protect(string input)
         {
             byte[] arInput = GetBytes(input);
@@ -250,13 +201,16 @@ namespace MemStache
         {
             return DataProtector.Protect(input);
         }
-        public byte[] Unprotect(byte[] input)
+        /// <summary>
+        /// Depends on unprotected data being originally encoded
+        /// in Base64
+        /// </summary>
+        /// <param name="arProtected"></param>
+        /// <returns></returns>
+        public string UnprotectToStr(byte[] arProtected)
         {
-            return DataProtector.Unprotect(input);
-        }
-        public string UnprotectToStr(byte[] input)
-        {
-            return GetString(DataProtector.Unprotect(input));
+            byte[] arUnprotected = DataProtector.Unprotect(arProtected);
+            return GetString(arUnprotected);
         }
         public byte[] Compress(byte[] input)
         {
@@ -268,19 +222,6 @@ namespace MemStache
                     gzip.Write(input, 0, input.Length);
                 }
                 return memory.ToArray();
-            }
-        }
-        public string CompressStr(string str)
-        {
-            byte[] input = GetBytes(str);
-            using (MemoryStream memory = new MemoryStream())
-            {
-                using (GZipStream gzip = new GZipStream(memory,
-                    CompressionMode.Compress, true))
-                {
-                    gzip.Write(input, 0, input.Length);
-                }
-                return GetString(memory.ToArray());
             }
         }
         public byte[] Uncompress(byte[] input)
@@ -303,33 +244,6 @@ namespace MemStache
                     }
                     while (count > 0);
                     return memory.ToArray();
-                }
-            }
-        }
-
-
-
-        public string UncompressStr(string inputStr)
-        {
-            byte[] input = GetBytes(inputStr);
-            using (GZipStream stream = new GZipStream(new MemoryStream(input),
-                CompressionMode.Decompress))
-            {
-                const int size = 4096;
-                byte[] buffer = new byte[size];
-                using (MemoryStream memory = new MemoryStream())
-                {
-                    int count = 0;
-                    do
-                    {
-                        count = stream.Read(buffer, 0, size);
-                        if (count > 0)
-                        {
-                            memory.Write(buffer, 0, count);
-                        }
-                    }
-                    while (count > 0);
-                    return GetString(memory.ToArray());
                 }
             }
         }
@@ -381,17 +295,17 @@ namespace MemStache
             return item;
         }
 
-    public void SetItemSerializationOnly(Stash item)
-    {
-        string key = item.key;
-        if (!item.serialized)//don't serialize twice.  The first time was in the Stash Object Property Setter
-            item.value = JsonConvert.SerializeObject(item.value);
-        item.encrypted = false;
-        item.serialized = true;
-        Cache.Set<Stash>(key, item);
-        Stash item2 = Cache.Get<Stash>(key);
-        DbAddOrUpdate(item);
-    }
+        public void SetItemSerializationOnly(Stash item)
+        {
+            string key = item.key;
+            if (!item.serialized)//don't serialize twice.  The first time was in the Stash Object Property Setter
+                item.value = JsonConvert.SerializeObject(item.value);
+            item.encrypted = false;
+            item.serialized = true;
+            Cache.Set<Stash>(key, item);
+            Stash item2 = Cache.Get<Stash>(key);
+            DbAddOrUpdate(item);
+        }
 
 
     #endregion
@@ -436,9 +350,10 @@ namespace MemStache
         #endregion
 
         #region Item Serialize, Compress And Encrypt
-        byte[] arCompressed;
+        
         Stash GetItemSerializeCompressEncrypt(Stash item)
         {
+            byte[] arCompressed;
             arCompressed = Convert.FromBase64String(item.value);//GetBytes(item.value);
             byte[] arUncompressed;
             try
@@ -523,15 +438,19 @@ namespace MemStache
 
         }
 
-        private byte[] GetBytes(string str)
+        /// <summary>
+        /// Input should alwase be a Base64 encoded string!
+        /// </summary>
+        /// <param name="strBase64"></param>
+        /// <returns></returns>
+        private byte[] GetBytes(string strBase64)
         {
-            byte[] bytes = new byte[str.Length * sizeof(char)];
-            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+            byte[] bytes = new byte[strBase64.Length * sizeof(char)];
+            System.Buffer.BlockCopy(strBase64.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
         /// <summary>
-        /// Warning: find a better method that detects the current string encoding
-        /// and uses that encoding to convert the bytes to the correct string format
+        /// Only use this method with data that was originally Base64 encoded
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
