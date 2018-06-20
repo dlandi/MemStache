@@ -27,8 +27,9 @@ namespace MemStache
         public Stasher Stasher { get; set; }
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
         /// <summary>
-        /// Stasher employing the Serialization and Compression Plan
+        /// Optons must include a Size Limit. If one it not provided the Size Limit will be 900Kb per item
         /// </summary>
+        public MemoryCacheEntryOptions MemoryItemOptions { get; set;}
 
         public dynamic this[string key]
         {
@@ -57,11 +58,11 @@ namespace MemStache
             }
         }
 
-        public StacheMeister(string purpose, StashPlan plan = StashPlan.spSerialize, ServiceCollection services = null)
+        public StacheMeister(string purpose, StashPlan plan = StashPlan.spSerialize, MemoryCacheOptions memCacheOptions = null, 
+                             MemoryCacheEntryOptions memoryItemOptions = null ,ServiceCollection services = null)
         {
             Plan = plan;
             Purpose = purpose;
-            //DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "memstache.db"); // Get an absolute path to the database file
             DatabasePath = GetBasePath("memstache.db");
 
             DB = new SQLiteConnection(DatabasePath);
@@ -70,8 +71,38 @@ namespace MemStache
             this.services = svcs;
             svcs.AddDataProtection();
             svcs.AddMemoryCache();
+            //IMemoryCache cache;
             serviceProvider = svcs.BuildServiceProvider();
-            Cache = serviceProvider.GetService<IMemoryCache>();
+            if (memCacheOptions == null) { 
+                Cache = new MemoryCache(new MemoryCacheOptions() {
+                    SizeLimit = 5242880, //bytes = 5 megs
+                    CompactionPercentage = .50,
+                    ExpirationScanFrequency = TimeSpan.FromMinutes(1)                
+                });
+            }
+            
+            else
+            {
+                Cache = new MemoryCache(memCacheOptions);
+            }
+            //Cache = serviceProvider.GetService<IMemoryCache>();
+            if (memoryItemOptions == null)
+            {
+                MemoryItemOptions = new MemoryCacheEntryOptions()
+                {
+                    AbsoluteExpirationRelativeToNow=TimeSpan.FromDays(1),
+                    Size = 921600, //bytes = 900 kb
+                    Priority = CacheItemPriority.High                    
+                };
+            }
+            else
+            {
+                if (memoryItemOptions.Size == null)
+                    memoryItemOptions.Size = 921600;
+                MemoryItemOptions = memoryItemOptions;
+            }
+
+            
             DataProtectionProvider = serviceProvider.GetService<IDataProtectionProvider>();
             DataProtector = DataProtectionProvider.CreateProtector(purpose);
             DefaultStashers();

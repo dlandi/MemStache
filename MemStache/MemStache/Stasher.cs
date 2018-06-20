@@ -134,14 +134,33 @@ namespace MemStache
         public string DatabasePath { get; set; }
         public SQLiteConnection DB { get; set; }
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
+        public MemoryCacheEntryOptions MemoryItemOptions { get; set; }
         public Stasher(string purpose, StashPlan plan, SQLiteConnection db,
-                       IDataProtector dataProtector, IMemoryCache cache)
+                       IDataProtector dataProtector, IMemoryCache cache,
+                       MemoryCacheEntryOptions memoryItemOptions = null)
         {
             DB = db;
             Cache = cache;
             DataProtector = dataProtector;
             Purpose = purpose;
             Plan = plan;
+            //If developer chooses to instantiate standalone Stasher then we will need to deal with 
+            //memItemOptions directly
+            if (memoryItemOptions == null)
+            {
+                MemoryItemOptions = new MemoryCacheEntryOptions()
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(1),
+                    Size = 921600, //bytes = 900 kb
+                    Priority = CacheItemPriority.High
+                };
+            }
+            else
+            {
+                if (memoryItemOptions.Size == null)
+                    memoryItemOptions.Size = 921600;
+                MemoryItemOptions = memoryItemOptions;
+            }
         }
 
         private Type GetStoredType(string typeName)
@@ -302,7 +321,7 @@ namespace MemStache
                 item.value = JsonConvert.SerializeObject(item.value);
             item.encrypted = false;
             item.serialized = true;
-            Cache.Set<Stash>(key, item);
+            Cache.Set<Stash>(key, item, MemoryItemOptions);
             Stash item2 = Cache.Get<Stash>(key);
             DbAddOrUpdate(item);
         }
@@ -341,7 +360,7 @@ namespace MemStache
 
             item.encrypted = false;
             item.serialized = true;
-            Cache.Set<Stash>(key, item);
+            Cache.Set<Stash>(key, item, MemoryItemOptions);
             Stash item2 = Cache.Get<Stash>(key);
             DbAddOrUpdate(item);
         }
@@ -393,7 +412,7 @@ namespace MemStache
 
             item.encrypted = false;
             item.serialized = true;
-            Cache.Set<Stash>(key, item);
+            Cache.Set<Stash>(key, item, MemoryItemOptions);
             DbAddOrUpdate(item);
         }
 
