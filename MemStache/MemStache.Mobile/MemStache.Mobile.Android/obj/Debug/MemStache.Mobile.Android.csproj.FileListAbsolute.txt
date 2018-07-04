@@ -112,6 +112,8 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\o
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\Xamarin.Forms.Core.pdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.pdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\bin\Debug\MemStache.Mobile.Android.dll
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\linksrc\MemStache.Mobile.pdb
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\linksrc\MemStache.pdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\linksrc\MemStache.Mobile.Android.dll.mdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\linksrc\FormsViewGroup.dll.mdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\linksrc\Xamarin.Forms.Platform.Android.dll.mdb

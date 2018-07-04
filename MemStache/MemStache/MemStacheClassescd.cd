@@ -3,7 +3,7 @@
   <Class Name="MemStache.StacheMeister">
     <Position X="1" Y="2" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAggAAAAAgICAAAgAAQBAABAAABKAAAAIAAABA=</HashCode>
+      <HashCode>AAAAQAAggAAAAAgICAAAgAAQBAABAAABKAEAAIAAABA=</HashCode>
       <FileName>StacheMeister.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -29,7 +29,7 @@
   <Class Name="MemStache.Stasher">
     <Position X="3.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AACIQAAiABIAAgAICAAAhAAADAEpAAIFIAAAAIKAjBQ=</HashCode>
+      <HashCode>AACIQAAiABIAAgAICAAAhAAADAEpAAIFIAEAAIKAjBQ=</HashCode>
       <FileName>Stasher.cs</FileName>
     </TypeIdentifier>
   </Class>

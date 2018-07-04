@@ -2,9 +2,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MemStache;
 using System.Diagnostics;
 using System;
-
-
-//using Stache = MemStache.MemStache<string, MemStache.IMemStacheProtectedItem<string>>;
 using Stache = MemStache.MemStache<string, MemStache.MemStacheProtectedItem<string>>;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -21,7 +18,6 @@ namespace MemStache.UnitTests
 
         public Employee employee1;
 
-        //public MemStache<string, MemStache.IMemStacheProtectedItem<string>> stash ;
         public MemStache<string, MemStache.MemStacheProtectedItem<string>> stash;
 
 
@@ -210,7 +206,6 @@ namespace MemStache.UnitTests
 
         }
 
-
         [TestMethod]
         [TestCategory("Using Stasher")]
         public void _1_StasherSerialize()
@@ -266,7 +261,7 @@ namespace MemStache.UnitTests
 
             //payload.value = "";
             if (payload == null)
-                Console.WriteLine("Payload is nulls");
+                Console.WriteLine("Payload is null");
 
 
             payload = stash[key];

@@ -37,8 +37,7 @@ namespace MemStache
             {
                 try
                 {
-                    return this.Stasher[key].Object;  //NOTE: Refactor to break the reference to the  wrapping stash object
-                                                        // by calling "deserialize Value" here
+                    return this.Stasher[key].Object;  
                 }
                 catch
                 {
@@ -48,13 +47,18 @@ namespace MemStache
             set
             {
 
-                var stash = new Stash()
+                using (
+
+                    Stash stash = new Stash()
+                    {
+                        key = key,
+                        stashPlan = this.Plan,
+                        Object = value
+                    }
+                )
                 {
-                    key = key,
-                    stashPlan = this.Plan,
-                    Object = value
-                };
-                this.Stasher[key]=stash;
+                    this.Stasher[key] = stash;
+                }
             }
         }
 
