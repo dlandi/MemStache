@@ -231,6 +231,17 @@ namespace MemStache
             byte[] arUnprotected = DataProtector.Unprotect(arProtected);
             return GetString(arUnprotected);
         }
+        /// <summary>
+        /// Depends on unprotected data being originally encoded
+        /// in Base64
+        /// </summary>
+        /// <param name="arProtected"></param>
+        /// <returns></returns>
+        public byte[] Unprotect(byte[] arProtected)
+        {
+            byte[] arUnprotected = DataProtector.Unprotect(arProtected);
+            return arUnprotected;
+        }
         public byte[] Compress(byte[] input)
         {
             using (MemoryStream memory = new MemoryStream())
@@ -372,19 +383,19 @@ namespace MemStache
         
         Stash GetItemSerializeCompressEncrypt(Stash item)
         {
+            byte[] arProtected;
             byte[] arCompressed;
-            arCompressed = Convert.FromBase64String(item.value);//GetBytes(item.value);
-            byte[] arUncompressed;
+            arProtected = Convert.FromBase64String(item.value);
             try
             {
-                arUncompressed = Uncompress(arCompressed);
+                arCompressed = Unprotect(arProtected);
             }
             catch (Exception e)
             {
 
                 throw;
             }
-            item.value = UnprotectToStr(arUncompressed);
+            item.value = GetString(Uncompress(arCompressed));
             item.value = DecodeFrom64(item.value);
             if (item.serialized)
             {
@@ -404,11 +415,11 @@ namespace MemStache
                 item.value = JsonConvert.SerializeObject(item.value);
 
             string str64 = EncodeTo64(item.value);
-
-            byte[] arProtected = Protect(str64);
-            byte[] arCompressed = Compress(arProtected);
-
-            item.value = Convert.ToBase64String(arCompressed);//GetString(arCompressed);
+            byte[] arCompressed = Compress(GetBytes(str64));
+            byte[] arProtected = Protect(arCompressed);
+            //byte[] arCompressed = Compress(arProtected);
+            item.value = Convert.ToBase64String(arProtected);
+            //item.value = Convert.ToBase64String(arCompressed);//GetString(arCompressed);
 
             item.encrypted = false;
             item.serialized = true;
