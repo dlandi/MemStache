@@ -544,6 +544,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -629,7 +632,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -661,6 +664,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -675,7 +679,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -1393,6 +1397,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -1466,7 +1473,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -1498,6 +1505,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -1512,7 +1520,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -2231,6 +2239,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2304,7 +2315,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -2336,6 +2347,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -2350,7 +2362,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -2894,6 +2906,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -2967,7 +2982,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -2999,6 +3014,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -3013,7 +3029,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -3731,6 +3747,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -3804,7 +3823,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -3836,6 +3855,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -3850,7 +3870,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -4569,6 +4589,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -4642,7 +4665,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -4674,6 +4697,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -4688,7 +4712,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -5406,6 +5430,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -5479,7 +5506,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -5511,6 +5538,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -5525,7 +5553,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -6244,6 +6272,9 @@
           "lib/uap10.0/SQLitePCLRaw.core.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Memory/4.5.0": {
         "type": "package",
         "dependencies": {
@@ -6317,7 +6348,7 @@
           "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
@@ -6349,6 +6380,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -6363,7 +6395,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -10282,6 +10314,26 @@
         "sqlitepclraw.core.nuspec"
       ]
     },
+    "StyleCop.Analyzers/1.1.0-beta008": {
+      "sha512": "wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
+      "type": "package",
+      "path": "stylecop.analyzers/1.1.0-beta008",
+      "files": [
+        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
+        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
+        "stylecop.analyzers.1.1.0-beta008.nupkg.sha512",
+        "stylecop.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "System.Memory/4.5.0": {
       "sha512": "P56/L4B9vhz0YFTC4qIXFgx+VgMhg3JhCm5/EASihTotyjwmBt2QEAQdmd2tNctYET/w0CRJzVH1cwxgbKGnDQ==",
       "type": "package",
@@ -10478,11 +10530,12 @@
         "version.txt"
       ]
     },
-    "Xamarin.Forms/3.0.0.482510": {
-      "sha512": "kq209d8qVvulrY3o+nGirENZ3kaZpEN7VWRErWcW1M+ahtDgm4BUXQJ5s9hnp1SAGxQMTMhDAVI3uk5g9NV7hA==",
+    "Xamarin.Forms/3.1.0.583944": {
+      "sha512": "q4AGFr8k9z6v5u++COV6M5TEZ8Oh8iiU3inVysapL5j75bhKfbcU2RizgZxTQ7+2CdlzVK+Dz+nyFx4JFh0Cwg==",
       "type": "package",
-      "path": "xamarin.forms/3.0.0.482510",
+      "path": "xamarin.forms/3.1.0.583944",
       "files": [
+        ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
         "build/netstandard1.0/Mono.Cecil.Pdb.dll",
         "build/netstandard1.0/Mono.Cecil.Rocks.dll",
@@ -10510,13 +10563,11 @@
         "lib/MonoAndroid10/Design/Xamarin.Forms.Core.Design.dll",
         "lib/MonoAndroid10/Design/Xamarin.Forms.Xaml.Design.dll",
         "lib/MonoAndroid10/FormsViewGroup.dll",
-        "lib/MonoAndroid10/FormsViewGroup.dll.mdb",
         "lib/MonoAndroid10/FormsViewGroup.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Core.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Core.xml",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll",
-        "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.dll.mdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.Android.pdb",
         "lib/MonoAndroid10/Xamarin.Forms.Platform.dll",
         "lib/MonoAndroid10/Xamarin.Forms.Xaml.dll",
@@ -10618,12 +10669,13 @@
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/PageControlStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Properties/Xamarin.Forms.Platform.UAP.rd.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Resources.xbf",
+        "lib/uap10.0/Xamarin.Forms.Platform.UAP/SliderStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/TabbedPageStyle.xbf",
         "lib/uap10.0/Xamarin.Forms.Platform.UAP/Xamarin.Forms.Platform.UAP.xr.xml",
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.0.0.482510.nupkg.sha512",
+        "xamarin.forms.3.1.0.583944.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -10642,7 +10694,7 @@
     "UAP,Version=v10.0.16299": [
       "MemStache.Mobile >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.1",
-      "Xamarin.Forms >= 3.0.0.482510",
+      "Xamarin.Forms >= 3.1.0.583944",
       "sqlite-net-sqlcipher >= 1.5.176-beta"
     ]
   },
@@ -10693,7 +10745,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.0.0.482510, )"
+            "version": "[3.1.0.583944, )"
           },
           "sqlite-net-sqlcipher": {
             "target": "Package",

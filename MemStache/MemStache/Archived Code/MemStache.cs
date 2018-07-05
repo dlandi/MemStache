@@ -1,20 +1,22 @@
-﻿using Microsoft.AspNetCore.DataProtection;
-using Microsoft.Extensions.DependencyInjection;
+﻿// <copyright file="MemStache.cs" company="Dennis Landi">
+// Copyright (c) Dennis Landi. All rights reserved.
+// </copyright>
+
 using System;
 using System.Collections.Concurrent;
 using System.Linq;
-using System.Security.Cryptography.Xml;
 using System.Threading.Tasks;
-using Microsoft.CSharp;
+using Microsoft.AspNetCore.DataProtection;
 
 namespace MemStache
 {
     public enum StacheItemEnum
     {
         stchBasic,              // Basic In-Mem Cache Item
-        stchSerialized,         //In-Mem Cache Item, serialized to support objects
-        stchProtected,          //In-Mem Cache, Serialized and Protected
-    };
+        stchSerialized,         // In-Mem Cache Item, serialized to support objects
+        stchProtected,          // In-Mem Cache, Serialized and Protected
+    }
+
 
     public class MemStache<T, MemStacheItemType>  where T : class where MemStacheItemType : MemStacheItemBase<T>  //IMemStacheItem<T>
     {

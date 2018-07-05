@@ -1,137 +1,168 @@
-﻿using Microsoft.AspNetCore.DataProtection;
+﻿// <copyright file="StacheMeister.cs" company="Dennis Landi">
+// Copyright (c) Dennis Landi. All rights reserved.
+// </copyright>
+
+using System;
+using System.IO;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace MemStache
 {
     public class StacheMeister
     {
         public string Purpose { get; set; }
-        public ServiceCollection services { get; set; }
-        public ServiceProvider serviceProvider { get; set; }
+
+        public ServiceCollection Services { get; set; }
+
+        public ServiceProvider ServiceProvider { get; set; }
+
         public IDataProtectionProvider DataProtectionProvider { get; set; }
+
         public IDataProtector DataProtector { get; set; }
+
         public IMemoryCache Cache { get; set; }
+
         public string DatabasePath { get; set; }
+
         public SQLiteConnection DB { get; set; }
+
         /// <summary>
         /// Stasher employing the Serialization Plan
         /// </summary>
         public Stasher Stasher { get; set; }
+
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
+
         /// <summary>
         /// Optons must include a Size Limit. If one it not provided the Size Limit will be 900Kb per item
         /// </summary>
-        public MemoryCacheEntryOptions MemoryItemOptions { get; set;}
+        public MemoryCacheEntryOptions MemoryItemOptions { get; set; }
 
+#pragma warning disable SA1600 // Elements should be documented
         public dynamic this[string key]
+#pragma warning restore SA1600 // Elements should be documented
         {
             get
             {
                 try
                 {
-                    return this.Stasher[key].Object;  
+                    return this.Stasher[key].Object;
                 }
                 catch
                 {
                     return null;
                 }
             }
+
             set
             {
-
                 using (
 
                     Stash stash = new Stash()
                     {
-                        key = key,
-                        stashPlan = this.Plan,
-                        Object = value
-                    }
-                )
+                        Key = key,
+                        StashPlan = this.Plan,
+                        Object = value,
+                    })
                 {
                     this.Stasher[key] = stash;
                 }
             }
         }
 
-        public StacheMeister(string purpose, StashPlan plan = StashPlan.spSerialize, MemoryCacheOptions memCacheOptions = null, 
-                             MemoryCacheEntryOptions memoryItemOptions = null ,ServiceCollection services = null)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StacheMeister"/> class.
+        /// </summary>
+        /// <param name="purpose"></param>
+        /// <param name="plan"></param>
+        /// <param name="memCacheOptions"></param>
+        /// <param name="memoryItemOptions"></param>
+        /// <param name="services"></param>
+        public StacheMeister(
+            string purpose,
+            StashPlan plan = StashPlan.spSerialize,
+            MemoryCacheOptions memCacheOptions = null,
+            MemoryCacheEntryOptions memoryItemOptions = null,
+            ServiceCollection services = null)
         {
-            Plan = plan;
-            Purpose = purpose;
-            DatabasePath = GetBasePath("memstache.db");
+            this.Plan = plan;
+            this.Purpose = purpose;
+            this.DatabasePath = GetBasePath("memstache.db");
 
-            DB = new SQLiteConnection(DatabasePath);
-            DB.CreateTable<Stash>();
+            this.DB = new SQLiteConnection(this.DatabasePath);
+            this.DB.CreateTable<Stash>();
             ServiceCollection svcs = services ?? new ServiceCollection();
-            this.services = svcs;
+            this.Services = svcs;
             svcs.AddDataProtection();
             svcs.AddMemoryCache();
-            //IMemoryCache cache;
-            serviceProvider = svcs.BuildServiceProvider();
-            if (memCacheOptions == null) { 
-                Cache = new MemoryCache(new MemoryCacheOptions() {
-                    SizeLimit = 5242880, //bytes = 5 megs
+            this.ServiceProvider = svcs.BuildServiceProvider();
+            if (memCacheOptions == null)
+            {
+                this.Cache = new MemoryCache(new MemoryCacheOptions()
+                {
+                    SizeLimit = 5242880, // bytes = 5 megs
                     CompactionPercentage = .50,
-                    ExpirationScanFrequency = TimeSpan.FromMinutes(1)                
+                    ExpirationScanFrequency = TimeSpan.FromMinutes(1),
                 });
             }
-            
             else
             {
-                Cache = new MemoryCache(memCacheOptions);
+                this.Cache = new MemoryCache(memCacheOptions);
             }
-            //Cache = serviceProvider.GetService<IMemoryCache>();
+
             if (memoryItemOptions == null)
             {
-                MemoryItemOptions = new MemoryCacheEntryOptions()
+                this.MemoryItemOptions = new MemoryCacheEntryOptions()
                 {
-                    AbsoluteExpirationRelativeToNow=TimeSpan.FromDays(1),
-                    Size = 921600, //bytes = 900 kb
-                    Priority = CacheItemPriority.High                    
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromDays(1),
+                    Size = 921600, // bytes = 900 kb
+                    Priority = CacheItemPriority.High,
                 };
             }
             else
             {
                 if (memoryItemOptions.Size == null)
+                {
                     memoryItemOptions.Size = 921600;
-                MemoryItemOptions = memoryItemOptions;
+                }
+
+                this.MemoryItemOptions = memoryItemOptions;
             }
 
-            
-            DataProtectionProvider = serviceProvider.GetService<IDataProtectionProvider>();
-            DataProtector = DataProtectionProvider.CreateProtector(purpose);
-            DefaultStashers();
+            this.DataProtectionProvider = this.ServiceProvider.GetService<IDataProtectionProvider>();
+            this.DataProtector = this.DataProtectionProvider.CreateProtector(purpose);
+            this.DefaultStashers();
         }
+
         public void DefaultStashers()
         {
-            Stasher = new Stasher("Stasher.Default", this.Plan, DB, DataProtector, Cache);
+            this.Stasher = new Stasher("Stasher.Default", this.Plan, this.DB, this.DataProtector, this.Cache);
         }
 
         public Stasher MakeStasher(string purpose, StashPlan plan = StashPlan.spSerialize)
         {
-            return new Stasher(purpose, plan, DB, DataProtector, Cache);
+            return new Stasher(purpose, plan, this.DB, this.DataProtector, this.Cache);
         }
 
         #region Utils
         public static string GetBasePath(string applicationId)
         {
             if (string.IsNullOrWhiteSpace(applicationId))
+            {
                 throw new ArgumentException("You must set a ApplicationId in the Stachemeister constructor");
+            }
 
             if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            {
                 throw new ArgumentException("ApplicationId has invalid characters");
+            }
 
             var path = string.Empty;
-            ///Gets full path based on device type.
+
+            // Gets full path based on device type.
 #if __IOS__ || __MACOS__
             path = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
 #elif __ANDROID__
@@ -153,7 +184,9 @@ namespace MemStache
             catch
             {
                 if (timeSpan.Milliseconds < 0)
+                {
                     return DateTime.MinValue;
+                }
 
                 return DateTime.MaxValue;
             }

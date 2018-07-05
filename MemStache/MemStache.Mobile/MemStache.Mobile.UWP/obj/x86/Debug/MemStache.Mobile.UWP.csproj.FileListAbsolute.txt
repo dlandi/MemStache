@@ -339,3 +339,4 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Pkcs.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.Xml.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\XamlC.stamp

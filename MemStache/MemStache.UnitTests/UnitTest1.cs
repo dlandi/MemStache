@@ -1,14 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MemStache;
-using System.Diagnostics;
-using System;
-using Stache = MemStache.MemStache<string, MemStache.MemStacheProtectedItem<string>>;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.Reflection;
-
 namespace MemStache.UnitTests
 {
+    using System;
+    using System.Diagnostics;
+    using System.Threading.Tasks;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Newtonsoft.Json;
+
     [TestClass]
     public class UnitTest1
     {
@@ -17,9 +14,6 @@ namespace MemStache.UnitTests
         private Stopwatch stopWatch;
 
         public Employee employee1;
-
-        public MemStache<string, MemStache.MemStacheProtectedItem<string>> stash;
-
 
         #region Built-in Test Events
 
@@ -172,11 +166,11 @@ namespace MemStache.UnitTests
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
 
-            stash.DbAddOrUpdate(new Stash() { key = key, value = s, serialized = true });
+            stash.DbAddOrUpdate(new Stash() { Key = key, Value = s, Serialized = true });
             //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(1000);
             Stash result = stash.DbGet(key);
-            Console.WriteLine("Payload Test: {0}", result.value);
+            Console.WriteLine("Payload Test: {0}", result.Value);
         }
 
 
@@ -189,19 +183,19 @@ namespace MemStache.UnitTests
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
-            var payload = new Stash() { key = key, Object = "This is a test" };
+            var payload = new Stash() { Key = key, Object = "This is a test" };
 
-            var hash1 = Stasher.Hash(payload.value);
+            var hash1 = Stasher.Hash(payload.Value);
 
             stash[key] = payload;
 
-            payload.value = "";
+            payload.Value = "";
 
             payload = stash[key];
 
-            Console.WriteLine("Payload Test: {0}", payload.value);
+            Console.WriteLine("Payload Test: {0}", payload.Value);
 
-            var hash2 = Stasher.Hash(payload.value);
+            var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
 
         }
@@ -218,10 +212,10 @@ namespace MemStache.UnitTests
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = key, Object = valuation1 };
+            var payload = new Stash() { Key = key, Object = valuation1 };
             var typeName = payload.StoredType;
 
-            var hash1 = Stasher.Hash(payload.value);
+            var hash1 = Stasher.Hash(payload.Value);
 
             stash[key] = payload;
 
@@ -234,9 +228,9 @@ namespace MemStache.UnitTests
 
             Valuation valuation2 = payload.Object as Valuation;
 
-            Console.WriteLine("Payload Test: {0}", payload.value);
+            Console.WriteLine("Payload Test: {0}", payload.Value);
 
-            var hash2 = Stasher.Hash(payload.value);
+            var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
 
         }
@@ -252,10 +246,10 @@ namespace MemStache.UnitTests
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = key, stashPlan = StashPlan.spSerializeCompress, Object = valuation1 };
+            var payload = new Stash() { Key = key, StashPlan = StashPlan.spSerializeCompress, Object = valuation1 };
             var typeName = payload.StoredType;
 
-            var hash1 = Stasher.Hash(payload.value);
+            var hash1 = Stasher.Hash(payload.Value);
 
             stash[key] = payload;
 
@@ -268,9 +262,9 @@ namespace MemStache.UnitTests
 
             Valuation valuation2 = payload.Object as Valuation;
 
-            Console.WriteLine("Payload Test: {0}", payload.value);
+            Console.WriteLine("Payload Test: {0}", payload.Value);
 
-            var hash2 = Stasher.Hash(payload.value);
+            var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
 
         }
@@ -287,10 +281,10 @@ namespace MemStache.UnitTests
 
             Valuation valuation1 = new Valuation();
 
-            var payload = new Stash() { key = key, stashPlan = StashPlan.spProtectCompress, Object = valuation1 };
+            var payload = new Stash() { Key = key, StashPlan = StashPlan.spProtectCompress, Object = valuation1 };
             var typeName = payload.StoredType;
 
-            var hash1 = Stasher.Hash(payload.value);
+            var hash1 = Stasher.Hash(payload.Value);
 
             stash[key] = payload;
 
@@ -303,9 +297,9 @@ namespace MemStache.UnitTests
 
             Valuation valuation2 = payload.Object as Valuation;
 
-            Console.WriteLine("Payload Test: {0}", payload.value);
+            Console.WriteLine("Payload Test: {0}", payload.Value);
 
-            var hash2 = Stasher.Hash(payload.value);
+            var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
 
         }

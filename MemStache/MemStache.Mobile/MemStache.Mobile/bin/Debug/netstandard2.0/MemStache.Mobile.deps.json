@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "f63c0e3487afa2559196ea4f94e07045ba762d2a"
+    "signature": "212c33fbbdc932a1132ea5b852f7f836b64f83cf"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "runtime": {
@@ -287,6 +287,7 @@
           }
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {},
       "System.Buffers/4.4.0": {
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {
@@ -395,7 +396,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.0.0.482510": {
+      "Xamarin.Forms/3.1.0.583944": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -418,6 +419,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "runtime": {
@@ -607,6 +609,13 @@
       "path": "sqlitepclraw.core/1.1.8",
       "hashPath": "sqlitepclraw.core.1.1.8.nupkg.sha512"
     },
+    "StyleCop.Analyzers/1.1.0-beta008": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
+      "path": "stylecop.analyzers/1.1.0-beta008",
+      "hashPath": "stylecop.analyzers.1.1.0-beta008.nupkg.sha512"
+    },
     "System.Buffers/4.4.0": {
       "type": "package",
       "serviceable": true,
@@ -684,12 +693,12 @@
       "path": "system.text.encodings.web/4.5.0",
       "hashPath": "system.text.encodings.web.4.5.0.nupkg.sha512"
     },
-    "Xamarin.Forms/3.0.0.482510": {
+    "Xamarin.Forms/3.1.0.583944": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kq209d8qVvulrY3o+nGirENZ3kaZpEN7VWRErWcW1M+ahtDgm4BUXQJ5s9hnp1SAGxQMTMhDAVI3uk5g9NV7hA==",
-      "path": "xamarin.forms/3.0.0.482510",
-      "hashPath": "xamarin.forms.3.0.0.482510.nupkg.sha512"
+      "sha512": "sha512-q4AGFr8k9z6v5u++COV6M5TEZ8Oh8iiU3inVysapL5j75bhKfbcU2RizgZxTQ7+2CdlzVK+Dz+nyFx4JFh0Cwg==",
+      "path": "xamarin.forms/3.1.0.583944",
+      "hashPath": "xamarin.forms.3.1.0.583944.nupkg.sha512"
     },
     "MemStache/1.0.0": {
       "type": "project",

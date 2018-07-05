@@ -21,6 +21,6 @@
     <Import Project="$(NuGetPackageRoot)microsoft.net.native.sharedlibrary-x64\2.0.0\build\Microsoft.Net.Native.SharedLibrary-x64.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.native.sharedlibrary-x64\2.0.0\build\Microsoft.Net.Native.SharedLibrary-x64.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.native.sharedlibrary-arm\2.0.0\build\Microsoft.Net.Native.SharedLibrary-arm.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.native.sharedlibrary-arm\2.0.0\build\Microsoft.Net.Native.SharedLibrary-arm.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.native.compiler\2.0.0\build\Microsoft.Net.Native.Compiler.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.native.compiler\2.0.0\build\Microsoft.Net.Native.Compiler.props')" />
-    <Import Project="$(NuGetPackageRoot)xamarin.forms\3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\3.0.0.482510\build\netstandard2.0\Xamarin.Forms.props')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.forms\3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\3.1.0.583944\build\netstandard2.0\Xamarin.Forms.props')" />
   </ImportGroup>
 </Project>

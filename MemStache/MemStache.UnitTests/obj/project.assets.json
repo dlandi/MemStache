@@ -920,6 +920,9 @@
           "lib/netstandard1.1/SQLitePCLRaw.provider.sqlcipher.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -2002,6 +2005,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -3409,6 +3413,26 @@
         "lib/netstandard1.1/SQLitePCLRaw.provider.sqlcipher.dll",
         "sqlitepclraw.provider.sqlcipher.netstandard11.1.1.8.nupkg.sha512",
         "sqlitepclraw.provider.sqlcipher.netstandard11.nuspec"
+      ]
+    },
+    "StyleCop.Analyzers/1.1.0-beta008": {
+      "sha512": "wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
+      "type": "package",
+      "path": "stylecop.analyzers/1.1.0-beta008",
+      "files": [
+        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
+        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
+        "stylecop.analyzers.1.1.0-beta008.nupkg.sha512",
+        "stylecop.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "System.AppContext/4.1.0": {

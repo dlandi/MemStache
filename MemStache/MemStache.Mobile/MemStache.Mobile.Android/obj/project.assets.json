@@ -316,6 +316,9 @@
           "lib/MonoAndroid/SQLitePCLRaw.provider.sqlcipher.dll": {}
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {
+        "type": "package"
+      },
       "System.Buffers/4.4.0": {
         "type": "package",
         "compile": {
@@ -739,7 +742,7 @@
           "build/MonoAndroid81/Xamarin.Android.Support.Vector.Drawable.targets": {}
         }
       },
-      "Xamarin.Forms/3.1.0.561732-pre4": {
+      "Xamarin.Forms/3.1.0.583944": {
         "type": "package",
         "dependencies": {
           "Xamarin.Android.Support.Design": "25.4.0.2",
@@ -776,6 +779,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -790,7 +794,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "MemStache": "1.0.0",
-          "Xamarin.Forms": "3.0.0.482510",
+          "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "compile": {
@@ -1231,6 +1235,26 @@
         "lib/MonoAndroid/SQLitePCLRaw.provider.sqlcipher.dll",
         "sqlitepclraw.provider.sqlcipher.android.1.1.8.nupkg.sha512",
         "sqlitepclraw.provider.sqlcipher.android.nuspec"
+      ]
+    },
+    "StyleCop.Analyzers/1.1.0-beta008": {
+      "sha512": "wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
+      "type": "package",
+      "path": "stylecop.analyzers/1.1.0-beta008",
+      "files": [
+        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
+        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
+        "stylecop.analyzers.1.1.0-beta008.nupkg.sha512",
+        "stylecop.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -1748,10 +1772,10 @@
         "xamarin.android.support.vector.drawable.nuspec"
       ]
     },
-    "Xamarin.Forms/3.1.0.561732-pre4": {
-      "sha512": "fHIHUelILuK6Ke2G3Wbc9Ul6D1vGBfOnXPGLBVXTtwmmYOF+rk9NtqhRg4axKQRRhVKV1mgV/p1twJDERAkXWA==",
+    "Xamarin.Forms/3.1.0.583944": {
+      "sha512": "q4AGFr8k9z6v5u++COV6M5TEZ8Oh8iiU3inVysapL5j75bhKfbcU2RizgZxTQ7+2CdlzVK+Dz+nyFx4JFh0Cwg==",
       "type": "package",
-      "path": "xamarin.forms/3.1.0.561732-pre4",
+      "path": "xamarin.forms/3.1.0.583944",
       "files": [
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
@@ -1893,7 +1917,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.1.0.561732-pre4.nupkg.sha512",
+        "xamarin.forms.3.1.0.583944.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1916,7 +1940,7 @@
       "Xamarin.Android.Support.v7.AppCompat >= 27.0.2.1",
       "Xamarin.Android.Support.v7.CardView >= 27.0.2.1",
       "Xamarin.Android.Support.v7.MediaRouter >= 27.0.2.1",
-      "Xamarin.Forms >= 3.1.0.561732-pre4",
+      "Xamarin.Forms >= 3.1.0.583944",
       "sqlite-net-sqlcipher >= 1.5.176-beta"
     ]
   },
@@ -1979,7 +2003,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[3.1.0.561732-pre4, )"
+            "version": "[3.1.0.583944, )"
           },
           "sqlite-net-sqlcipher": {
             "target": "Package",

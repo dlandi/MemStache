@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "14fc10d08c9719cf4f5f09d4521297591776f250"
+    "signature": "75e8c64e8260f90296b29d61e33835cec97d01b7"
   },
   "compilationOptions": {},
   "targets": {
@@ -648,6 +648,7 @@
           }
         }
       },
+      "StyleCop.Analyzers/1.1.0-beta008": {},
       "System.AppContext/4.1.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -1331,6 +1332,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
+          "StyleCop.Analyzers": "1.1.0-beta008",
           "sqlite-net-sqlcipher": "1.5.176-beta"
         },
         "runtime": {
@@ -1603,6 +1605,13 @@
       "sha512": "sha512-u4kmkPDV4HxsB73FbzFgE9IueapyRdZ5VN63yEoNdoCOp7LTAQgF3dHS2nryS54AxlzuXCyCuTetq603rlvzQA==",
       "path": "sqlitepclraw.provider.sqlcipher.netstandard11/1.1.8",
       "hashPath": "sqlitepclraw.provider.sqlcipher.netstandard11.1.1.8.nupkg.sha512"
+    },
+    "StyleCop.Analyzers/1.1.0-beta008": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
+      "path": "stylecop.analyzers/1.1.0-beta008",
+      "hashPath": "stylecop.analyzers.1.1.0-beta008.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",
