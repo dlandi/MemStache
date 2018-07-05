@@ -30,9 +30,7 @@ namespace MemStache
         [PrimaryKey]
         public string key { get; set; }
         public string value { get; set; }
-        public bool encrypted { get; set; }
         public bool serialized { get; set; }
-        public bool compressed { get; set; }
         public int size { get; set; }
         public string hash { get; set; }
         public DateTime ExpirationDate { get; set; }//stored as UTC
@@ -175,8 +173,6 @@ namespace MemStache
                 throw new Exception("Cache Item Plan does not match container's Plan.");
             return new Stash()
             {
-                compressed = stash.compressed,
-                encrypted = stash.encrypted,
                 ExpirationDate = stash.ExpirationDate,
                 hash = stash.hash,
                 key = stash.key,
@@ -319,7 +315,6 @@ namespace MemStache
             {
                 Type serializedType = GetStoredType(item.StoredType);
                 item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));//deserialized data assigned to Object property.
-                item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
             }
             return item;
@@ -330,7 +325,6 @@ namespace MemStache
             string key = item.key;
             if (!item.serialized)//don't serialize twice.  The first time was in the Stash Object Property Setter
                 item.value = JsonConvert.SerializeObject(item.value);
-            item.encrypted = false;
             item.serialized = true;
             Cache.Set<Stash>(key, item, MemoryItemOptions);
             Stash item2 = Cache.Get<Stash>(key);
@@ -352,7 +346,6 @@ namespace MemStache
             {
                 Type serializedType = GetStoredType(item.StoredType);
                 item.SetPrivateObject(JsonConvert.DeserializeObject(item.value, serializedType));//deserialized data assigned to Object property.
-                item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
             }
             return item;
@@ -368,8 +361,6 @@ namespace MemStache
 
             byte[] arCompressed = Compress(itembytes);
             item.value = Convert.ToBase64String(arCompressed);
-
-            item.encrypted = false;
             item.serialized = true;
             Cache.Set<Stash>(key, item, MemoryItemOptions);
             Stash item2 = Cache.Get<Stash>(key);
@@ -402,7 +393,6 @@ namespace MemStache
                 Type serializedType = GetStoredType(item.StoredType);
                 dynamic deserialized = JsonConvert.DeserializeObject(item.value, serializedType);
                 item.SetPrivateObject(deserialized);//deserialized data assigned to Object property.
-                item.encrypted = false;
                 item.serialized = true;//the value property remains serialized...
             }
             return item;
@@ -417,11 +407,8 @@ namespace MemStache
             string str64 = EncodeTo64(item.value);
             byte[] arCompressed = Compress(GetBytes(str64));
             byte[] arProtected = Protect(arCompressed);
-            //byte[] arCompressed = Compress(arProtected);
             item.value = Convert.ToBase64String(arProtected);
-            //item.value = Convert.ToBase64String(arCompressed);//GetString(arCompressed);
 
-            item.encrypted = false;
             item.serialized = true;
             Cache.Set<Stash>(key, item, MemoryItemOptions);
             DbAddOrUpdate(item);
