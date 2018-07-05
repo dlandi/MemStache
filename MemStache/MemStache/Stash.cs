@@ -39,12 +39,10 @@ namespace MemStache
 
         public int Plan { get; set; }
 
-        #pragma warning disable SA1309 // Field names should not begin with underscore
-        /// <summary>
+     /// <summary>
         /// Private field for "Object" property.
         /// </summary>
         private dynamic _object;
-        #pragma warning restore SA1309 // Field names should not begin with underscore
 
         [Ignore]
         public dynamic Object
@@ -81,8 +79,6 @@ namespace MemStache
                 this.Plan = (int)this.stashPlan;
             }
         }
-
-        public dynamic Obj { get => this._object; set => this._object = value; }
 
         internal void SetPrivateObject(dynamic value)
         {

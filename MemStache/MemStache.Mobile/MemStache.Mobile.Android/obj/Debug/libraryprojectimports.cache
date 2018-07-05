@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
   <Jars>
-    <Jar>obj\Debug\lp\0\jl\formsviewgroup.jar</Jar>
-    <Jar>obj\Debug\lp\34\jl\arch-core-common.jar</Jar>
-    <Jar>obj\Debug\lp\35\jl\arch-lifecycle-common.jar</Jar>
-    <Jar>obj\Debug\lp\38\jl\support-annotations.jar</Jar>
     <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\lp\0\jl\formsviewgroup.jar</Jar>
     <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\lp\34\jl\arch-core-common.jar</Jar>
     <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\lp\35\jl\arch-lifecycle-common.jar</Jar>

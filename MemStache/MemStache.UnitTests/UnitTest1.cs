@@ -309,7 +309,7 @@ namespace MemStache.UnitTests
         public void _4_StacheMeisterSerialization()
         {
             string key = "test06";
-            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerialize);
+            StacheMeister Meister = new StacheMeister("memstache.demo");
             var rowcount = Meister.DB.Delete<Stash>(key);
 
             Employee emp1 = employee1;//CreateEmployee();
