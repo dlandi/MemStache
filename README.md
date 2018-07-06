@@ -11,3 +11,4 @@ A Flexible, Powerful Cache Library with these features
 		- All Code written in .NET Standard 2.
 		- Leverage .NET Standard DI Framework.
 		- A Small Intuitive Developer API
+![Mem Stache Class Diagram](MemStacheClassDiagram.png)
