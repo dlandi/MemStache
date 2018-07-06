@@ -31,13 +31,13 @@
     <AppXManifest Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-19T19:11:47.790</Modified>
+      <Modified>2018-07-05T22:33:39.900</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\MemStache.Mobile.UWP.exe">
       <PackagePath>entrypoint\MemStache.Mobile.UWP.exe</PackagePath>
-      <Modified>2018-06-19T19:11:46.451</Modified>
+      <Modified>2018-07-05T22:33:38.133</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\microsoft.aspnetcore.cryptography.internal\2.1.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll">
       <PackagePath>Microsoft.AspNetCore.Cryptography.Internal.dll</PackagePath>
@@ -811,29 +811,29 @@
       <PackagePath>System.Text.Encodings.Web.dll</PackagePath>
       <Modified>2018-05-15T17:29:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.0.0.482510\lib\uap10.0\Xamarin.Forms.Core.dll">
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Core.dll">
       <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
-      <Modified>2018-05-11T18:33:18.000</Modified>
+      <Modified>2018-06-16T02:58:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.0.0.482510\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
       <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
-      <Modified>2018-05-11T18:33:18.000</Modified>
+      <Modified>2018-06-16T02:58:34.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.0.0.482510\lib\uap10.0\Xamarin.Forms.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.dll">
       <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
-      <Modified>2018-05-11T18:33:18.000</Modified>
+      <Modified>2018-06-16T02:58:36.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.0.0.482510\lib\uap10.0\Xamarin.Forms.Xaml.dll">
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Xaml.dll">
       <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
-      <Modified>2018-05-11T18:33:12.000</Modified>
+      <Modified>2018-06-16T02:58:30.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\bin\Debug\netstandard2.0\MemStache.Mobile.dll">
       <PackagePath>MemStache.Mobile.dll</PackagePath>
-      <Modified>2018-06-19T18:45:42.900</Modified>
+      <Modified>2018-07-05T22:31:46.642</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\bin\Debug\netstandard2.0\MemStache.dll">
       <PackagePath>MemStache.dll</PackagePath>
-      <Modified>2018-06-19T18:43:39.875</Modified>
+      <Modified>2018-07-05T20:37:41.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -980,28 +980,72 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-06-19T19:11:46.215</Modified>
+      <Modified>2018-07-05T22:33:37.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-06-19T19:11:46.217</Modified>
+      <Modified>2018-07-05T22:33:37.902</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2017-09-28T21:28:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.0.0.482510\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\AutoSuggestStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\AutoSuggestStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsCommandBarStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\FormsCommandBarStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsEmbeddedPageWrapper.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\FormsEmbeddedPageWrapper.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsFlyout.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\FormsFlyout.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsProgressBarStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\FormsProgressBarStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\FormsTextBoxStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\FormsTextBoxStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\MasterDetailControlStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\MasterDetailControlStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\PageControlStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\PageControlStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\Resources.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\Resources.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\SliderStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\SliderStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\TabbedPageStyle.xbf">
+      <PackagePath>Xamarin.Forms.Platform.UAP\TabbedPageStyle.xbf</PackagePath>
+      <Modified>2018-06-16T02:58:28.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\xamarin.forms\3.1.0.583944\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
-      <Modified>2018-05-11T18:33:12.000</Modified>
+      <Modified>2018-06-16T02:58:28.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-06-19T17:54:53.564</Modified>
+      <Modified>2018-07-05T22:33:39.329</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\Core\MemStache.Mobile.UWP.exe">
       <PackagePath>MemStache.Mobile.UWP.exe</PackagePath>
-      <Modified>2018-06-19T19:11:47.783</Modified>
+      <Modified>2018-07-05T22:33:39.894</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

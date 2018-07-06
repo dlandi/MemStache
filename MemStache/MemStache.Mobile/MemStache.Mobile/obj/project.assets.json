@@ -1576,6 +1576,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "MemStache >= 1.0.0",
+      "Microsoft.CSharp >= 4.5.0",
       "NETStandard.Library >= 2.0.3",
       "Xamarin.Forms >= 3.1.0.583944",
       "sqlite-net-sqlcipher >= 1.5.176-beta"
@@ -1626,6 +1627,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Microsoft.CSharp": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
           "NETStandard.Library": {
             "suppressParent": "All",
             "target": "Package",

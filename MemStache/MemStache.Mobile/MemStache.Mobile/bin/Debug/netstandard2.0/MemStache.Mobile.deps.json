@@ -10,6 +10,7 @@
       "MemStache.Mobile/1.0.0": {
         "dependencies": {
           "MemStache": "1.0.0",
+          "Microsoft.CSharp": "4.5.0",
           "NETStandard.Library": "2.0.3",
           "Xamarin.Forms": "3.1.0.583944",
           "sqlite-net-sqlcipher": "1.5.176-beta"
