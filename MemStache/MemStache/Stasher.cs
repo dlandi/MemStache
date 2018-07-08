@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Security.Cryptography;
 using System.Text;
+using MemStache.LiteDB;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
@@ -68,13 +69,16 @@ namespace MemStache
 
         public string DatabasePath { get; set; }
 
-        public SQLiteConnection DB { get; set; }
+        //public SQLiteConnection DB { get; set; }
+        public StashRepo DB { get; set; }
 
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
 
         public MemoryCacheEntryOptions MemoryItemOptions { get; set; }
 
-        public Stasher(string purpose, StashPlan plan, SQLiteConnection db,
+        public Stasher(string purpose, StashPlan plan, 
+                       //SQLiteConnection db,
+                       StashRepo db,
                        IDataProtector dataProtector, IMemoryCache cache,
                        MemoryCacheEntryOptions memoryItemOptions = null)
         {
@@ -151,10 +155,13 @@ namespace MemStache
             return this.DB.Get<Stash>(key);
         }
 
-        public int DbAddOrUpdate(Stash item)
+        public bool DbAddOrUpdate(Stash item)
         {
-            int numRowsAffected = (this.DB.Find<Stash>(item.Key) == null) ? this.DB.Insert(item) : this.DB.Update(item); // If record found, update; else, insert
-            return numRowsAffected;
+            //int numRowsAffected = (this.DB.Find<Stash>(item.Key) == null) ? this.DB.Insert(item) : this.DB.Update(item); // If record found, update; else, insert
+            //return numRowsAffected;
+
+            this.DB.Add<Stash>(item.Key, item, TimeSpan.FromDays(365), Hash(item.Key));
+            return true;
         }
 
         #region Item Processing Functions

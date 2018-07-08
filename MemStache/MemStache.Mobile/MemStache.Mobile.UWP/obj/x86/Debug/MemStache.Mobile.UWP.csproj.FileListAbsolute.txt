@@ -340,3 +340,4 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\ProjectArchitectures.txt
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\LiteDB.dll

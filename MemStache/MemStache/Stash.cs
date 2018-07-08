@@ -9,6 +9,7 @@ using System.IO.Compression;
 using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using LiteDB;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +23,11 @@ namespace MemStache
     /// </summary>
     public class Stash : IDisposable
     {
+#if SQLITE
         [PrimaryKey]
+#elif LITEDB
+        [BsonId]
+#endif
         public string Key { get; set; }
 
         public string Value { get; set; }

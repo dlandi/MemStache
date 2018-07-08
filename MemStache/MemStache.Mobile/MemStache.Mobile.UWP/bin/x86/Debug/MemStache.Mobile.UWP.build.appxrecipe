@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\MemStache.Mobile.UWP.exe">
       <PackagePath>entrypoint\MemStache.Mobile.UWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\litedb\4.1.4\lib\netstandard2.0\LiteDB.dll">
+      <PackagePath>LiteDB.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\microsoft.aspnetcore.cryptography.internal\2.1.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll">
       <PackagePath>Microsoft.AspNetCore.Cryptography.Internal.dll</PackagePath>
     </AppxPackagedFile>

@@ -59,3 +59,4 @@ netstandard
 MemStache
 System.Memory
 System.Reflection.Extensions
+LiteDB

@@ -4,6 +4,7 @@
 
 using System;
 using System.IO;
+using MemStache.LiteDB;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +14,7 @@ namespace MemStache
 {
     public class StacheMeister
     {
-        public string Purpose { get; set; }
+        public string AppId { get; set; }
 
         public ServiceCollection Services { get; set; }
 
@@ -27,7 +28,8 @@ namespace MemStache
 
         public string DatabasePath { get; set; }
 
-        public SQLiteConnection DB { get; set; }
+        //public SQLiteConnection DB { get; set; }
+        public StashRepo DB { get; set; }
 
         /// <summary>
         /// Stasher employing the Serialization Plan
@@ -76,24 +78,25 @@ namespace MemStache
         /// <summary>
         /// Initializes a new instance of the <see cref="StacheMeister"/> class.
         /// </summary>
-        /// <param name="purpose"></param>
+        /// <param name="appId"></param>
         /// <param name="plan"></param>
         /// <param name="memCacheOptions"></param>
         /// <param name="memoryItemOptions"></param>
         /// <param name="services"></param>
         public StacheMeister(
-            string purpose,
+            string appId,
             StashPlan plan = StashPlan.spSerialize,
             MemoryCacheOptions memCacheOptions = null,
             MemoryCacheEntryOptions memoryItemOptions = null,
             ServiceCollection services = null)
         {
             this.Plan = plan;
-            this.Purpose = purpose;
+            this.AppId = appId;
             this.DatabasePath = GetBasePath("memstache.db");
 
-            this.DB = new SQLiteConnection(this.DatabasePath);
-            this.DB.CreateTable<Stash>();
+            //this.DB = new SQLiteConnection(this.DatabasePath);
+            //this.DB.CreateTable<Stash>();
+            this.DB = new StashRepo(appId);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;
             svcs.AddDataProtection();
@@ -133,7 +136,7 @@ namespace MemStache
             }
 
             this.DataProtectionProvider = this.ServiceProvider.GetService<IDataProtectionProvider>();
-            this.DataProtector = this.DataProtectionProvider.CreateProtector(purpose);
+            this.DataProtector = this.DataProtectionProvider.CreateProtector(appId);
             this.DefaultStashers();
         }
 

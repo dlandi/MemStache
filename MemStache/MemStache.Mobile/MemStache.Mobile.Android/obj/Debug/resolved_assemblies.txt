@@ -1,6 +1,7 @@
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\MemStache.Mobile.Android.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\FormsViewGroup.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\Java.Interop.dll
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\LiteDB.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\MemStache.Mobile.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\Microsoft.AspNetCore.Cryptography.Internal.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Debug\android\assets\Microsoft.AspNetCore.DataProtection.Abstractions.dll

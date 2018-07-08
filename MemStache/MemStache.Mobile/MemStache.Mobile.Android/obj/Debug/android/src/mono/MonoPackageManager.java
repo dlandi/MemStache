@@ -108,6 +108,7 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "MemStache.Mobile.Android.dll" comes first in this list. */
 		"MemStache.Mobile.Android.dll",
 		"FormsViewGroup.dll",
+		"LiteDB.dll",
 		"MemStache.Mobile.dll",
 		"Microsoft.AspNetCore.Cryptography.Internal.dll",
 		"Microsoft.AspNetCore.DataProtection.Abstractions.dll",

@@ -3,6 +3,7 @@ namespace MemStache.UnitTests
     using System;
     using System.Diagnostics;
     using System.Threading.Tasks;
+    using MemStache.LiteDB;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Newtonsoft.Json;
 
@@ -161,7 +162,8 @@ namespace MemStache.UnitTests
         {
             string key = "test02";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
@@ -179,7 +181,8 @@ namespace MemStache.UnitTests
         {
             string key = "test01";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -206,7 +209,8 @@ namespace MemStache.UnitTests
         {
             string key = "test03";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -240,7 +244,8 @@ namespace MemStache.UnitTests
         {
             string key = "test04";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerializeCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -275,7 +280,8 @@ namespace MemStache.UnitTests
         {
             string key = "test05";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spProtectCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -310,7 +316,8 @@ namespace MemStache.UnitTests
         {
             string key = "test06";
             StacheMeister Meister = new StacheMeister("memstache.demo");
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
@@ -331,7 +338,8 @@ namespace MemStache.UnitTests
         {
             string key = "test07";
             StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerializeCompress);
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
@@ -352,7 +360,8 @@ namespace MemStache.UnitTests
         {
             string key = "test08";
             StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spProtectCompress);
-            var rowcount = Meister.DB.Delete<Stash>(key);
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.col.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
