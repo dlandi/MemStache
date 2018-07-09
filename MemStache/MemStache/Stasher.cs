@@ -12,12 +12,11 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using SQLite;
 
 namespace MemStache
 {
     /// <summary>
-    /// How the Stash will go down
+    /// How the Stash will go down.
     /// </summary>
     public enum StashPlan
     {
@@ -28,7 +27,7 @@ namespace MemStache
     }
 
     /// <summary>
-    /// It Stashes the Stash
+    /// It Stashes the Stash.
     /// </summary>
     public class Stasher
     {
@@ -36,7 +35,7 @@ namespace MemStache
 
         public ServiceCollection Services { get; set; }
 
-        public ServiceProvider serviceProvider { get; set; }
+        public ServiceProvider ServiceProvider { get; set; }
 
         public IDataProtectionProvider DataProtectionProvider { get; set; }
 
@@ -63,24 +62,26 @@ namespace MemStache
             {
                 Stash clone = this.CloneItem(value);
                 this.SetItemCommon(clone);
+
                 // value.Dispose();
             }
         }
 
         public string DatabasePath { get; set; }
 
-        //public SQLiteConnection DB { get; set; }
         public StashRepo DB { get; set; }
 
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
 
         public MemoryCacheEntryOptions MemoryItemOptions { get; set; }
 
-        public Stasher(string purpose, StashPlan plan, 
-                       //SQLiteConnection db,
-                       StashRepo db,
-                       IDataProtector dataProtector, IMemoryCache cache,
-                       MemoryCacheEntryOptions memoryItemOptions = null)
+        public Stasher(
+                        string purpose,
+                        StashPlan plan,
+                        StashRepo db,
+                        IDataProtector dataProtector,
+                        IMemoryCache cache,
+                        MemoryCacheEntryOptions memoryItemOptions = null)
         {
             this.DB = db;
             this.Cache = cache;
@@ -152,14 +153,11 @@ namespace MemStache
 
         public Stash DbGet(string key)
         {
-            return this.DB.Get<Stash>(key);
+            return this.DB.Get(key);
         }
 
         public bool DbAddOrUpdate(Stash item)
         {
-            //int numRowsAffected = (this.DB.Find<Stash>(item.Key) == null) ? this.DB.Insert(item) : this.DB.Update(item); // If record found, update; else, insert
-            //return numRowsAffected;
-
             this.DB.Add<Stash>(item.Key, item, TimeSpan.FromDays(365), Hash(item.Key));
             return true;
         }
@@ -179,10 +177,10 @@ namespace MemStache
 
         /// <summary>
         /// Depends on unprotected data being originally encoded
-        /// in Base64
+        /// in Base64.
         /// </summary>
         /// <param name="arProtected"></param>
-        /// <returns></returns>
+        /// <returns>string.</returns>
         public string UnprotectToStr(byte[] arProtected)
         {
             byte[] arUnprotected = this.DataProtector.Unprotect(arProtected);
@@ -191,10 +189,10 @@ namespace MemStache
 
         /// <summary>
         /// Depends on unprotected data being originally encoded
-        /// in Base64
+        /// in Base64.
         /// </summary>
         /// <param name="arProtected"></param>
-        /// <returns></returns>
+        /// <returns>byte[].</returns>
         public byte[] Unprotect(byte[] arProtected)
         {
             byte[] arUnprotected = this.DataProtector.Unprotect(arProtected);
@@ -205,19 +203,18 @@ namespace MemStache
         {
             using (MemoryStream memory = new MemoryStream())
             {
-                using (GZipStream gzip = new GZipStream(memory,
-                    CompressionMode.Compress, true))
+                using (GZipStream gzip = new GZipStream(memory, CompressionMode.Compress, true))
                 {
                     gzip.Write(input, 0, input.Length);
                 }
+
                 return memory.ToArray();
             }
         }
 
         public byte[] Uncompress(byte[] input)
         {
-            using (GZipStream stream = new GZipStream(new MemoryStream(input),
-                CompressionMode.Decompress))
+            using (GZipStream stream = new GZipStream(new MemoryStream(input), CompressionMode.Decompress))
             {
                 const int size = 4096;
                 byte[] buffer = new byte[size];
@@ -319,7 +316,6 @@ namespace MemStache
             this.DbAddOrUpdate(item);
         }
 
-
         #endregion
 
         #region Item Serialize And Compress
@@ -372,7 +368,7 @@ namespace MemStache
             {
                 arCompressed = this.Unprotect(arProtected);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -416,7 +412,6 @@ namespace MemStache
 
         #region Helpers
         public static string EncodeTo64(string toEncode)
-
         {
             byte[] toEncodeAsBytes
 
@@ -446,7 +441,7 @@ namespace MemStache
         /// Input should alwase be a Base64 encoded string!.
         /// </summary>
         /// <param name="strBase64"></param>
-        /// <returns></returns>
+        /// <returns>byte[].</returns>
         private byte[] GetBytes(string strBase64)
         {
             byte[] bytes = new byte[strBase64.Length * sizeof(char)];
@@ -458,7 +453,7 @@ namespace MemStache
         /// Only use this method with data that was originally Base64 encoded.
         /// </summary>
         /// <param name="bytes"></param>
-        /// <returns></returns>
+        /// <returns>string.</returns>
         private string GetString(byte[] bytes)
         {
                                         #pragma warning disable SA1108 // Block statements should not contain embedded comments

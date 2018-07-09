@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "f709076d8af5c1f8b4d0585d209cf88ee0089916"
+    "signature": "b650da088f5293de0eb12d6067db8e170ff9b440"
   },
   "compilationOptions": {},
   "targets": {
@@ -574,92 +574,6 @@
         }
       },
       "runtime.native.System/4.3.0": {},
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8",
-          "SQLitePCLRaw.lib.sqlcipher.linux": "1.1.8",
-          "SQLitePCLRaw.lib.sqlcipher.osx": "1.1.8",
-          "SQLitePCLRaw.lib.sqlcipher.windows": "1.1.8",
-          "SQLitePCLRaw.provider.sqlcipher.netstandard11": "1.1.8"
-        },
-        "runtime": {
-          "lib/netcoreapp/SQLitePCLRaw.batteries_sqlcipher.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netcoreapp/SQLitePCLRaw.batteries_v2.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "runtime": {
-          "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.lib.sqlcipher.linux/1.1.8": {
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/libsqlcipher.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x86/native/libsqlcipher.so": {
-            "rid": "linux-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.lib.sqlcipher.osx/1.1.8": {
-        "runtimeTargets": {
-          "runtimes/osx-x64/native/libsqlcipher.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.lib.sqlcipher.windows/1.1.8": {
-        "runtimeTargets": {
-          "runtimes/win7-x64/native/sqlcipher.dll": {
-            "rid": "win7-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win7-x86/native/sqlcipher.dll": {
-            "rid": "win7-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.provider.sqlcipher.netstandard11/1.1.8": {
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLitePCLRaw.provider.sqlcipher.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {},
       "System.AppContext/4.1.0": {
         "dependencies": {
@@ -1345,8 +1259,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "runtime": {
           "MemStache.dll": {}
@@ -1576,55 +1489,6 @@
       "sha512": "sha512-c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "path": "runtime.native.system/4.3.0",
       "hashPath": "runtime.native.system.4.3.0.nupkg.sha512"
-    },
-    "sqlite-net-sqlcipher/1.5.176-beta": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eePlIY0J4uS4BMAUORkzTqeRATXK7rkGhEukrtLb+/SXmSrV9JLI+yzxjlf8nirOVbie2HxEAWWs8bPQ37a9bw==",
-      "path": "sqlite-net-sqlcipher/1.5.176-beta",
-      "hashPath": "sqlite-net-sqlcipher.1.5.176-beta.nupkg.sha512"
-    },
-    "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9NQc0zf4OofPzCSLYI8jrS+c74HID/IKoSNvn3zonrmoJJgyUdokG/fNZWtzebhY4h1MlCcfFYgQBCAPEK2uLA==",
-      "path": "sqlitepclraw.bundle_sqlcipher/1.1.8",
-      "hashPath": "sqlitepclraw.bundle_sqlcipher.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.core/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-JTvlAlVHeMW9QaTcu+3iLB9ZEGtceb+uM1MOlfyAnEocShSacHEzwPNsden7MlWb0QjPX3Y3sDMW0ymGhH8Jtg==",
-      "path": "sqlitepclraw.core/1.1.8",
-      "hashPath": "sqlitepclraw.core.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.lib.sqlcipher.linux/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1nIvFDWhWCZr0KCsw8IAjzJxW3fSP1nbNVvRvjm2agxKADzh4ZMKIcA5tE7Y6UuEsj7S0ccjB1nsQVcAx3FKIw==",
-      "path": "sqlitepclraw.lib.sqlcipher.linux/1.1.8",
-      "hashPath": "sqlitepclraw.lib.sqlcipher.linux.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.lib.sqlcipher.osx/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-MJqtfIgYeWaDYTGYHQmNjrRC6DibFEw1H6bnzvI3h9t5G+NekAdZIYr9TshCav9mwnafl/b+4G5ypRq9Q+fuaA==",
-      "path": "sqlitepclraw.lib.sqlcipher.osx/1.1.8",
-      "hashPath": "sqlitepclraw.lib.sqlcipher.osx.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.lib.sqlcipher.windows/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-UTKzqYbsat+8p/34grqFWQn2IdVA1n4pNKkLEOHoFy4eYIEQCE1b9enVLi2/0bE63DHnD0LdyVrNZoR0kMovFw==",
-      "path": "sqlitepclraw.lib.sqlcipher.windows/1.1.8",
-      "hashPath": "sqlitepclraw.lib.sqlcipher.windows.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.provider.sqlcipher.netstandard11/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-u4kmkPDV4HxsB73FbzFgE9IueapyRdZ5VN63yEoNdoCOp7LTAQgF3dHS2nryS54AxlzuXCyCuTetq603rlvzQA==",
-      "path": "sqlitepclraw.provider.sqlcipher.netstandard11/1.1.8",
-      "hashPath": "sqlitepclraw.provider.sqlcipher.netstandard11.1.1.8.nupkg.sha512"
     },
     "StyleCop.Analyzers/1.1.0-beta008": {
       "type": "package",

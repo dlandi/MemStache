@@ -580,18 +580,6 @@
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.1\runtimes\win10-x86\lib\uap10.0.15138\netstandard.dll">
       <PackagePath>netstandard.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlite-net-sqlcipher\1.5.176-beta\lib\netstandard1.1\SQLite-net.dll">
-      <PackagePath>SQLite-net.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.bundle_sqlcipher\1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_sqlcipher.dll">
-      <PackagePath>SQLitePCLRaw.batteries_sqlcipher.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.bundle_sqlcipher\1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll">
-      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.core\1.1.8\lib\uap10.0\SQLitePCLRaw.core.dll">
-      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\system.memory\4.5.0\lib\netstandard2.0\System.Memory.dll">
       <PackagePath>System.Memory.dll</PackagePath>
     </AppxPackagedFile>

@@ -26,13 +26,11 @@ namespace MemStache.UnitTests
 
         /// <summary>
         /// see MSDN for sequence of built-in Test Events:
-        /// http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.classinitializeattribute(v=vs.110).aspx
+        /// http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.classinitializeattribute(v=vs.110).aspx.
         /// </summary>
         [ClassInitialize()]
         public static void ClassInit(TestContext testContext)
         {
-
-
             //testContext.WriteLine("ClassInit " + testContext.TestName);
         }
 
@@ -44,8 +42,6 @@ namespace MemStache.UnitTests
 
             stopWatch = new Stopwatch();
 
-
-
             stopWatch.Start();
         }
 
@@ -55,10 +51,11 @@ namespace MemStache.UnitTests
             //testContext.WriteLine("TestMethodCleanup: " + testContext.TestName);
 
             stopWatch.Stop();
+
             // Get the elapsed time as a TimeSpan value.
             TimeSpan ts = stopWatch.Elapsed;
 
-            // Format and display the TimeSpan value. 
+            // Format and display the TimeSpan value.
             string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
@@ -111,7 +108,6 @@ namespace MemStache.UnitTests
             public int Division { get; set; }
             public string Country { get; set; }
             public bool Eligible { get; set; }
-
         }
 
         public class Person
@@ -138,7 +134,7 @@ namespace MemStache.UnitTests
                     Country = "USA",
                     Division = 1,
                     Eligible = true,
-                    Name = "Sales"
+                    Name = "Sales",
                 },
                 Person = new Person()
                 {
@@ -151,7 +147,7 @@ namespace MemStache.UnitTests
                         State = "VA",
                         Country = "USA"
                     }
-                }
+                },
             };
         }
 
@@ -162,27 +158,29 @@ namespace MemStache.UnitTests
         {
             string key = "test02";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
 
             stash.DbAddOrUpdate(new Stash() { Key = key, Value = s, Serialized = true });
+
             //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(1000);
             Stash result = stash.DbGet(key);
             Console.WriteLine("Payload Test: {0}", result.Value);
         }
 
-
         [TestMethod]
         public void _0_TestStasher()
         {
             string key = "test01";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -200,7 +198,6 @@ namespace MemStache.UnitTests
 
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
-
         }
 
         [TestMethod]
@@ -209,8 +206,9 @@ namespace MemStache.UnitTests
         {
             string key = "test03";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -225,8 +223,9 @@ namespace MemStache.UnitTests
 
             //payload.value = "";
             if (payload == null)
+            {
                 Console.WriteLine("Payload is nulls");
-
+            }
 
             payload = stash[key];
 
@@ -236,7 +235,6 @@ namespace MemStache.UnitTests
 
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
-
         }
         [TestMethod]
         [TestCategory("Using Stasher")]
@@ -244,8 +242,9 @@ namespace MemStache.UnitTests
         {
             string key = "test04";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spSerializeCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -260,8 +259,9 @@ namespace MemStache.UnitTests
 
             //payload.value = "";
             if (payload == null)
+            {
                 Console.WriteLine("Payload is null");
-
+            }
 
             payload = stash[key];
 
@@ -271,7 +271,6 @@ namespace MemStache.UnitTests
 
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
-
         }
 
         [TestMethod]
@@ -280,8 +279,9 @@ namespace MemStache.UnitTests
         {
             string key = "test05";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
             Stasher stash = Meister.MakeStasher("test", StashPlan.spProtectCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
@@ -296,8 +296,9 @@ namespace MemStache.UnitTests
 
             //payload.value = "";
             if (payload == null)
+            {
                 Console.WriteLine("Payload is nulls");
-
+            }
 
             payload = stash[key];
 
@@ -307,7 +308,6 @@ namespace MemStache.UnitTests
 
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
-
         }
 
         [TestMethod]
@@ -316,8 +316,9 @@ namespace MemStache.UnitTests
         {
             string key = "test06";
             StacheMeister Meister = new StacheMeister("memstache.demo");
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
@@ -329,7 +330,6 @@ namespace MemStache.UnitTests
             string v2 = JsonConvert.SerializeObject(emp2);
 
             Assert.AreEqual(v1, v2);
-
         }
 
         [TestMethod]
@@ -338,8 +338,9 @@ namespace MemStache.UnitTests
         {
             string key = "test07";
             StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerializeCompress);
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
@@ -351,7 +352,6 @@ namespace MemStache.UnitTests
             string v2 = JsonConvert.SerializeObject(emp2);
 
             Assert.AreEqual(v1, v2);
-
         }
 
         [TestMethod]
@@ -360,8 +360,9 @@ namespace MemStache.UnitTests
         {
             string key = "test08";
             StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spProtectCompress);
+
             //var rowcount = Meister.DB.Delete<Stash>(key);
-            StashRepo.col.Delete(key);
+            StashRepo.Delete(key);
 
             Employee emp1 = employee1;//CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
@@ -373,9 +374,6 @@ namespace MemStache.UnitTests
             string v2 = JsonConvert.SerializeObject(emp2);
 
             Assert.AreEqual(v1, v2);
-
         }
-
-
     }
 }

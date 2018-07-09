@@ -14,12 +14,11 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using SQLite;
 
 namespace MemStache
 {
     /// <summary>
-    /// The stash that gets stashed
+    /// The stash that gets stashed.
     /// </summary>
     public class Stash : IDisposable
     {
@@ -49,7 +48,6 @@ namespace MemStache
         /// </summary>
         private dynamic _object;
 
-        [Ignore]
         public dynamic Object
         {
             get
@@ -70,7 +68,6 @@ namespace MemStache
 
         private StashPlan stashPlan;
 
-        [Ignore]
         public StashPlan StashPlan
         {
             get
@@ -85,10 +82,7 @@ namespace MemStache
             }
         }
 
-        internal void SetPrivateObject(dynamic value)
-        {
-            this._object = value;
-        }
+        internal void SetPrivateObject(dynamic value) => this._object = value;
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls
@@ -111,6 +105,7 @@ namespace MemStache
         }
 
         // This code added to correctly implement the disposable pattern.
+
         /// <inheritdoc/>
         public void Dispose()
         {

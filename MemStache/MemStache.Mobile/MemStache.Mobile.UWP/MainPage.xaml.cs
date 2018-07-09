@@ -22,7 +22,6 @@ namespace MemStache.Mobile.UWP
             //SQLitePCL.Batteries_V2.Init();
             this.InitializeComponent();
 
-
             LoadApplication(new MemStache.Mobile.App());
         }
     }

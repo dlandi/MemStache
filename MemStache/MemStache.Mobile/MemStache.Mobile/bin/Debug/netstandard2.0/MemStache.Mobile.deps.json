@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "e082f052db6e8a59c27fd7f512572c19a4325f16"
+    "signature": "c103d6b1ff68586e9c56c1b5f198bc79861635ae"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,8 +12,7 @@
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
           "NETStandard.Library": "2.0.3",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "runtime": {
           "MemStache.Mobile.dll": {}
@@ -262,45 +261,6 @@
           }
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3",
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLitePCLRaw.batteries_sqlcipher.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netstandard1.1/SQLitePCLRaw.batteries_v2.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "dependencies": {
-          "NETStandard.Library": "2.0.3"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {},
       "System.Buffers/4.4.0": {
         "runtime": {
@@ -491,8 +451,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "runtime": {
           "MemStache.dll": {}
@@ -673,27 +632,6 @@
       "sha512": "sha512-IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
-    },
-    "sqlite-net-sqlcipher/1.5.176-beta": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-eePlIY0J4uS4BMAUORkzTqeRATXK7rkGhEukrtLb+/SXmSrV9JLI+yzxjlf8nirOVbie2HxEAWWs8bPQ37a9bw==",
-      "path": "sqlite-net-sqlcipher/1.5.176-beta",
-      "hashPath": "sqlite-net-sqlcipher.1.5.176-beta.nupkg.sha512"
-    },
-    "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9NQc0zf4OofPzCSLYI8jrS+c74HID/IKoSNvn3zonrmoJJgyUdokG/fNZWtzebhY4h1MlCcfFYgQBCAPEK2uLA==",
-      "path": "sqlitepclraw.bundle_sqlcipher/1.1.8",
-      "hashPath": "sqlitepclraw.bundle_sqlcipher.1.1.8.nupkg.sha512"
-    },
-    "SQLitePCLRaw.core/1.1.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-JTvlAlVHeMW9QaTcu+3iLB9ZEGtceb+uM1MOlfyAnEocShSacHEzwPNsden7MlWb0QjPX3Y3sDMW0ymGhH8Jtg==",
-      "path": "sqlitepclraw.core/1.1.8",
-      "hashPath": "sqlitepclraw.core.1.1.8.nupkg.sha512"
     },
     "StyleCop.Analyzers/1.1.0-beta008": {
       "type": "package",

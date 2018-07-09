@@ -8,7 +8,6 @@ using MemStache.LiteDB;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
-using SQLite;
 
 namespace MemStache
 {
@@ -28,18 +27,17 @@ namespace MemStache
 
         public string DatabasePath { get; set; }
 
-        //public SQLiteConnection DB { get; set; }
         public StashRepo DB { get; set; }
 
         /// <summary>
-        /// Stasher employing the Serialization Plan
+        /// Gets or sets stasher employing the Serialization Plan.
         /// </summary>
         public Stasher Stasher { get; set; }
 
         public StashPlan Plan { get; set; } = StashPlan.spSerialize;
 
         /// <summary>
-        /// Optons must include a Size Limit. If one it not provided the Size Limit will be 900Kb per item
+        /// Gets or sets options must include a Size Limit. If one it not provided the Size Limit will be 900Kb per item.
         /// </summary>
         public MemoryCacheEntryOptions MemoryItemOptions { get; set; }
 
@@ -93,9 +91,6 @@ namespace MemStache
             this.Plan = plan;
             this.AppId = appId;
             this.DatabasePath = GetBasePath("memstache.db");
-
-            //this.DB = new SQLiteConnection(this.DatabasePath);
-            //this.DB.CreateTable<Stash>();
             this.DB = new StashRepo(appId);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;

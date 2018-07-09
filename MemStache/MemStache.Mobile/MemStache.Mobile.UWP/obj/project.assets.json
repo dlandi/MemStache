@@ -528,44 +528,6 @@
           "build/runtime.win10-x86.Microsoft.Net.UWPCoreRuntimeSdk.targets": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -905,8 +867,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -921,8 +882,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -1740,44 +1700,6 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -2115,8 +2037,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -2131,8 +2052,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -2981,44 +2901,6 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -3385,8 +3267,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -3401,8 +3282,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -4046,44 +3926,6 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -4421,8 +4263,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -4437,8 +4278,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -5256,44 +5096,6 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -5631,8 +5433,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -5647,8 +5448,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -6497,44 +6297,6 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -6901,8 +6663,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -6917,8 +6678,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -7736,44 +7496,6 @@
           "runtimes/win/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -8111,8 +7833,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -8127,8 +7848,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -8977,44 +8697,6 @@
           "runtimes/aot/lib/netcore50/System.Private.Uri.dll": {}
         }
       },
-      "sqlite-net-sqlcipher/1.5.176-beta": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.bundle_sqlcipher": "1.1.8"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLite-net.dll": {}
-        }
-      },
-      "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "SQLitePCLRaw.core": "1.1.8"
-        },
-        "compile": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll": {},
-          "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll": {}
-        }
-      },
-      "SQLitePCLRaw.core/1.1.8": {
-        "type": "package",
-        "dependencies": {
-          "NETStandard.Library": "1.6.0"
-        },
-        "compile": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        },
-        "runtime": {
-          "lib/uap10.0/SQLitePCLRaw.core.dll": {}
-        }
-      },
       "StyleCop.Analyzers/1.1.0-beta008": {
         "type": "package"
       },
@@ -9381,8 +9063,7 @@
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "StyleCop.Analyzers": "1.1.0-beta008"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -9397,8 +9078,7 @@
         "dependencies": {
           "MemStache": "1.0.0",
           "Microsoft.CSharp": "4.5.0",
-          "Xamarin.Forms": "3.1.0.583944",
-          "sqlite-net-sqlcipher": "1.5.176-beta"
+          "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
           "bin/placeholder/MemStache.Mobile.dll": {}
@@ -13693,74 +13373,6 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
-    "sqlite-net-sqlcipher/1.5.176-beta": {
-      "sha512": "eePlIY0J4uS4BMAUORkzTqeRATXK7rkGhEukrtLb+/SXmSrV9JLI+yzxjlf8nirOVbie2HxEAWWs8bPQ37a9bw==",
-      "type": "package",
-      "path": "sqlite-net-sqlcipher/1.5.176-beta",
-      "files": [
-        "lib/netstandard1.1/SQLite-net.deps.json",
-        "lib/netstandard1.1/SQLite-net.dll",
-        "lib/netstandard1.1/SQLite-net.pdb",
-        "lib/netstandard1.1/SQLite-net.xml",
-        "sqlite-net-sqlcipher.1.5.176-beta.nupkg.sha512",
-        "sqlite-net-sqlcipher.nuspec"
-      ]
-    },
-    "SQLitePCLRaw.bundle_sqlcipher/1.1.8": {
-      "sha512": "9NQc0zf4OofPzCSLYI8jrS+c74HID/IKoSNvn3zonrmoJJgyUdokG/fNZWtzebhY4h1MlCcfFYgQBCAPEK2uLA==",
-      "type": "package",
-      "path": "sqlitepclraw.bundle_sqlcipher/1.1.8",
-      "files": [
-        "lib/MonoAndroid/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/MonoAndroid/SQLitePCLRaw.batteries_v2.dll",
-        "lib/Xamarin.Mac20/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/Xamarin.Mac20/SQLitePCLRaw.batteries_v2.dll",
-        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net35/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/net35/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net40/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/net40/SQLitePCLRaw.batteries_v2.dll",
-        "lib/net45/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/net45/SQLitePCLRaw.batteries_v2.dll",
-        "lib/netcoreapp/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/netcoreapp/SQLitePCLRaw.batteries_v2.dll",
-        "lib/netstandard1.1/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/netstandard1.1/SQLitePCLRaw.batteries_v2.dll",
-        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
-        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_sqlcipher.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll",
-        "sqlitepclraw.bundle_sqlcipher.1.1.8.nupkg.sha512",
-        "sqlitepclraw.bundle_sqlcipher.nuspec"
-      ]
-    },
-    "SQLitePCLRaw.core/1.1.8": {
-      "sha512": "JTvlAlVHeMW9QaTcu+3iLB9ZEGtceb+uM1MOlfyAnEocShSacHEzwPNsden7MlWb0QjPX3Y3sDMW0ymGhH8Jtg==",
-      "type": "package",
-      "path": "sqlitepclraw.core/1.1.8",
-      "files": [
-        "lib/MonoAndroid/SQLitePCLRaw.core.dll",
-        "lib/Xamarin.Mac20/SQLitePCLRaw.core.dll",
-        "lib/Xamarin.iOS10/SQLitePCLRaw.core.dll",
-        "lib/net35/SQLitePCLRaw.core.dll",
-        "lib/net40/SQLitePCLRaw.core.dll",
-        "lib/net45/SQLitePCLRaw.core.dll",
-        "lib/netstandard1.0/SQLitePCLRaw.core.dll",
-        "lib/netstandard1.1/SQLitePCLRaw.core.dll",
-        "lib/portable-net40+sl5+netcore45+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
-        "lib/portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
-        "lib/portable-net45+netcore45+wpa81+wp8+MonoAndroid10+MonoTouch10+Xamarin.iOS10/SQLitePCLRaw.core.dll",
-        "lib/uap10.0/SQLitePCLRaw.core.dll",
-        "lib/win8/SQLitePCLRaw.core.dll",
-        "lib/win81/SQLitePCLRaw.core.dll",
-        "lib/wpa81/SQLitePCLRaw.core.dll",
-        "sqlitepclraw.core.1.1.8.nupkg.sha512",
-        "sqlitepclraw.core.nuspec"
-      ]
-    },
     "StyleCop.Analyzers/1.1.0-beta008": {
       "sha512": "wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
       "type": "package",
@@ -15236,8 +14848,7 @@
       "MemStache.Mobile >= 1.0.0",
       "Microsoft.CSharp >= 4.5.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.0.1",
-      "Xamarin.Forms >= 3.1.0.583944",
-      "sqlite-net-sqlcipher >= 1.5.176-beta"
+      "Xamarin.Forms >= 3.1.0.583944"
     ]
   },
   "packageFolders": {
@@ -15292,10 +14903,6 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[3.1.0.583944, )"
-          },
-          "sqlite-net-sqlcipher": {
-            "target": "Package",
-            "version": "[1.5.176-beta, )"
           }
         },
         "imports": [

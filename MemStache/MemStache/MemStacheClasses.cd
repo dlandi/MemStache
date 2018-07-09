@@ -3,15 +3,13 @@
   <Class Name="MemStache.StacheMeister">
     <Position X="1" Y="2" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAggAAAAAgICAAAgAAQBAABAAABKAEAAIAAABA=</HashCode>
+      <HashCode>gAAAQAAggAAAAAgICAAAgAAQBAAAAAABCQEAAAQAABA=</HashCode>
       <FileName>StacheMeister.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MemStache.Stash" BaseTypeListCollapsed="true">
     <Position X="6.5" Y="2.25" Width="1.5" />
     <Members>
-      <Field Name="_Object" Hidden="true" />
-      <Field Name="_stashPlan" Hidden="true" />
       <Method Name="Dispose" Hidden="true" />
       <Field Name="disposedValue" Hidden="true" />
       <Method Name="SetPrivateObject" Hidden="true" />
@@ -21,15 +19,15 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>gAAEAIAAACAAgAAiAIAEAAAFQAAAASABAAAAggAAAAA=</HashCode>
-      <FileName>Stasher.cs</FileName>
+      <HashCode>AAAAAAAAACKAgAQgAAAAAAAFQAAAAACBAAAgggCAAAA=</HashCode>
+      <FileName>Stash.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="MemStache.Stasher">
     <Position X="3.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AACIQAAiABIAAgAICAAAhAAADAEpAAIFIAEAAIKAjBQ=</HashCode>
+      <HashCode>gACIQAAiABIAAgAICABAhAAADAEoAAIFIQEAAIKAjBQ=</HashCode>
       <FileName>Stasher.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="Utils.cs" company="Dennis Landi">
+// Copyright (c) Dennis Landi. All rights reserved.
+// </copyright>
+
+using System;
 using System.IO;
 #if __IOS__ || __MACOS__
 using Foundation;
@@ -15,10 +19,14 @@ namespace MemStache
         public static string GetBasePath(string applicationId)
         {
             if (string.IsNullOrWhiteSpace(applicationId))
+            {
                 throw new ArgumentException("You must set a ApplicationId for MemStache by using Stasher.ApplicationId.");
+            }
 
             if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+            {
                 throw new ArgumentException("ApplicationId has invalid characters");
+            }
 
             var path = string.Empty;
 
@@ -44,7 +52,9 @@ namespace MemStache
             catch
             {
                 if (timeSpan.Milliseconds < 0)
+                {
                     return DateTime.MinValue;
+                }
 
                 return DateTime.MaxValue;
             }

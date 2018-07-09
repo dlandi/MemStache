@@ -191,11 +191,6 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\WindowsBase.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\mscorlib.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\netstandard.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\SQLite-net.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\SQLite-net.pdb
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_sqlcipher.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\SQLitePCLRaw.batteries_v2.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\SQLitePCLRaw.core.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\System.Memory.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\System.Security.Cryptography.Pkcs.dll
