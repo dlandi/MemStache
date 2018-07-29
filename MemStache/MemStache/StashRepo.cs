@@ -47,11 +47,18 @@ namespace MemStache.LiteDB
         /// </summary>
         public static StashRepo Current => instance ?? (instance = new StashRepo(ApplicationId));
 
-        public StashRepo(string appId)
+        public StashRepo(string appId, string filename = null, string password = null)
         {
             ApplicationId = appId;
+            EncryptionKey = password;
+
+            if (filename == null)
+            {
+                filename = "memstache.db";
+            }
+
             var directory = BaseCacheDir.Value;
-            string path = Path.Combine(directory, "memstache.db");
+            string path = Path.Combine(directory, filename);
             if (!Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);

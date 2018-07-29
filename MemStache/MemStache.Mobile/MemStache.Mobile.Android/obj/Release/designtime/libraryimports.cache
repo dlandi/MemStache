@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <ManifestDocuments>
+    <ManifestDocument>obj\Release\lp\31\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\32\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\34\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\35\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\36\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\37\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\38\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\39\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\40\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\41\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\42\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\43\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\44\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\45\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\46\jl\AndroidManifest.xml</ManifestDocument>
+    <ManifestDocument>obj\Release\lp\47\jl\AndroidManifest.xml</ManifestDocument>
+  </ManifestDocuments>
+  <NativeLibraries />
+  <Jars>
+    <Jar>obj\Release\lp\0\jl\formsviewgroup.jar</Jar>
+    <Jar>obj\Release\lp\29\jl\arch-core-common.jar</Jar>
+    <Jar>obj\Release\lp\30\jl\arch-lifecycle-common.jar</Jar>
+    <Jar>obj\Release\lp\31\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\32\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\33\jl\support-annotations.jar</Jar>
+    <Jar>obj\Release\lp\34\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\35\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\36\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\37\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\38\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\39\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\40\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\41\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\42\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\43\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\44\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\45\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\46\jl\bin\classes.jar</Jar>
+    <Jar>obj\Release\lp\47\jl\bin\classes.jar</Jar>
+  </Jars>
+</Paths>

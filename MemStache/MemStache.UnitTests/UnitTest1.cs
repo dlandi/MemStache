@@ -173,6 +173,33 @@ namespace MemStache.UnitTests
             Console.WriteLine("Payload Test: {0}", result.Value);
         }
 
+
+        [TestMethod]
+        public void _0_TestDBInsert_2()
+        {
+            string appId, filename, password;
+            appId = "memstache.demo";
+            filename = "MemstacheTest.cv";
+            password = "password";
+            string key = "test02";
+            //StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister Meister = new StacheMeister(appId, filename, password);
+
+
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.Delete(key);
+            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            string s = "another test";
+            s = JsonConvert.SerializeObject(s);
+
+            stash.DbAddOrUpdate(new Stash() { Key = key, Value = s, Serialized = true });
+
+            //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
+            Task.Delay(1000);
+            Stash result = stash.DbGet(key);
+            Console.WriteLine("Payload Test: {0}", result.Value);
+        }
+
         [TestMethod]
         public void _0_TestStasher()
         {
@@ -337,7 +364,7 @@ namespace MemStache.UnitTests
         public void _5_StacheMeisterSerializeAndCompress()
         {
             string key = "test07";
-            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerializeCompress);
+            StacheMeister Meister = new StacheMeister("memstache.demo", null, null, StashPlan.spSerializeCompress);
 
             //var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
@@ -359,7 +386,7 @@ namespace MemStache.UnitTests
         public void _6_StacheMeisterSerializeAndCompressAndEncrypt()
         {
             string key = "test08";
-            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spProtectCompress);
+            StacheMeister Meister = new StacheMeister("memstache.demo", null, null, StashPlan.spProtectCompress);
 
             //var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);

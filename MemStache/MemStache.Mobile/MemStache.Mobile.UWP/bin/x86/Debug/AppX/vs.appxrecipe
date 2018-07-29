@@ -31,13 +31,17 @@
     <AppXManifest Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-05T22:33:39.900</Modified>
+      <Modified>2018-07-09T16:08:57.536</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\MemStache.Mobile.UWP.exe">
       <PackagePath>entrypoint\MemStache.Mobile.UWP.exe</PackagePath>
-      <Modified>2018-07-05T22:33:38.133</Modified>
+      <Modified>2018-07-09T16:08:56.070</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\litedb\4.1.4\lib\netstandard2.0\LiteDB.dll">
+      <PackagePath>LiteDB.dll</PackagePath>
+      <Modified>2018-06-11T23:04:22.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\microsoft.aspnetcore.cryptography.internal\2.1.0\lib\netstandard2.0\Microsoft.AspNetCore.Cryptography.Internal.dll">
       <PackagePath>Microsoft.AspNetCore.Cryptography.Internal.dll</PackagePath>
@@ -771,22 +775,6 @@
       <PackagePath>netstandard.dll</PackagePath>
       <Modified>2017-10-01T00:26:12.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlite-net-sqlcipher\1.5.176-beta\lib\netstandard1.1\SQLite-net.dll">
-      <PackagePath>SQLite-net.dll</PackagePath>
-      <Modified>2017-08-13T00:25:36.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.bundle_sqlcipher\1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_sqlcipher.dll">
-      <PackagePath>SQLitePCLRaw.batteries_sqlcipher.dll</PackagePath>
-      <Modified>2017-08-03T18:50:14.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.bundle_sqlcipher\1.1.8\lib\portable-net45+netcore45+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLitePCLRaw.batteries_v2.dll">
-      <PackagePath>SQLitePCLRaw.batteries_v2.dll</PackagePath>
-      <Modified>2017-08-03T18:50:14.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\sqlitepclraw.core\1.1.8\lib\uap10.0\SQLitePCLRaw.core.dll">
-      <PackagePath>SQLitePCLRaw.core.dll</PackagePath>
-      <Modified>2017-08-03T18:50:08.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\RFIDGS01\.nuget\packages\system.memory\4.5.0\lib\netstandard2.0\System.Memory.dll">
       <PackagePath>System.Memory.dll</PackagePath>
       <Modified>2018-05-15T17:29:54.000</Modified>
@@ -829,11 +817,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\bin\Debug\netstandard2.0\MemStache.Mobile.dll">
       <PackagePath>MemStache.Mobile.dll</PackagePath>
-      <Modified>2018-07-05T22:31:46.642</Modified>
+      <Modified>2018-07-09T15:25:37.552</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\bin\Debug\netstandard2.0\MemStache.dll">
       <PackagePath>MemStache.dll</PackagePath>
-      <Modified>2018-07-05T20:37:41.259</Modified>
+      <Modified>2018-07-09T15:25:36.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
@@ -980,11 +968,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-07-05T22:33:37.901</Modified>
+      <Modified>2018-07-09T16:08:55.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2018-07-05T22:33:37.902</Modified>
+      <Modified>2018-07-09T16:08:55.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -1041,11 +1029,11 @@
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-07-05T22:33:39.329</Modified>
+      <Modified>2018-07-09T15:16:17.129</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\Core\MemStache.Mobile.UWP.exe">
       <PackagePath>MemStache.Mobile.UWP.exe</PackagePath>
-      <Modified>2018-07-05T22:33:39.894</Modified>
+      <Modified>2018-07-09T16:08:57.521</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

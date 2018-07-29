@@ -12,7 +12,7 @@ namespace MemStache.Mobile
         {
             InitializeComponent();
 
-            StacheMeister Meister = new StacheMeister("memstache.demo", StashPlan.spSerializeCompress);
+            StacheMeister Meister = new StacheMeister("memstache.demo", null, null, StashPlan.spSerializeCompress);
             string key = "app01_Test";
 
             string value = Meister[key]; //app just started, so fetching value from db cache, not memory

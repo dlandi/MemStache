@@ -77,12 +77,16 @@ namespace MemStache
         /// Initializes a new instance of the <see cref="StacheMeister"/> class.
         /// </summary>
         /// <param name="appId"></param>
+        /// <param name="filename"></param>
+        /// <param name="password"></param>
         /// <param name="plan"></param>
         /// <param name="memCacheOptions"></param>
         /// <param name="memoryItemOptions"></param>
         /// <param name="services"></param>
         public StacheMeister(
             string appId,
+            string filename = null,
+            string password = null,
             StashPlan plan = StashPlan.spSerialize,
             MemoryCacheOptions memCacheOptions = null,
             MemoryCacheEntryOptions memoryItemOptions = null,
@@ -91,7 +95,7 @@ namespace MemStache
             this.Plan = plan;
             this.AppId = appId;
             this.DatabasePath = GetBasePath("memstache.db");
-            this.DB = new StashRepo(appId);
+            this.DB = new StashRepo(appId, filename, password);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;
             svcs.AddDataProtection();

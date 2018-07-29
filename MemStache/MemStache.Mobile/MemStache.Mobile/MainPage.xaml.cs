@@ -11,7 +11,7 @@ namespace MemStache.Mobile
     {
         public MainPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

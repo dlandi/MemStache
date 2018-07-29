@@ -19,10 +19,10 @@ namespace MemStache.Mobile.UWP
     {
         public MainPage()
         {
-            //SQLitePCL.Batteries_V2.Init();
             this.InitializeComponent();
 
             LoadApplication(new MemStache.Mobile.App());
+
         }
     }
 }
