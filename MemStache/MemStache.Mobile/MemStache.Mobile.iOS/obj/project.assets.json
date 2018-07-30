@@ -527,7 +527,7 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -550,8 +550,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
@@ -1060,7 +1061,7 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1083,8 +1084,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
@@ -1593,7 +1595,7 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1616,8 +1618,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
@@ -2126,7 +2129,7 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2149,8 +2152,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Xamarin.Forms": "3.1.0.583944"
         },
         "compile": {
@@ -3082,7 +3086,7 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "MemStache/1.0.0": {
+    "MemStache/0.1.0": {
       "type": "project",
       "path": "../../MemStache/MemStache.csproj",
       "msbuildProject": "../../MemStache/MemStache.csproj"

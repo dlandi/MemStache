@@ -3,9 +3,10 @@
   <Class Name="MemStache.StacheMeister">
     <Position X="1" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>gAAAQAAggAAAAAgICAAAgAAQBAAAAAABCQEAAAQAABA=</HashCode>
+      <HashCode>gAAAQAAggCAAAAgICAAAgAAQBAAAAAABCQEAAgQAABA=</HashCode>
       <FileName>StacheMeister.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="MemStache.Stash" BaseTypeListCollapsed="true">
     <Position X="6.25" Y="0.75" Width="1.5" />

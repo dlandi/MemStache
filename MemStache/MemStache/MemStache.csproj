@@ -2,6 +2,26 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.1.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>Dennis A. Landi 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/dlandi/MemStache/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/dlandi/MemStache</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dlandi/MemStache</RepositoryUrl>
+    <Description>MemStache
+
+A Flexible, Powerful Cache Library with these features
+
+	- In-Memory Resiliency (memory management)
+	- Serialization Capability
+	- Granular Data Persistence Capabililty
+	- Instant Data Availability 
+	- Security In-Memory
+	- Security On-Disk
+	- All Code written in .NET Standard 2.
+	- Leverage .NET Standard DI Framework.
+	- A Small Intuitive Developer API</Description>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

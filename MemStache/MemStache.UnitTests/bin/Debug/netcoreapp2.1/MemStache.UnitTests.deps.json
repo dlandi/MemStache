@@ -10,7 +10,8 @@
         "dependencies": {
           "MSTest.TestAdapter": "1.2.1",
           "MSTest.TestFramework": "1.2.1",
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Microsoft.NET.Test.Sdk": "15.7.0",
           "Tynamix.ObjectFiller": "1.5.4.1"
         },
@@ -1251,7 +1252,7 @@
           }
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "dependencies": {
           "LiteDB": "4.1.4",
           "Microsoft.AspNetCore.DataProtection": "2.1.0",
@@ -1952,7 +1953,7 @@
       "path": "tynamix.objectfiller/1.5.4.1",
       "hashPath": "tynamix.objectfiller.1.5.4.1.nupkg.sha512"
     },
-    "MemStache/1.0.0": {
+    "MemStache/0.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

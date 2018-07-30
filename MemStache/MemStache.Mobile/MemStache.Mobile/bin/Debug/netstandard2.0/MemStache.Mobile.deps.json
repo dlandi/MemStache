@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "MemStache.Mobile/1.0.0": {
         "dependencies": {
-          "MemStache": "1.0.0",
+          "MemStache": "0.1.0",
           "Microsoft.CSharp": "4.5.0",
           "NETStandard.Library": "2.0.3",
           "Xamarin.Forms": "3.1.0.583944"
@@ -443,7 +443,7 @@
           }
         }
       },
-      "MemStache/1.0.0": {
+      "MemStache/0.1.0": {
         "dependencies": {
           "LiteDB": "4.1.4",
           "Microsoft.AspNetCore.DataProtection": "2.1.0",
@@ -773,7 +773,7 @@
       "path": "xamarin.forms/3.1.0.583944",
       "hashPath": "xamarin.forms.3.1.0.583944.nupkg.sha512"
     },
-    "MemStache/1.0.0": {
+    "MemStache/0.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

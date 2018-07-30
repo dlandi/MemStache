@@ -9,7 +9,6 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.csproj.CoreCompileInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.AssemblyInfoInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.AssemblyInfo.cs
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.csproj.CopyComplete
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.pdb

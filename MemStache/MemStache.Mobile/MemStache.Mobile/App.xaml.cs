@@ -2,6 +2,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MemStache.Mobile.Model;
 using MemStache.LiteDB;
+using Microsoft.Extensions.DependencyInjection;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace MemStache.Mobile

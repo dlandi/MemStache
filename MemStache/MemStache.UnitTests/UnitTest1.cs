@@ -4,12 +4,16 @@ namespace MemStache.UnitTests
     using System.Diagnostics;
     using System.Threading.Tasks;
     using MemStache.LiteDB;
+    using Microsoft.Extensions.DependencyInjection;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Newtonsoft.Json;
 
     [TestClass]
     public class UnitTest1
     {
+        private ServiceCollection services = new ServiceCollection();
+        private StacheMeister GlobalMeister;
+
         private TestContext testContext;
 
         private Stopwatch stopWatch;
@@ -39,6 +43,21 @@ namespace MemStache.UnitTests
         {
             //testContext.WriteLine("TestMethodInit: " + testContext.TestName);
             employee1 = CreateEmployee();
+
+            string appId, filename, password;
+            appId = "memstache.demo";
+            filename = "MemstacheTest.cv";
+            password = "password";
+            this.GlobalMeister =
+            new StacheMeister(appId,
+                              filename,
+                              password,
+                              StashPlan.spSerialize,
+                              null,
+                              null,
+                              this.services);
+
+            this.services.AddSingleton<StacheMeister>(GlobalMeister);
 
             stopWatch = new Stopwatch();
 
@@ -401,6 +420,32 @@ namespace MemStache.UnitTests
             string v2 = JsonConvert.SerializeObject(emp2);
 
             Assert.AreEqual(v1, v2);
+        }
+
+        [TestMethod]
+        [TestCategory("Using ServiceCollection")]
+        public void _7_DependencyInjection()
+        {
+
+
+            var provider = services.BuildServiceProvider();
+            using (var meister = provider.GetService<StacheMeister>())
+            {
+                string key = "test07";
+
+                StashRepo.Delete(key);
+
+                Employee emp1 = employee1;
+                string v1 = JsonConvert.SerializeObject(emp1);
+
+                meister[key] = emp1;
+
+                Employee emp2 = meister[key] as Employee;
+
+                string v2 = JsonConvert.SerializeObject(emp2);
+
+                Assert.AreEqual(v1, v2);
+            }
         }
     }
 }
