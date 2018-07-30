@@ -195,7 +195,7 @@ namespace MemStache.LiteDB
         /// <param name="data">Data string to store.</param>
         /// <param name="expireIn">Time from UtcNow to expire entry in.</param>
         /// <param name="hash">Optional Hash information.</param>
-        public void Add(string key, string data, TimeSpan expireIn, string hash = null)
+        public void Add(string key, Stash item, string data, TimeSpan expireIn, string hash = null)
         {
             if (data == null)
             {
@@ -207,6 +207,10 @@ namespace MemStache.LiteDB
                 Key = key,
                 ExpirationDate = Utils.GetExpiration(expireIn),
                 Hash = hash,
+                Serialized = item.Serialized,
+                StoredType = item.StoredType,
+                Plan = item.Plan,
+                Size = data.Length,
                 Value = data,
             };
 
@@ -228,7 +232,11 @@ namespace MemStache.LiteDB
                 return;
             }
 
-            this.Add(key, JsonConvert.SerializeObject(data, this.jsonSettings), expireIn, hash);
+            Stash item = data as Stash;
+            item.ExpirationDate = Utils.GetExpiration(expireIn);
+            item.Hash = hash;
+            col.Upsert(item);
+            //this.Add(key,  item, JsonConvert.SerializeObject(data, this.jsonSettings), expireIn, hash);
         }
 
         #endregion
