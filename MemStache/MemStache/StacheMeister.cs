@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using MemStache.LiteDB;
 using Microsoft.AspNetCore.DataProtection;
@@ -25,7 +26,7 @@ namespace MemStache
 
         public IMemoryCache Cache { get; set; }
 
-        public string DatabasePath { get; set; }
+        //public string DatabasePath { get; set; }
 
         public StashRepo DB { get; set; }
 
@@ -51,8 +52,10 @@ namespace MemStache
                 {
                     return this.Stasher[key].Object;
                 }
-                catch
+                catch (Exception e)
                 {
+
+                    Debug.WriteLine("Error: " + e.Message);
                     return null;
                 }
             }
@@ -94,7 +97,13 @@ namespace MemStache
         {
             this.Plan = plan;
             this.AppId = appId;
-            this.DatabasePath = GetBasePath("memstache.db");
+            //this.DatabasePath = GetBasePath("memstache.db");
+            //if (appId != null)
+            //{
+            //    this.DatabasePath = GetBasePath(appId);
+            //    Debug.WriteLine("DEVICE DB PATH: " + this.DatabasePath.ToUpper());
+            //}
+
             this.DB = new StashRepo(appId, filename, password);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;
@@ -150,32 +159,32 @@ namespace MemStache
         }
 
         #region Utils
-        public static string GetBasePath(string applicationId)
-        {
-            if (string.IsNullOrWhiteSpace(applicationId))
-            {
-                throw new ArgumentException("You must set a ApplicationId in the Stachemeister constructor");
-            }
+//        public static string GetBasePath(string applicationId)
+//        {
+//            if (string.IsNullOrWhiteSpace(applicationId))
+//            {
+//                throw new ArgumentException("You must set a ApplicationId in the Stachemeister constructor");
+//            }
 
-            if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
-            {
-                throw new ArgumentException("ApplicationId has invalid characters");
-            }
+//            if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+//            {
+//                throw new ArgumentException("ApplicationId has invalid characters");
+//            }
 
-            var path = string.Empty;
+//            var path = string.Empty;
 
-            // Gets full path based on device type.
-#if __IOS__ || __MACOS__
-            path = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
-#elif __ANDROID__
-            path = Application.Context.CacheDir.AbsolutePath;
-#elif __UWP__
-            path = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path;
-#else
-            path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-#endif
-            return Path.Combine(path, applicationId);
-        }
+//            // Gets full path based on device type.
+//#if __IOS__ || __MACOS__
+//            path = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
+//#elif __ANDROID__
+//            path = Application.Context.CacheDir.AbsolutePath;
+//#elif __UWP__
+//            path = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path;
+//#else
+//            path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+//#endif
+//            return Path.Combine(path, applicationId);
+//        }
 
         public static DateTime GetExpiration(TimeSpan timeSpan)
         {

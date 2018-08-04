@@ -192,7 +192,6 @@ namespace MemStache.UnitTests
             Console.WriteLine("Payload Test: {0}", result.Value);
         }
 
-
         [TestMethod]
         public void _0_TestDBInsert_2()
         {
@@ -203,7 +202,6 @@ namespace MemStache.UnitTests
             string key = "test02";
             //StacheMeister Meister = new StacheMeister("memstache.demo");
             StacheMeister Meister = new StacheMeister(appId, filename, password);
-
 
             //var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
@@ -244,6 +242,71 @@ namespace MemStache.UnitTests
 
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
+        }
+
+        [TestMethod]
+        public void _0_TestHash()
+        {
+            for (int i = 0; i < 999; i++)
+            {
+                Random rnd = new Random();
+                int length = 20;
+                var str = string.Empty;
+                for (var ii = 0; ii < length; ii++)
+                {
+                    str += ((char)(rnd.Next(1, 26) + 64)).ToString();
+                }
+                var h = Stasher.Hash(str);
+                var h2 = Stasher.Hash(str);
+                Assert.AreEqual(h, h2);
+            }
+        }
+
+        public string GetFileName(string userId, string emailAddress, string pwHash)
+        {
+            //string s = userId + "_" + emailAddress + "_" + pwHash;
+            string s = userId + "_" + pwHash;
+            s = "File_" + Stasher.Hash(s).Replace("-", string.Empty) + ".cv";
+            return s;
+        }
+
+        [TestMethod]
+        public void _0_TestHashFileName()
+        {
+            string userId = "Tester01";
+            string eml = "tester@test.com";
+            for (int i = 0; i < 9; i++)
+            {
+                Random rnd = new Random();
+                int length = 20;
+                var str = string.Empty;
+                for (var ii = 0; ii < length; ii++)
+                {
+                    str += ((char)(rnd.Next(1, 26) + 64)).ToString();
+                }
+                var h = Stasher.Hash(str);
+
+                Console.WriteLine( this.GetFileName(userId, eml, h));
+            }
+        }
+
+        [TestMethod]
+        public void _0_GenVerificationCode()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                Random rnd = new Random();
+                int length = 5;
+                var str = string.Empty;
+                for (var ii = 0; ii < length; ii++)
+                {
+                    str += ((char)(rnd.Next(1, 26) + 64)).ToString();
+                }
+                var h = Stasher.Hash(str).Replace("-", string.Empty).ToUpper().Substring(0, 5);
+                //return h;
+
+                Console.WriteLine(h); 
+            }
         }
 
         [TestMethod]

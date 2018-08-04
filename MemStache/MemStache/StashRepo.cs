@@ -3,6 +3,7 @@
 // </copyright>
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using LiteDB;
 using Newtonsoft.Json;
@@ -22,7 +23,9 @@ namespace MemStache.LiteDB
     {
         private static readonly Lazy<string> BaseCacheDir = new Lazy<string>(() =>
         {
-            return Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
+            //string path = Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
+            string path = Utils.GetBasePath(ApplicationId);
+            return path;
         });
 
         private static LiteCollection<Stash> col;
@@ -59,6 +62,7 @@ namespace MemStache.LiteDB
 
             var directory = BaseCacheDir.Value;
             string path = Path.Combine(directory, filename);
+            Debug.WriteLine("DEVICE DB PATH: " + path.ToUpper());
             if (!Directory.Exists(directory))
             {
                 Directory.CreateDirectory(directory);
