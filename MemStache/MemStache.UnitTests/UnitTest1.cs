@@ -289,6 +289,44 @@ namespace MemStache.UnitTests
                 Console.WriteLine( this.GetFileName(userId, eml, h));
             }
         }
+        /// <summary>
+        /// StacheMeister should be able to serialize anything that NewtonSoft can handle.
+        /// When in doubt test the serializatin here
+        /// </summary>
+        [TestMethod]
+        public void _0_TestNewtonSoft()
+        {
+            DateTime dt = DateTime.UtcNow;
+            long dtFileTimeUTC = dt.ToFileTimeUtc();
+            bool b = true;
+            int i = 1;
+            double dbl = 10.10;
+            float flt = 10.10F;
+            string str = "string";
+
+            string strSerialized = string.Empty;
+            dynamic dyn;
+            strSerialized = JsonConvert.SerializeObject(dt);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(DateTime));
+
+            strSerialized = JsonConvert.SerializeObject(dtFileTimeUTC);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(long));
+
+            strSerialized = JsonConvert.SerializeObject(b);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(bool));
+
+            strSerialized = JsonConvert.SerializeObject(i);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(int));
+
+            strSerialized = JsonConvert.SerializeObject(dbl);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(double));
+
+            strSerialized = JsonConvert.SerializeObject(flt);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(float));
+
+            strSerialized = JsonConvert.SerializeObject(str);
+            dyn = JsonConvert.DeserializeObject(strSerialized, typeof(string));
+        }
 
         [TestMethod]
         public void _0_GenVerificationCode()
