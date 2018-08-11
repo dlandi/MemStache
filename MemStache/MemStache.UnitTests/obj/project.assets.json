@@ -1900,7 +1900,7 @@
           "lib/netstandard1.0/Tynamix.ObjectFiller.dll": {}
         }
       },
-      "MemStache/0.1.0.2": {
+      "MemStache/0.1.0.3": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -6451,7 +6451,7 @@
         "tynamix.objectfiller.nuspec"
       ]
     },
-    "MemStache/0.1.0.2": {
+    "MemStache/0.1.0.3": {
       "type": "project",
       "path": "../MemStache/MemStache.csproj",
       "msbuildProject": "../MemStache/MemStache.csproj"
@@ -6461,7 +6461,7 @@
     ".NETCoreApp,Version=v2.1": [
       "MSTest.TestAdapter >= 1.2.1",
       "MSTest.TestFramework >= 1.2.1",
-      "MemStache >= 0.1.0.2",
+      "MemStache >= 0.1.0.3",
       "Microsoft.Extensions.DependencyInjection >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.1.0",
