@@ -217,6 +217,41 @@ namespace MemStache.UnitTests
             Console.WriteLine("Payload Test: {0}", result.Value);
         }
 
+
+        [TestMethod]
+        public void _0_InsertAndRetrieve()
+        {
+            string appId, filename, password;
+            appId = "memstache.demo";
+            filename = "MemstacheTest.cv";
+            password = "password";
+            string key = "test02";
+            //StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister Meister = new StacheMeister(appId, filename, password,StashPlan.spProtectCompress);
+
+            //var rowcount = Meister.DB.Delete<Stash>(key);
+            StashRepo.Delete(key);
+
+            Meister[key] = "testing"; //this.CreateEmployee();
+
+            //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
+            Task.Delay(10).Wait();
+            string result = Meister[key];
+            if (result != null)
+                Console.WriteLine("1st Payload Test: {0}", result); //result.Id.ToString());
+
+            Task.Delay(10).Wait();
+            result = Meister[key];
+            if(result != null)
+                Console.WriteLine("2nd Payload Test: {0}", result); //result.Id.ToString());
+
+            Task.Delay(10).Wait();
+            result = Meister[key];
+            if (result != null)
+                Console.WriteLine("3rd Payload Test: {0}", result); //result.Id.ToString());
+        }
+
+
         [TestMethod]
         public void _0_TestStasher()
         {

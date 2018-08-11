@@ -241,6 +241,7 @@ namespace MemStache
         public Stash GetItemCommon(string key)
         {
             Stash item = this.Cache.Get<Stash>(key);
+            item = this.CloneItem(item);
             if (item == null)
             {
                 item = this.DbGet(key);

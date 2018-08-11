@@ -1,4 +1,5 @@
 FormsViewGroup
+LiteDB
 MemStache.Mobile
 Microsoft.AspNetCore.Cryptography.Internal
 Microsoft.AspNetCore.DataProtection.Abstractions
@@ -19,12 +20,6 @@ Microsoft.Extensions.Options
 Microsoft.Extensions.Primitives
 Microsoft.Win32.Registry
 Newtonsoft.Json
-SQLite-net
-SQLitePCLRaw.batteries_sqlcipher
-SQLitePCLRaw.batteries_v2
-SQLitePCLRaw.core
-SQLitePCLRaw.lib.sqlcipher
-SQLitePCLRaw.provider.sqlcipher
 System.Runtime.CompilerServices.Unsafe
 System.Runtime
 System.Security.AccessControl
@@ -58,5 +53,3 @@ Xamarin.Forms.Xaml
 netstandard
 MemStache
 System.Memory
-System.Reflection.Extensions
-LiteDB
