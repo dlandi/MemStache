@@ -241,7 +241,7 @@ namespace MemStache
         public Stash GetItemCommon(string key)
         {
             Stash item = this.Cache.Get<Stash>(key);
-            item = this.CloneItem(item);
+            
             if (item == null)
             {
                 item = this.DbGet(key);
@@ -251,6 +251,8 @@ namespace MemStache
             {
                 return null;
             }
+
+            item = this.CloneItem(item);
 
             item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
 

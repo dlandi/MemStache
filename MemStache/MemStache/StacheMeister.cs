@@ -50,7 +50,14 @@ namespace MemStache
             {
                 try
                 {
-                    return this.Stasher[key].Object;
+                    dynamic item = this.Stasher[key].Object;
+                    if (item == null)
+                    {
+                        return null;
+                    } else
+                    {
+                        return item;
+                    }
                 }
                 catch (Exception e)
                 {

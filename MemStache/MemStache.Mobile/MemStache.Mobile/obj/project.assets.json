@@ -547,7 +547,7 @@
           "build/netstandard2.0/Xamarin.Forms.targets": {}
         }
       },
-      "MemStache/0.1.0.3": {
+      "MemStache/0.1.0.4": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -2080,7 +2080,7 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "MemStache/0.1.0.3": {
+    "MemStache/0.1.0.4": {
       "type": "project",
       "path": "../../MemStache/MemStache.csproj",
       "msbuildProject": "../../MemStache/MemStache.csproj"
@@ -2088,7 +2088,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "MemStache >= 0.1.0.3",
+      "MemStache >= 0.1.0.4",
       "Microsoft.CSharp >= 4.5.0",
       "Microsoft.Extensions.DependencyInjection >= 2.1.0",
       "NETStandard.Library >= 2.0.3",
