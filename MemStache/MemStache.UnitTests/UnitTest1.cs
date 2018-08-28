@@ -230,6 +230,7 @@ namespace MemStache.UnitTests
             StacheMeister Meister = new StacheMeister(appId, filename, password,StashPlan.spProtectCompress);
 
             //var rowcount = Meister.DB.Delete<Stash>(key);
+            string orevresult = Meister[key];
             StashRepo.Delete(key);
 
             Meister[key] = "testing"; //this.CreateEmployee();
@@ -324,6 +325,8 @@ namespace MemStache.UnitTests
                 Console.WriteLine( this.GetFileName(userId, eml, h));
             }
         }
+
+
         /// <summary>
         /// StacheMeister should be able to serialize anything that NewtonSoft can handle.
         /// When in doubt test the serializatin here

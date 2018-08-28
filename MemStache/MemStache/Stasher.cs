@@ -158,7 +158,7 @@ namespace MemStache
 
         public bool DbAddOrUpdate(Stash item)
         {
-            
+
             this.DB.Add<Stash>(item.Key, item, TimeSpan.FromDays(365), Hash(item.Key));
             return true;
         }
@@ -241,10 +241,12 @@ namespace MemStache
         public Stash GetItemCommon(string key)
         {
             Stash item = this.Cache.Get<Stash>(key);
-            
+
             if (item == null)
             {
                 item = this.DbGet(key);
+                item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
+                SetItemCommon(item);
             }
 
             if (item == null)
@@ -254,7 +256,7 @@ namespace MemStache
 
             item = this.CloneItem(item);
 
-            item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
+            
 
             if (item.StashPlan == StashPlan.spSerialize)
             {
