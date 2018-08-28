@@ -565,8 +565,6 @@ namespace MemStache.UnitTests
         [TestCategory("Using ServiceCollection")]
         public void _7_DependencyInjection()
         {
-
-
             var provider = services.BuildServiceProvider();
             using (var meister = provider.GetService<StacheMeister>())
             {

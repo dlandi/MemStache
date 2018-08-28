@@ -245,8 +245,11 @@ namespace MemStache
             if (item == null)
             {
                 item = this.DbGet(key);
-                item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
-                SetItemCommon(item);
+                if (item != null)
+                {
+                    item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
+                    this.SetItemCommon(item, true);
+                }
             }
 
             if (item == null)
@@ -255,8 +258,6 @@ namespace MemStache
             }
 
             item = this.CloneItem(item);
-
-            
 
             if (item.StashPlan == StashPlan.spSerialize)
             {
@@ -276,21 +277,21 @@ namespace MemStache
             return null;
         }
 
-        public void SetItemCommon(Stash item)
+        public void SetItemCommon(Stash item, bool InMemOnly = false)
         {
             if (item.StashPlan == StashPlan.spSerialize)
             {
-                this.SetItemSerializationOnly(item);
+                this.SetItemSerializationOnly(item, InMemOnly);
             }
             else
             if (item.StashPlan == StashPlan.spSerializeCompress)
             {
-                this.SetItemSerializeCompress(item);
+                this.SetItemSerializeCompress(item, InMemOnly);
             }
             else
             if (item.StashPlan == StashPlan.spProtectCompress)
             {
-                this.SetItemSerializeCompressEncrypt(item);
+                this.SetItemSerializeCompressEncrypt(item, InMemOnly);
             }
         }
 
@@ -308,7 +309,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializationOnly(Stash item)
+        protected void SetItemSerializationOnly(Stash item, bool InMemOnly = false)
         {
             string key = item.Key;
             if (!item.Serialized) // don't serialize twice.  The first time was in the Stash Object Property Setter
@@ -319,7 +320,10 @@ namespace MemStache
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
             Stash item2 = this.Cache.Get<Stash>(key);
-            this.DbAddOrUpdate(item);
+            if (!InMemOnly)
+            {
+                this.DbAddOrUpdate(item);
+            }
         }
 
         #endregion
@@ -342,7 +346,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializeCompress(Stash item)
+        protected void SetItemSerializeCompress(Stash item, bool InMemOnly = false)
         {
             string key = item.Key;
             if (!item.Serialized) // don't serialize twice.  The first time was in the Stash Object Property Setter
@@ -358,7 +362,10 @@ namespace MemStache
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
             Stash item2 = this.Cache.Get<Stash>(key);
-            this.DbAddOrUpdate(item);
+            if (!InMemOnly)
+            {
+                this.DbAddOrUpdate(item);
+            }
         }
 
         #endregion
@@ -392,7 +399,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializeCompressEncrypt(Stash item)
+        protected void SetItemSerializeCompressEncrypt(Stash item, bool InMemOnly = false)
         {
             string key = item.Key;
                                     #pragma warning disable SA1108 // Block statements should not contain embedded comments
@@ -409,7 +416,10 @@ namespace MemStache
 
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
-            this.DbAddOrUpdate(item);
+            if (!InMemOnly)
+            {
+                this.DbAddOrUpdate(item);
+            }
         }
 
         #endregion
