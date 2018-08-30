@@ -245,11 +245,13 @@ namespace MemStache
             if (item == null)
             {
                 item = this.DbGet(key);
-                //if (item != null)
-                //{
-                //    item.StashPlan = this.GetPlanFromValue(item.Plan); // if DBGet fired then we need to re-hydrate this prop
-                //    this.SetItemCommon(item, true);
-                //}
+
+                if (item != null)
+                {
+                    Stash item_0 = this.CloneItem(item);
+                    this.SetItemCommon(item_0, true);
+                    item_0.Dispose();
+                }
             }
 
             if (item == null)
