@@ -1,5 +1,6 @@
 ﻿// <copyright file="StashRepo.cs" company="Dennis Landi">
 // Copyright (c) Dennis Landi. All rights reserved.
+//NOTE: This unit is based on the LiteDB implementation from MonkeyCache
 // </copyright>
 
 using System;
