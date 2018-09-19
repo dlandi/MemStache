@@ -44,5 +44,6 @@ https://www.mergeconflict.fm/76
 
 I also based my implementation of LiteDB integration on the one in MonkeyCache!  Thanks!
 
+Best way to learn how to use this library is to look at the unit tests.
 
 Enjoy
