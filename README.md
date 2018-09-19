@@ -28,7 +28,7 @@ Example -
 ```
         StacheMeister cache = new StacheMeister("memstache.demo", "FileName", "Password", StashPlan.spProtectCompress);
         cache[EmployeeId] = CreateEmployee(EmployeeId, name, dob);
-        Employee empResult = Meister[key] as Employee;
+        Employee empResult = cache[key] as Employee;
 ```
 Same code semantics, but Memstache utilizes:
 
