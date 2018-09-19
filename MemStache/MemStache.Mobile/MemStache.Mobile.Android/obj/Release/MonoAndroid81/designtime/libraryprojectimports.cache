@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Paths>
+  <Jars>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\0\jl\formsviewgroup.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\31\jl\arch-core-common.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\32\jl\arch-lifecycle-common.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\33\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\34\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\35\jl\support-annotations.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\36\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\37\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\38\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\39\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\40\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\41\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\42\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\43\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\44\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\45\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\46\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\47\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\48\jl\bin\classes.jar</Jar>
+    <Jar>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\49\jl\bin\classes.jar</Jar>
+  </Jars>
+  <ResolvedResourceDirectories>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\36\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\39\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\41\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\42\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\43\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\44\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\45\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\46\jl\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\48\jl\res</ResolvedResourceDirectory>
+  </ResolvedResourceDirectories>
+  <ResolvedAssetDirectories>
+    <ResolvedAssetDirectory>obj\\Release\MonoAndroid81\lp\43\jl\assets</ResolvedAssetDirectory>
+  </ResolvedAssetDirectories>
+  <ResolvedEnvironmentFiles />
+  <ResolvedResourceDirectoryStamps>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\36.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\39.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\41.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\42.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\43.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\44.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\45.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\46.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.Android\obj\Release\MonoAndroid81\lp\48.stamp</ResolvedResourceDirectoryStamp>
+  </ResolvedResourceDirectoryStamps>
+</Paths>

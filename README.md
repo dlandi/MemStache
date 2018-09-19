@@ -10,6 +10,9 @@ A Flexible, Powerful Cache Library with these features
 		- All Code written in .NET Standard 2.
 		- Leverage .NET Standard DI Framework.
 		- A Small Intuitive Developer API
+
+Nuget Package is available: https://www.nuget.org/packages/MemStache
+
 ![Mem Stache Class Diagram](MemStacheClassDiagram.png)
 
 MemStache is designed to be used exactly the way the original Asp.NET Memory Cache was used.
