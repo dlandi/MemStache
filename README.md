@@ -39,7 +39,7 @@ Same code semantics, but Memstache utilizes:
 		- the LiteDB library to provide an encrypted on-disk Cache
 		- optional use of compression and/or encryption.        
 
-I would like to acknowledge James Montemagno and Frank Krueger of Merge/Conflict fame and their podcast on Monkey Cache for giving me the inpsiration to write my own cache library:
+I would like to acknowledge James Montemagno and Frank Krueger of Merge/Conflict fame and their podcast on Monkey Cache for giving me the inspiration to write my own cache library:
 https://www.mergeconflict.fm/76
 
 I also based my implementation of LiteDB integration on the one in MonkeyCache!  Thanks!
