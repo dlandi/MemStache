@@ -46,4 +46,6 @@ I also based my implementation of LiteDB integration on the one in MonkeyCache! 
 
 Best way to learn how to use this library is to look at the unit tests.
 
+A note on serialization: Anything that can be serialized by the NewtonSoft libary should be assignable to the cache.  When in doubt, write a unit test, first, to prove that NewtonSoft can serialize your object.
+
 Enjoy
