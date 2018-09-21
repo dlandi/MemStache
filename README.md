@@ -44,6 +44,8 @@ https://www.mergeconflict.fm/76
 
 I also based my implementation of LiteDB integration on the one in MonkeyCache!  Thanks!
 
+I have written this library to specifically be used in Xamarin Forms apps, but any program using .NET Standard 2 can use it.
+
 Best way to learn how to use this library is to look at the unit tests.
 
 A note on serialization: Anything that can be serialized by the NewtonSoft libary should be assignable to the cache.  When in doubt, write a unit test, first, to prove that NewtonSoft can serialize your object.
