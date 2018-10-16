@@ -324,8 +324,6 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\priconfig.xml
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\priconfig.xml.intermediate
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\layout.resfiles
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\layout.resfiles.intermediate
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\resources.resfiles
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\resources.resfiles.intermediate
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\pri.resfiles
@@ -336,3 +334,9 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\Xamarin.Forms.Platform.UAP.pri.xml
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\ProjectArchitectures.txt
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\bin\x86\Debug\LiteDB.dll
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\unfiltered.layout.resfiles
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\filtered.layout.resfiles
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\filtered.layout.resfiles.intermediate
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\excluded.layout.resfiles
+D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile.UWP\obj\x86\Debug\excluded.layout.resfiles.intermediate
