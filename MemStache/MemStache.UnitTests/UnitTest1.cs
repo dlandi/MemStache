@@ -1,3 +1,7 @@
+// <copyright file="UnitTest1.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
+
 namespace MemStache.UnitTests
 {
     using System;
@@ -12,17 +16,17 @@ namespace MemStache.UnitTests
     public class UnitTest1
     {
         private ServiceCollection services = new ServiceCollection();
-        private StacheMeister GlobalMeister;
+        private StacheMeister globalMeister;
 
         private TestContext testContext;
 
         private Stopwatch stopWatch;
 
-        public Employee employee1;
+        private Employee employee1;
 
         #region Built-in Test Events
 
-        //[AssemblyInitialize()]
+        // [AssemblyInitialize()]
         public static void AssemblyInit(TestContext testContext)
         {
             testContext.WriteLine("AssemblyInit " + testContext.TestName);
@@ -32,23 +36,23 @@ namespace MemStache.UnitTests
         /// see MSDN for sequence of built-in Test Events:
         /// http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.classinitializeattribute(v=vs.110).aspx.
         /// </summary>
-        [ClassInitialize()]
+        [ClassInitialize]
         public static void ClassInit(TestContext testContext)
         {
-            //testContext.WriteLine("ClassInit " + testContext.TestName);
+            // testContext.WriteLine("ClassInit " + testContext.TestName);
         }
 
-        [TestInitialize()]
+        [TestInitialize]
         public void Initialize()
         {
-            //testContext.WriteLine("TestMethodInit: " + testContext.TestName);
+            // testContext.WriteLine("TestMethodInit: " + testContext.TestName);
             employee1 = CreateEmployee();
 
             string appId, filename, password;
             appId = "memstache.demo";
             filename = "MemstacheTest.cv";
             password = "password";
-            this.GlobalMeister =
+            this.globalMeister =
             new StacheMeister(appId,
                               filename,
                               password,
@@ -57,41 +61,40 @@ namespace MemStache.UnitTests
                               null,
                               this.services);
 
-            this.services.AddSingleton<StacheMeister>(GlobalMeister);
+            this.services.AddSingleton<StacheMeister>(globalMeister);
 
             stopWatch = new Stopwatch();
 
             stopWatch.Start();
         }
 
-        [TestCleanup()]
+        [TestCleanup]
         public void Cleanup()
         {
-            //testContext.WriteLine("TestMethodCleanup: " + testContext.TestName);
-
+            // testContext.WriteLine("TestMethodCleanup: " + testContext.TestName);
             stopWatch.Stop();
 
             // Get the elapsed time as a TimeSpan value.
             TimeSpan ts = stopWatch.Elapsed;
 
             // Format and display the TimeSpan value.
-            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:000}",
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:000}",
                 ts.Hours, ts.Minutes, ts.Seconds,
                 ts.Milliseconds);
 
             Console.WriteLine("TIME ELAPSED: " + elapsedTime);
         }
 
-        [ClassCleanup()]
+        [ClassCleanup]
         public static void ClassCleanup()
         {
-            //testContext.WriteLine("ClassCleanup");
+            // testContext.WriteLine("ClassCleanup");
         }
 
-        [AssemblyCleanup()]
+        [AssemblyCleanup]
         public static void AssemblyCleanup()
         {
-            //testContext.WriteLine("AssemblyCleanup");
+            // testContext.WriteLine("AssemblyCleanup");
         }
 
         #endregion
@@ -101,47 +104,63 @@ namespace MemStache.UnitTests
         public class Stock
         {
             public int Id { get; set; } = 1;
+
             public string Symbol { get; set; } = "LANDI";
         }
 
         public class Valuation
         {
             public int Id { get; set; } = 100;
+
             public int StockId { get; set; } = 1;
+
             public DateTime Time { get; set; } = DateTime.UtcNow;
+
             public decimal Price { get; set; } = 100.34m;
         }
 
         public class Address
         {
             public string Street { get; set; }
+
             public string City { get; set; }
+
             public string State { get; set; }
+
             public string Country { get; set; }
         }
 
         public class Dept
         {
             public string Name { get; set; }
+
             public string Branch { get; set; }
+
             public int Division { get; set; }
+
             public string Country { get; set; }
+
             public bool Eligible { get; set; }
         }
 
         public class Person
         {
             public string Name { get; set; }
+
             public int Age { get; set; }
+
             public Address Address { get; set; }
         }
 
         public class Employee
         {
             public int Id { get; set; }
+
             public Dept Department { get; set; }
+
             public Person Person { get; set; }
         }
+
         public Employee CreateEmployee()
         {
             return new Employee()
@@ -164,8 +183,8 @@ namespace MemStache.UnitTests
                         Street = "123 Main Street",
                         City = "Ashburn",
                         State = "VA",
-                        Country = "USA"
-                    }
+                        Country = "USA",
+                    },
                 },
             };
         }
@@ -176,17 +195,17 @@ namespace MemStache.UnitTests
         public void _0_TestDBInsert()
         {
             string key = "test02";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spSerialize);
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
 
             stash.DbAddOrUpdate(new Stash() { Key = key, Value = s, Serialized = true });
 
-            //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
+            // stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(1000);
             Stash result = stash.DbGet(key);
             Console.WriteLine("Payload Test: {0}", result.Value);
@@ -200,23 +219,23 @@ namespace MemStache.UnitTests
             filename = "MemstacheTest.cv";
             password = "password";
             string key = "test02";
-            //StacheMeister Meister = new StacheMeister("memstache.demo");
-            StacheMeister Meister = new StacheMeister(appId, filename, password);
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister(appId, filename, password);
+
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spSerialize);
             string s = "another test";
             s = JsonConvert.SerializeObject(s);
 
             stash.DbAddOrUpdate(new Stash() { Key = key, Value = s, Serialized = true });
 
-            //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
+            // stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(1000);
             Stash result = stash.DbGet(key);
             Console.WriteLine("Payload Test: {0}", result.Value);
         }
-
 
         [TestMethod]
         public void _0_InsertAndRetrieve()
@@ -226,42 +245,48 @@ namespace MemStache.UnitTests
             filename = "MemstacheTest.cv";
             password = "password";
             string key = "test02";
-            //StacheMeister Meister = new StacheMeister("memstache.demo");
-            StacheMeister Meister = new StacheMeister(appId, filename, password,StashPlan.spProtectCompress);
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
-            string orevresult = Meister[key];
+            // StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister(appId, filename, password, StashPlan.spProtectCompress);
+
+            // var rowcount = Meister.DB.Delete<Stash>(key);
+            string orevresult = meister[key];
             StashRepo.Delete(key);
 
-            Meister[key] = "testing"; //this.CreateEmployee();
+            meister[key] = "testing"; // this.CreateEmployee();
 
-            //stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
+            // stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
             Task.Delay(10).Wait();
-            string result = Meister[key];
+            string result = meister[key];
             if (result != null)
-                Console.WriteLine("1st Payload Test: {0}", result); //result.Id.ToString());
+            {
+                Console.WriteLine("1st Payload Test: {0}", result); // result.Id.ToString());
+            }
 
             Task.Delay(10).Wait();
-            result = Meister[key];
-            if(result != null)
-                Console.WriteLine("2nd Payload Test: {0}", result); //result.Id.ToString());
-
-            Task.Delay(10).Wait();
-            result = Meister[key];
+            result = meister[key];
             if (result != null)
-                Console.WriteLine("3rd Payload Test: {0}", result); //result.Id.ToString());
+            {
+                Console.WriteLine("2nd Payload Test: {0}", result); // result.Id.ToString());
+            }
+
+            Task.Delay(10).Wait();
+            result = meister[key];
+            if (result != null)
+            {
+                Console.WriteLine("3rd Payload Test: {0}", result); // result.Id.ToString());
+            }
         }
-
 
         [TestMethod]
         public void _0_TestStasher()
         {
             string key = "test01";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             var payload = new Stash() { Key = key, Object = "This is a test" };
@@ -270,7 +295,7 @@ namespace MemStache.UnitTests
 
             stash[key] = payload;
 
-            payload.Value = "";
+            payload.Value = string.Empty;
 
             payload = stash[key];
 
@@ -292,6 +317,7 @@ namespace MemStache.UnitTests
                 {
                     str += ((char)(rnd.Next(1, 26) + 64)).ToString();
                 }
+
                 var h = Stasher.Hash(str);
                 var h2 = Stasher.Hash(str);
                 Assert.AreEqual(h, h2);
@@ -300,7 +326,7 @@ namespace MemStache.UnitTests
 
         public string GetFileName(string userId, string emailAddress, string pwHash)
         {
-            //string s = userId + "_" + emailAddress + "_" + pwHash;
+            // string s = userId + "_" + emailAddress + "_" + pwHash;
             string s = userId + "_" + pwHash;
             s = "File_" + Stasher.Hash(s).Replace("-", string.Empty) + ".cv";
             return s;
@@ -320,16 +346,16 @@ namespace MemStache.UnitTests
                 {
                     str += ((char)(rnd.Next(1, 26) + 64)).ToString();
                 }
+
                 var h = Stasher.Hash(str);
 
-                Console.WriteLine( this.GetFileName(userId, eml, h));
+                Console.WriteLine(this.GetFileName(userId, eml, h));
             }
         }
 
-
         /// <summary>
         /// StacheMeister should be able to serialize anything that NewtonSoft can handle.
-        /// When in doubt test the serializatin here
+        /// When in doubt test the serializatin here.
         /// </summary>
         [TestMethod]
         public void _0_TestNewtonSoft()
@@ -378,10 +404,11 @@ namespace MemStache.UnitTests
                 {
                     str += ((char)(rnd.Next(1, 26) + 64)).ToString();
                 }
-                var h = Stasher.Hash(str).Replace("-", string.Empty).ToUpper().Substring(0, 5);
-                //return h;
 
-                Console.WriteLine(h); 
+                var h = Stasher.Hash(str).Replace("-", string.Empty).ToUpper().Substring(0, 5);
+
+                // return h;
+                Console.WriteLine(h);
             }
         }
 
@@ -390,11 +417,11 @@ namespace MemStache.UnitTests
         public void _1_StasherSerialize()
         {
             string key = "test03";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerialize);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spSerialize);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
@@ -406,7 +433,7 @@ namespace MemStache.UnitTests
 
             stash[key] = payload;
 
-            //payload.value = "";
+            // payload.value = "";
             if (payload == null)
             {
                 Console.WriteLine("Payload is nulls");
@@ -421,16 +448,17 @@ namespace MemStache.UnitTests
             var hash2 = Stasher.Hash(payload.Value);
             Assert.AreEqual(hash1, hash2);
         }
+
         [TestMethod]
         [TestCategory("Using Stasher")]
         public void _2_StasherSerializeAndCompress()
         {
             string key = "test04";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spSerializeCompress);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spSerializeCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
@@ -442,7 +470,7 @@ namespace MemStache.UnitTests
 
             stash[key] = payload;
 
-            //payload.value = "";
+            // payload.value = "";
             if (payload == null)
             {
                 Console.WriteLine("Payload is null");
@@ -463,11 +491,11 @@ namespace MemStache.UnitTests
         public void _3_StasherSerializeAndCompressAndEncrypt()
         {
             string key = "test05";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = Meister.MakeStasher("test", StashPlan.spProtectCompress);
+            Stasher stash = meister.MakeStasher("test", StashPlan.spProtectCompress);
             Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
 
             Valuation valuation1 = new Valuation();
@@ -479,7 +507,7 @@ namespace MemStache.UnitTests
 
             stash[key] = payload;
 
-            //payload.value = "";
+            // payload.value = "";
             if (payload == null)
             {
                 Console.WriteLine("Payload is nulls");
@@ -500,17 +528,17 @@ namespace MemStache.UnitTests
         public void _4_StacheMeisterSerialization()
         {
             string key = "test06";
-            StacheMeister Meister = new StacheMeister("memstache.demo");
+            StacheMeister meister = new StacheMeister("memstache.demo");
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
 
-            Employee emp1 = employee1;//CreateEmployee();
+            Employee emp1 = employee1; // CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
 
-            Meister[key] = emp1;
+            meister[key] = emp1;
 
-            Employee emp2 = Meister[key] as Employee;
+            Employee emp2 = meister[key] as Employee;
 
             string v2 = JsonConvert.SerializeObject(emp2);
 
@@ -522,17 +550,17 @@ namespace MemStache.UnitTests
         public void _5_StacheMeisterSerializeAndCompress()
         {
             string key = "test07";
-            StacheMeister Meister = new StacheMeister("memstache.demo", null, null, StashPlan.spSerializeCompress);
+            StacheMeister meister = new StacheMeister("memstache.demo", null, null, StashPlan.spSerializeCompress);
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
 
-            Employee emp1 = employee1;//CreateEmployee();
+            Employee emp1 = employee1; // CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
 
-            Meister[key] = emp1;
+            meister[key] = emp1;
 
-            Employee emp2 = Meister[key] as Employee;
+            Employee emp2 = meister[key] as Employee;
 
             string v2 = JsonConvert.SerializeObject(emp2);
 
@@ -544,17 +572,17 @@ namespace MemStache.UnitTests
         public void _6_StacheMeisterSerializeAndCompressAndEncrypt()
         {
             string key = "test08";
-            StacheMeister Meister = new StacheMeister("memstache.demo", null, null, StashPlan.spProtectCompress);
+            StacheMeister meister = new StacheMeister("memstache.demo", null, null, StashPlan.spProtectCompress);
 
-            //var rowcount = Meister.DB.Delete<Stash>(key);
+            // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
 
-            Employee emp1 = employee1;//CreateEmployee();
+            Employee emp1 = employee1; // CreateEmployee();
             string v1 = JsonConvert.SerializeObject(emp1);
 
-            Meister[key] = emp1;
+            meister[key] = emp1;
 
-            Employee emp2 = Meister[key] as Employee;
+            Employee emp2 = meister[key] as Employee;
 
             string v2 = JsonConvert.SerializeObject(emp2);
 

@@ -43,7 +43,7 @@ namespace MemStache
 
         public int Plan { get; set; }
 
-     /// <summary>
+        /// <summary>
         /// Private field for "Object" property.
         /// </summary>
         private dynamic _object;

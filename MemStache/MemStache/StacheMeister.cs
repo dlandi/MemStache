@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace MemStache
 {
-    public class StacheMeister:IDisposable
+    public class StacheMeister : IDisposable
     {
         public string AppId { get; set; }
 
@@ -26,8 +26,7 @@ namespace MemStache
 
         public IMemoryCache Cache { get; set; }
 
-        //public string DatabasePath { get; set; }
-
+        // public string DatabasePath { get; set; }
         public StashRepo DB { get; set; }
 
         /// <summary>
@@ -54,14 +53,14 @@ namespace MemStache
                     if (item == null)
                     {
                         return null;
-                    } else
+                    }
+                    else
                     {
                         return item;
                     }
                 }
                 catch (Exception e)
                 {
-
                     Debug.WriteLine("Error: " + e.Message);
                     return null;
                 }
@@ -86,13 +85,13 @@ namespace MemStache
         /// <summary>
         /// Initializes a new instance of the <see cref="StacheMeister"/> class.
         /// </summary>
-        /// <param name="appId"></param>
-        /// <param name="filename"></param>
-        /// <param name="password"></param>
-        /// <param name="plan"></param>
-        /// <param name="memCacheOptions"></param>
-        /// <param name="memoryItemOptions"></param>
-        /// <param name="services"></param>
+        /// <param name="appId">appId.</param>
+        /// <param name="filename">filename.</param>
+        /// <param name="password">password.</param>
+        /// <param name="plan">plan.</param>
+        /// <param name="memCacheOptions">memCacheOptions.</param>
+        /// <param name="memoryItemOptions">memoryItemOptions.</param>
+        /// <param name="services">services.</param>
         public StacheMeister(
             string appId,
             string filename = null,
@@ -104,13 +103,13 @@ namespace MemStache
         {
             this.Plan = plan;
             this.AppId = appId;
-            //this.DatabasePath = GetBasePath("memstache.db");
-            //if (appId != null)
-            //{
+
+            // this.DatabasePath = GetBasePath("memstache.db");
+            // if (appId != null)
+            // {
             //    this.DatabasePath = GetBasePath(appId);
             //    Debug.WriteLine("DEVICE DB PATH: " + this.DatabasePath.ToUpper());
-            //}
-
+            // }
             this.DB = new StashRepo(appId, filename, password);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;
@@ -166,33 +165,33 @@ namespace MemStache
         }
 
         #region Utils
-//        public static string GetBasePath(string applicationId)
-//        {
-//            if (string.IsNullOrWhiteSpace(applicationId))
-//            {
-//                throw new ArgumentException("You must set a ApplicationId in the Stachemeister constructor");
-//            }
 
-//            if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
-//            {
-//                throw new ArgumentException("ApplicationId has invalid characters");
-//            }
+        // public static string GetBasePath(string applicationId)
+        //        {
+        //            if (string.IsNullOrWhiteSpace(applicationId))
+        //            {
+        //                throw new ArgumentException("You must set a ApplicationId in the Stachemeister constructor");
+        //            }
 
-//            var path = string.Empty;
+        // if (applicationId.IndexOfAny(Path.GetInvalidPathChars()) != -1)
+        //            {
+        //                throw new ArgumentException("ApplicationId has invalid characters");
+        //            }
 
-//            // Gets full path based on device type.
-//#if __IOS__ || __MACOS__
-//            path = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
-//#elif __ANDROID__
-//            path = Application.Context.CacheDir.AbsolutePath;
-//#elif __UWP__
-//            path = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path;
-//#else
-//            path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-//#endif
-//            return Path.Combine(path, applicationId);
-//        }
+        // var path = string.Empty;
 
+        // // Gets full path based on device type.
+        // #if __IOS__ || __MACOS__
+        //            path = NSSearchPath.GetDirectories(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomain.User)[0];
+        // #elif __ANDROID__
+        //            path = Application.Context.CacheDir.AbsolutePath;
+        // #elif __UWP__
+        //            path = Windows.Storage.ApplicationData.Current.LocalCacheFolder.Path;
+        // #else
+        //            path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        // #endif
+        //            return Path.Combine(path, applicationId);
+        //        }
         public static DateTime GetExpiration(TimeSpan timeSpan)
         {
             try
@@ -224,7 +223,6 @@ namespace MemStache
 
                 // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
                 // TODO: set large fields to null.
-
                 disposedValue = true;
             }
         }
@@ -240,6 +238,7 @@ namespace MemStache
         {
             // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(true);
+
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
         }

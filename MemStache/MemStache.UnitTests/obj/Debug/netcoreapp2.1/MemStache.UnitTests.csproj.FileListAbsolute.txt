@@ -9,7 +9,6 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\bin\Debug\netcoreapp2.1
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\bin\Debug\netcoreapp2.1\MemStache.dll
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\bin\Debug\netcoreapp2.1\MemStache.pdb
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\obj\Debug\netcoreapp2.1\MemStache.UnitTests.csprojAssemblyReference.cache
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\obj\Debug\netcoreapp2.1\MemStache.UnitTests.csproj.CoreCompileInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\obj\Debug\netcoreapp2.1\MemStache.UnitTests.AssemblyInfoInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\obj\Debug\netcoreapp2.1\MemStache.UnitTests.AssemblyInfo.cs
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.UnitTests\obj\Debug\netcoreapp2.1\MemStache.UnitTests.csproj.CopyComplete

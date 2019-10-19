@@ -158,7 +158,6 @@ namespace MemStache
 
         public bool DbAddOrUpdate(Stash item)
         {
-
             this.DB.Add<Stash>(item.Key, item, TimeSpan.FromDays(365), Hash(item.Key));
             return true;
         }
@@ -404,9 +403,9 @@ namespace MemStache
         protected void SetItemSerializeCompressEncrypt(Stash item, bool InMemOnly = false)
         {
             string key = item.Key;
-                                    #pragma warning disable SA1108 // Block statements should not contain embedded comments
+#pragma warning disable SA1108 // Block statements should not contain embedded comments
             if (!item.Serialized) // don't serialize twice.  The first time was in the Stash Object Property Setter
-                                    #pragma warning restore SA1108 // Block statements should not contain embedded comments
+#pragma warning restore SA1108 // Block statements should not contain embedded comments
             {
                 item.Value = JsonConvert.SerializeObject(item.Value);
             }
@@ -474,9 +473,9 @@ namespace MemStache
         /// <returns>string.</returns>
         private string GetString(byte[] bytes)
         {
-                                        #pragma warning disable SA1108 // Block statements should not contain embedded comments
+#pragma warning disable SA1108 // Block statements should not contain embedded comments
             if (bytes.Length % 2 != 0) // if input length is odd, add a #0
-                                        #pragma warning restore SA1108 // Block statements should not contain embedded comments
+#pragma warning restore SA1108 // Block statements should not contain embedded comments
             {
                 byte[] newArray = new byte[bytes.Length + 1];
                 bytes.CopyTo(newArray, 1);

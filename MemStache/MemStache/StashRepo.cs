@@ -1,6 +1,6 @@
 ﻿// <copyright file="StashRepo.cs" company="Dennis Landi">
 // Copyright (c) Dennis Landi. All rights reserved.
-//NOTE: This unit is based on the LiteDB implementation from MonkeyCache
+// NOTE: This unit is based on the LiteDB implementation from MonkeyCache
 // </copyright>
 
 using System;
@@ -24,7 +24,7 @@ namespace MemStache.LiteDB
     {
         private static readonly Lazy<string> BaseCacheDir = new Lazy<string>(() =>
         {
-            //string path = Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
+            // string path = Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
             string path = Utils.GetBasePath(ApplicationId);
             return path;
         });
@@ -195,11 +195,11 @@ namespace MemStache.LiteDB
         /// <summary>
         /// Adds a string netry to the StashRepo.
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key">Unique identifier for the entry.</param>
-        /// <param name="data">Data string to store.</param>
-        /// <param name="expireIn">Time from UtcNow to expire entry in.</param>
-        /// <param name="hash">Optional Hash information.</param>
+        /// <param name="key">key.</param>
+        /// <param name="item">item.</param>
+        /// <param name="data">data.</param>
+        /// <param name="expireIn">expireIn.</param>
+        /// <param name="hash">hash.</param>
         public void Add(string key, Stash item, string data, TimeSpan expireIn, string hash = null)
         {
             if (data == null)
@@ -241,7 +241,8 @@ namespace MemStache.LiteDB
             item.ExpirationDate = Utils.GetExpiration(expireIn);
             item.Hash = hash;
             col.Upsert(item);
-            //this.Add(key,  item, JsonConvert.SerializeObject(data, this.jsonSettings), expireIn, hash);
+
+            // this.Add(key,  item, JsonConvert.SerializeObject(data, this.jsonSettings), expireIn, hash);
         }
 
         #endregion
