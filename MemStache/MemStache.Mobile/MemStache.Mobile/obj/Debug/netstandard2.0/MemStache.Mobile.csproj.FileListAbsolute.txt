@@ -6,7 +6,6 @@ D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\bin\Debug
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.csprojAssemblyReference.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\App.xaml.g.cs
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.csproj.CoreCompileInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.AssemblyInfoInputs.cache
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\MemStache.Mobile.AssemblyInfo.cs
 D:\GitHub\dlandi\MemStache\MemStache\MemStache.Mobile\MemStache.Mobile\obj\Debug\netstandard2.0\XamlC.stamp

@@ -250,27 +250,29 @@ namespace MemStache.UnitTests
             StacheMeister meister = new StacheMeister(appId, filename, password, StashPlan.spProtectCompress);
 
             // var rowcount = Meister.DB.Delete<Stash>(key);
-            string orevresult = meister[key];
+
             StashRepo.Delete(key);
 
-            meister[key] = "testing"; // this.CreateEmployee();
+            meister[key] = "testing01"; 
 
             // stash.DB.Insert(new Stash() { key = key,  value = s, serialized=true });
-            Task.Delay(10).Wait();
+            Task.Delay(1).Wait();
             string result = meister[key];
             if (result != null)
             {
                 Console.WriteLine("1st Payload Test: {0}", result); // result.Id.ToString());
             }
 
-            Task.Delay(10).Wait();
+            meister[key] = "testing02";
+            Task.Delay(1).Wait();
             result = meister[key];
             if (result != null)
             {
                 Console.WriteLine("2nd Payload Test: {0}", result); // result.Id.ToString());
             }
 
-            Task.Delay(10).Wait();
+            meister[key] = "testing03";
+            Task.Delay(1).Wait();
             result = meister[key];
             if (result != null)
             {

@@ -802,7 +802,7 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "Newtonsoft.Json/11.0.2": {
+      "Newtonsoft.Json/12.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
@@ -823,9 +823,6 @@
         "runtime": {
           "lib/netstandard1.0/_._": {}
         }
-      },
-      "StyleCop.Analyzers/1.1.0-beta008": {
-        "type": "package"
       },
       "System.AppContext/4.1.0": {
         "type": "package",
@@ -1888,7 +1885,7 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "Tynamix.ObjectFiller/1.5.4.1": {
+      "Tynamix.ObjectFiller/1.5.5": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1909,8 +1906,7 @@
           "Microsoft.CSharp": "4.5.0",
           "Microsoft.Extensions.Caching.Memory": "2.1.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
-          "Newtonsoft.Json": "11.0.2",
-          "StyleCop.Analyzers": "1.1.0-beta008"
+          "Newtonsoft.Json": "12.0.2"
         },
         "compile": {
           "bin/placeholder/MemStache.dll": {}
@@ -3199,11 +3195,13 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+    "Newtonsoft.Json/12.0.2": {
+      "sha512": "rTK0s2EKlfHsQsH6Yx2smvcTCeyoDNgCW7FEYyV01drPlh2T243PR2DiDXqtC5N4GDm4Ma/lkxfW5a/4793vbA==",
       "type": "package",
-      "path": "newtonsoft.json/11.0.2",
+      "path": "newtonsoft.json/12.0.2",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -3223,7 +3221,7 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.12.0.2.nupkg.sha512",
         "newtonsoft.json.nuspec"
       ]
     },
@@ -3237,26 +3235,6 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
-      ]
-    },
-    "StyleCop.Analyzers/1.1.0-beta008": {
-      "sha512": "wooFpXhCyYaY554qO5BGgLjIJmXcZ10RYTO2FLhpOGhAyOw9Xvd82E+M9CSrRtBHc+uJXtnnr+OVOBGIJqa3TQ==",
-      "type": "package",
-      "path": "stylecop.analyzers/1.1.0-beta008",
-      "files": [
-        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
-        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
-        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
-        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
-        "stylecop.analyzers.1.1.0-beta008.nupkg.sha512",
-        "stylecop.analyzers.nuspec",
-        "tools/install.ps1",
-        "tools/uninstall.ps1"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -6464,11 +6442,13 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "Tynamix.ObjectFiller/1.5.4.1": {
-      "sha512": "3Sm3X4FATuzaiexea9/Ynfizt1Ev6eFgJV0I2h1U7GMDvzIPAuYMaXcbtdiCTYPjuOOnMxzFaSJ7LesA2t5wxg==",
+    "Tynamix.ObjectFiller/1.5.5": {
+      "sha512": "f3iVv/tcmBsbChZ1z0rE64guwRTT7kEPnH3LJ5gI4L4SUR5NnOf73g6nHWABun6hFefPNetBZ7tMehPLw9xqMw==",
       "type": "package",
-      "path": "tynamix.objectfiller/1.5.4.1",
+      "path": "tynamix.objectfiller/1.5.5",
       "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
         "lib/net35/Tynamix.ObjectFiller.dll",
         "lib/net35/Tynamix.ObjectFiller.xml",
         "lib/net40/Tynamix.ObjectFiller.dll",
@@ -6481,7 +6461,7 @@
         "lib/net452/Tynamix.ObjectFiller.xml",
         "lib/netstandard1.0/Tynamix.ObjectFiller.dll",
         "lib/netstandard1.0/Tynamix.ObjectFiller.xml",
-        "tynamix.objectfiller.1.5.4.1.nupkg.sha512",
+        "tynamix.objectfiller.1.5.5.nupkg.sha512",
         "tynamix.objectfiller.nuspec"
       ]
     },
@@ -6499,7 +6479,7 @@
       "Microsoft.Extensions.DependencyInjection >= 2.1.0",
       "Microsoft.NET.Test.Sdk >= 15.7.0",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Tynamix.ObjectFiller >= 1.5.4.1"
+      "Tynamix.ObjectFiller >= 1.5.5"
     ]
   },
   "packageFolders": {
@@ -6574,7 +6554,7 @@
           },
           "Tynamix.ObjectFiller": {
             "target": "Package",
-            "version": "[1.5.4.1, )"
+            "version": "[1.5.5, )"
           }
         },
         "imports": [
