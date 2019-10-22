@@ -55,7 +55,7 @@ A note on serialization: Anything that can be serialized by the NewtonSoft libar
 
 10/22/2019: Just added BDD Tests via SpecEasy https://github.com/speceasy/speceasy
 
-This should make is easier to help developers visualize how to use this MemStache. Here is a screenshot
+This should make is easier for developers visualize how to use MemStache. Here is a screenshot
 
 ![MemStache BDD Tess](SpecEasyBDD-MemstacheTests.png)
 
