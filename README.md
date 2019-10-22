@@ -50,4 +50,14 @@ Best way to learn how to use this library is to look at the unit tests.
 
 A note on serialization: Anything that can be serialized by the NewtonSoft libary should be assignable to the cache.  When in doubt, write a unit test, first, to prove that NewtonSoft can serialize your object.
 
+
+**BDD Tests**
+
+10/22/2019: Just added BDD Tests via SpecEasy https://github.com/speceasy/speceasy
+
+This should make is easier to help developers visualize how to use this MemStache. Here is a screenshot
+
+![MemStache BDD Tess](SpecEasyBDD-MemstacheTests.png)
+
+
 Enjoy

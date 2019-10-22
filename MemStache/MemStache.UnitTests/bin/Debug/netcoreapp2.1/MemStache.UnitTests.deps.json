@@ -13,7 +13,7 @@
           "MemStache": "1.0.0",
           "Microsoft.Extensions.DependencyInjection": "2.1.0",
           "Microsoft.NET.Test.Sdk": "15.7.0",
-          "Tynamix.ObjectFiller": "1.5.4.1"
+          "Tynamix.ObjectFiller": "1.5.5"
         },
         "runtime": {
           "MemStache.UnitTests.dll": {}
@@ -1165,11 +1165,11 @@
           }
         }
       },
-      "Tynamix.ObjectFiller/1.5.4.1": {
+      "Tynamix.ObjectFiller/1.5.5": {
         "runtime": {
           "lib/netstandard1.0/Tynamix.ObjectFiller.dll": {
-            "assemblyVersion": "1.5.4.1",
-            "fileVersion": "1.5.4.1"
+            "assemblyVersion": "1.5.5.0",
+            "fileVersion": "1.5.5.0"
           }
         }
       },
@@ -1859,12 +1859,12 @@
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
-    "Tynamix.ObjectFiller/1.5.4.1": {
+    "Tynamix.ObjectFiller/1.5.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3Sm3X4FATuzaiexea9/Ynfizt1Ev6eFgJV0I2h1U7GMDvzIPAuYMaXcbtdiCTYPjuOOnMxzFaSJ7LesA2t5wxg==",
-      "path": "tynamix.objectfiller/1.5.4.1",
-      "hashPath": "tynamix.objectfiller.1.5.4.1.nupkg.sha512"
+      "sha512": "sha512-f3iVv/tcmBsbChZ1z0rE64guwRTT7kEPnH3LJ5gI4L4SUR5NnOf73g6nHWABun6hFefPNetBZ7tMehPLw9xqMw==",
+      "path": "tynamix.objectfiller/1.5.5",
+      "hashPath": "tynamix.objectfiller.1.5.5.nupkg.sha512"
     },
     "MemStache/1.0.0": {
       "type": "project",
