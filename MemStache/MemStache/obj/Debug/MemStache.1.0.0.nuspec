@@ -23,11 +23,11 @@
     <dependencies>
       <group targetFramework=".NETStandard2.0">
         <dependency id="LiteDB" version="4.1.4" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.AspNetCore.DataProtection" version="2.1.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.CSharp" version="4.5.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.Extensions.Caching.Memory" version="2.1.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.Extensions.DependencyInjection" version="2.1.0" exclude="Build,Analyzers" />
-        <dependency id="Newtonsoft.Json" version="12.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.CSharp" version="4.6.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Caching.Memory" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="12.0.3" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>

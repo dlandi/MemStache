@@ -49,19 +49,19 @@
             },
             "Microsoft.AspNetCore.DataProtection": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[3.0.0, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.6.0, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[3.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[3.0.0, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -71,7 +71,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.2, )"
+              "version": "[12.0.3, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
