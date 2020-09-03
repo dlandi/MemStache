@@ -3,7 +3,7 @@
     "additionalProbingPaths": [
       "C:\\Users\\RFIDGS01\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\RFIDGS01\\.nuget\\packages",
-      "C:\\Microsoft\\Xamarin\\NuGet",
+      "d:\\Microsoft\\Xamarin\\NuGet",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ]
   }

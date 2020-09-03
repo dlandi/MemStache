@@ -75,7 +75,7 @@ namespace MemStache.LiteDB
             }
 
             this.db = new LiteDatabase(path);
-            col = this.db.GetCollection<Stash>();
+            col = (LiteCollection<Stash>)this.db.GetCollection<Stash>();
 
             this.jsonSettings = new JsonSerializerSettings
             {
@@ -255,7 +255,7 @@ namespace MemStache.LiteDB
         /// </summary>
         public void EmptyExpired()
         {
-            col.Delete(b => b.ExpirationDate.ToUniversalTime() < DateTime.UtcNow);
+            var count = col.DeleteMany(b => b.ExpirationDate.ToUniversalTime() < DateTime.UtcNow);
         }
 
         /// <summary>
@@ -264,7 +264,8 @@ namespace MemStache.LiteDB
         /// </summary>
         public void EmptyAll()
         {
-            col.Delete(Query.All());
+            int recordsDeleted = col.DeleteAll();
+            Console.WriteLine(@"{0} records deleted", recordsDeleted);
         }
 
         /// <summary>

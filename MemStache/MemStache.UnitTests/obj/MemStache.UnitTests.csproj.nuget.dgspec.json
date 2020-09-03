@@ -14,7 +14,7 @@
         "outputPath": "D:\\GitHub\\dlandi\\MemStache\\MemStache\\MemStache.UnitTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "d:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -49,19 +49,19 @@
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.1.2, )"
             },
             "MSTest.TestFramework": {
               "target": "Package",
-              "version": "[2.0.0, )"
+              "version": "[2.1.2, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.7, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[16.4.0, )"
+              "version": "[16.7.1, )"
             },
             "Microsoft.NETCore.App": {
               "suppressParent": "All",
@@ -84,12 +84,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
     "D:\\GitHub\\dlandi\\MemStache\\MemStache\\MemStache\\MemStache.csproj": {
-      "version": "1.0.0",
+      "version": "1.0.0.2",
       "restore": {
         "projectUniqueName": "D:\\GitHub\\dlandi\\MemStache\\MemStache\\MemStache\\MemStache.csproj",
         "projectName": "MemStache",
@@ -98,7 +98,7 @@
         "outputPath": "D:\\GitHub\\dlandi\\MemStache\\MemStache\\MemStache\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "d:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -129,23 +129,23 @@
           "dependencies": {
             "LiteDB": {
               "target": "Package",
-              "version": "[4.1.4, )"
+              "version": "[5.0.9, )"
             },
             "Microsoft.AspNetCore.DataProtection": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.7, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
-              "version": "[4.6.0, )"
+              "version": "[4.7.0, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.7, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[3.1.7, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -174,7 +174,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

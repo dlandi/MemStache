@@ -48,20 +48,20 @@ namespace MemStache.UnitTests
             // testContext.WriteLine("TestMethodInit: " + testContext.TestName);
             employee1 = CreateEmployee();
 
-            string appId, filename, password;
-            appId = "memstache.demo";
-            filename = "MemstacheTest.cv";
-            password = "password";
-            this.globalMeister =
-            new StacheMeister(appId,
-                              filename,
-                              password,
-                              StashPlan.spSerialize,
-                              null,
-                              null,
-                              this.services);
+            //string appId, filename, password;
+            //appId = "memstache.demo";
+            //filename = "MemstacheTest.cv";
+            //password = "password";
+            //this.globalMeister =
+            //new StacheMeister(appId,
+            //                  filename,
+            //                  password,
+            //                  StashPlan.spSerialize,
+            //                  null,
+            //                  null,
+            //                  this.services);
 
-            this.services.AddSingleton<StacheMeister>(globalMeister);
+            //this.services.AddSingleton<StacheMeister>(globalMeister);
 
             stopWatch = new Stopwatch();
 
@@ -220,8 +220,8 @@ namespace MemStache.UnitTests
             password = "password";
             string key = "test02";
 
-            // StacheMeister Meister = new StacheMeister("memstache.demo");
-            StacheMeister meister = new StacheMeister(appId, filename, password);
+            StacheMeister meister = new StacheMeister("memstache.demo");
+            //StacheMeister meister = new StacheMeister(appId, filename, password);
 
             // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
@@ -246,8 +246,8 @@ namespace MemStache.UnitTests
             password = "password";
             string key = "test02";
 
-            // StacheMeister Meister = new StacheMeister("memstache.demo");
-            StacheMeister meister = new StacheMeister(appId, filename, password, StashPlan.spProtectCompress);
+            StacheMeister meister = new StacheMeister("memstache.demo");
+            //StacheMeister meister = new StacheMeister(appId, filename, password, StashPlan.spProtectCompress);
 
             // var rowcount = Meister.DB.Delete<Stash>(key);
 
@@ -591,28 +591,28 @@ namespace MemStache.UnitTests
             Assert.AreEqual(v1, v2);
         }
 
-        [TestMethod]
-        [TestCategory("Using ServiceCollection")]
-        public void _7_DependencyInjection()
-        {
-            var provider = services.BuildServiceProvider();
-            using (var meister = provider.GetService<StacheMeister>())
-            {
-                string key = "test07";
+        //[TestMethod]
+        //[TestCategory("Using ServiceCollection")]
+        //public void _7_DependencyInjection()
+        //{
+        //    var provider = services.BuildServiceProvider();
+        //    using (var meister = provider.GetService<StacheMeister>())
+        //    {
+        //        string key = "test07";
 
-                StashRepo.Delete(key);
+        //        //StashRepo.Delete(key);
 
-                Employee emp1 = employee1;
-                string v1 = JsonConvert.SerializeObject(emp1);
+        //        Employee emp1 = employee1;
+        //        string v1 = JsonConvert.SerializeObject(emp1);
 
-                meister[key] = emp1;
+        //        meister[key] = emp1;
 
-                Employee emp2 = meister[key] as Employee;
+        //        Employee emp2 = meister[key] as Employee;
 
-                string v2 = JsonConvert.SerializeObject(emp2);
+        //        string v2 = JsonConvert.SerializeObject(emp2);
 
-                Assert.AreEqual(v1, v2);
-            }
-        }
+        //        Assert.AreEqual(v1, v2);
+        //    }
+        //}
     }
 }
