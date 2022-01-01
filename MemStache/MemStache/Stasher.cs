@@ -166,7 +166,7 @@ namespace MemStache
 
         public byte[] Protect(string input)
         {
-            byte[] arInput = this.GetBytes(input);
+            byte[] arInput = this.GetBytesFromBase64(input);
             return this.Protect(arInput);
         }
 
@@ -184,7 +184,7 @@ namespace MemStache
         public string UnprotectToStr(byte[] arProtected)
         {
             byte[] arUnprotected = this.DataProtector.Unprotect(arProtected);
-            return this.GetString(arUnprotected);
+            return this.GetBase64String(arUnprotected);
         }
 
         /// <summary>
@@ -278,21 +278,21 @@ namespace MemStache
             return null;
         }
 
-        public void SetItemCommon(Stash item, bool InMemOnly = false)
+        public void SetItemCommon(Stash item, bool inMemOnly = false)
         {
             if (item.StashPlan == StashPlan.spSerialize)
             {
-                this.SetItemSerializationOnly(item, InMemOnly);
+                this.SetItemSerializationOnly(item, inMemOnly);
             }
             else
             if (item.StashPlan == StashPlan.spSerializeCompress)
             {
-                this.SetItemSerializeCompress(item, InMemOnly);
+                this.SetItemSerializeCompress(item, inMemOnly);
             }
             else
             if (item.StashPlan == StashPlan.spProtectCompress)
             {
-                this.SetItemSerializeCompressEncrypt(item, InMemOnly);
+                this.SetItemSerializeCompressEncrypt(item, inMemOnly);
             }
         }
 
@@ -310,7 +310,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializationOnly(Stash item, bool InMemOnly = false)
+        protected void SetItemSerializationOnly(Stash item, bool inMemOnly = false)
         {
             string key = item.Key;
             if (!item.Serialized) // don't serialize twice.  The first time was in the Stash Object Property Setter
@@ -320,8 +320,9 @@ namespace MemStache
 
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
+
             Stash item2 = this.Cache.Get<Stash>(key);
-            if (!InMemOnly)
+            if (!inMemOnly)
             {
                 this.DbAddOrUpdate(item);
             }
@@ -336,7 +337,7 @@ namespace MemStache
             byte[] itembytes = Convert.FromBase64String(item.Value);
             byte[] arCompressed = this.Uncompress(itembytes);
             item.Value = Convert.ToBase64String(arCompressed);
-            item.Value = DecodeFrom64(item.Value);
+            item.Value = DecodeFromBase64(item.Value);
             if (item.Serialized)
             {
                 Type serializedType = this.GetStoredType(item.StoredType);
@@ -347,7 +348,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializeCompress(Stash item, bool InMemOnly = false)
+        protected void SetItemSerializeCompress(Stash item, bool inMemOnly = false)
         {
             string key = item.Key;
             if (!item.Serialized) // don't serialize twice.  The first time was in the Stash Object Property Setter
@@ -355,7 +356,7 @@ namespace MemStache
                 item.Value = JsonConvert.SerializeObject(item.Value);
             }
 
-            item.Value = EncodeTo64(item.Value);
+            item.Value = EncodeToBase64(item.Value);
             byte[] itembytes = Convert.FromBase64String(item.Value);
 
             byte[] arCompressed = this.Compress(itembytes);
@@ -363,7 +364,7 @@ namespace MemStache
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
             Stash item2 = this.Cache.Get<Stash>(key);
-            if (!InMemOnly)
+            if (!inMemOnly)
             {
                 this.DbAddOrUpdate(item);
             }
@@ -387,8 +388,8 @@ namespace MemStache
                 throw;
             }
 
-            item.Value = this.GetString(this.Uncompress(arCompressed));
-            item.Value = DecodeFrom64(item.Value);
+            item.Value = this.GetBase64String(this.Uncompress(arCompressed));
+            item.Value = DecodeFromBase64(item.Value);
             if (item.Serialized)
             {
                 Type serializedType = this.GetStoredType(item.StoredType);
@@ -400,7 +401,7 @@ namespace MemStache
             return item;
         }
 
-        protected void SetItemSerializeCompressEncrypt(Stash item, bool InMemOnly = false)
+        protected void SetItemSerializeCompressEncrypt(Stash item, bool inMemOnly = false)
         {
             string key = item.Key;
 #pragma warning disable SA1108 // Block statements should not contain embedded comments
@@ -410,14 +411,14 @@ namespace MemStache
                 item.Value = JsonConvert.SerializeObject(item.Value);
             }
 
-            string str64 = EncodeTo64(item.Value);
-            byte[] arCompressed = this.Compress(this.GetBytes(str64));
+            string str64 = EncodeToBase64(item.Value);
+            byte[] arCompressed = this.Compress(this.GetBytesFromBase64(str64));
             byte[] arProtected = this.Protect(arCompressed);
             item.Value = Convert.ToBase64String(arProtected);
 
             item.Serialized = true;
             this.Cache.Set<Stash>(key, item, this.MemoryItemOptions);
-            if (!InMemOnly)
+            if (!inMemOnly)
             {
                 this.DbAddOrUpdate(item);
             }
@@ -428,7 +429,7 @@ namespace MemStache
         #endregion
 
         #region Helpers
-        public static string EncodeTo64(string toEncode)
+        public static string EncodeToBase64(string toEncode)
         {
             byte[] toEncodeAsBytes
 
@@ -441,7 +442,7 @@ namespace MemStache
             return returnValue;
         }
 
-        public static string DecodeFrom64(string encodedData)
+        public static string DecodeFromBase64(string encodedData)
         {
             byte[] encodedDataAsBytes
 
@@ -455,11 +456,11 @@ namespace MemStache
         }
 
         /// <summary>
-        /// Input should alwase be a Base64 encoded string!.
+        /// Input should always be a Base64 encoded string!.
         /// </summary>
         /// <param name="strBase64"></param>
         /// <returns>byte[].</returns>
-        private byte[] GetBytes(string strBase64)
+        private byte[] GetBytesFromBase64(string strBase64)
         {
             byte[] bytes = new byte[strBase64.Length * sizeof(char)];
             System.Buffer.BlockCopy(strBase64.ToCharArray(), 0, bytes, 0, bytes.Length);
@@ -471,7 +472,7 @@ namespace MemStache
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns>string.</returns>
-        private string GetString(byte[] bytes)
+        private string GetBase64String(byte[] bytes)
         {
 #pragma warning disable SA1108 // Block statements should not contain embedded comments
             if (bytes.Length % 2 != 0) // if input length is odd, add a #0

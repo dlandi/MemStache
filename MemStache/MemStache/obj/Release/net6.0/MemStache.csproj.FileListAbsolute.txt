@@ -1,0 +1,12 @@
+C:\GitHub\MemStache\MemStache\MemStache\bin\Release\net6.0\MemStache.deps.json
+C:\GitHub\MemStache\MemStache\MemStache\bin\Release\net6.0\MemStache.dll
+C:\GitHub\MemStache\MemStache\MemStache\bin\Release\net6.0\ref\MemStache.dll
+C:\GitHub\MemStache\MemStache\MemStache\bin\Release\net6.0\MemStache.pdb
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.csproj.AssemblyReference.cache
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.AssemblyInfoInputs.cache
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.AssemblyInfo.cs
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.csproj.CoreCompileInputs.cache
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.dll
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\ref\MemStache.dll
+C:\GitHub\MemStache\MemStache\MemStache\obj\Release\net6.0\MemStache.pdb

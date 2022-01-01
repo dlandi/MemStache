@@ -1,0 +1,15 @@
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\Lib.MemStache.WebAPI.deps.json
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\Lib.MemStache.WebAPI.dll
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\ref\Lib.MemStache.WebAPI.dll
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\Lib.MemStache.WebAPI.pdb
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\MemStache.dll
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\bin\Debug\net6.0\MemStache.pdb
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.csproj.AssemblyReference.cache
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.AssemblyInfoInputs.cache
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.AssemblyInfo.cs
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.csproj.CoreCompileInputs.cache
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.csproj.CopyComplete
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.dll
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\ref\Lib.MemStache.WebAPI.dll
+C:\GitHub\MemStache\MemStache\Lib.MemStache.WebAPI\obj\Debug\net6.0\Lib.MemStache.WebAPI.pdb

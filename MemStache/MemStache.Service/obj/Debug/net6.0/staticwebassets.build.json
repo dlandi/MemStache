@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "pqWk/R8Pi1PTYb2PKoIV6su98n0d42DVLUh5tArxzkM=",
+  "Source": "MemStache.Service",
+  "BasePath": "_content/MemStache.Service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

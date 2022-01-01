@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = MemStache.UnitTests
+build_property.ProjectDir = C:\GitHub\MemStache\MemStache\MemStache.UnitTests\
