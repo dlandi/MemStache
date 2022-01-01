@@ -214,7 +214,9 @@ namespace MemStache.UnitTests
         [TestMethod]
         public void _0_TestDBInsert_2()
         {
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
             string appId, filename, password;
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
             appId = "memstache.demo";
             filename = "MemstacheTest.cv";
             password = "password";
@@ -240,7 +242,9 @@ namespace MemStache.UnitTests
         [TestMethod]
         public void _0_InsertAndRetrieve()
         {
+#pragma warning disable CS0219 // Variable is assigned but its value is never used
             string appId, filename, password;
+#pragma warning restore CS0219 // Variable is assigned but its value is never used
             appId = "memstache.demo";
             filename = "MemstacheTest.cv";
             password = "password";
@@ -423,8 +427,8 @@ namespace MemStache.UnitTests
 
             // var rowcount = Meister.DB.Delete<Stash>(key);
             StashRepo.Delete(key);
-            Stasher stash = meister.MakeStasher("test", StashPlan.spSerialize);
-            Console.WriteLine("MemStache Initialized: {0}", stash.Purpose);
+            Stasher stasher = meister.MakeStasher("test", StashPlan.spSerialize);
+            Console.WriteLine("MemStache Initialized: {0}", stasher.Purpose);
 
             Valuation valuation1 = new Valuation();
 
@@ -433,15 +437,15 @@ namespace MemStache.UnitTests
 
             var hash1 = Stasher.Hash(payload.Value);
 
-            stash[key] = payload;
+            stasher[key] = payload;
 
             // payload.value = "";
             if (payload == null)
             {
-                Console.WriteLine("Payload is nulls");
+                Console.WriteLine("Payload is null");
             }
 
-            payload = stash[key];
+            payload = stasher[key];
 
             Valuation valuation2 = payload.Object as Valuation;
 

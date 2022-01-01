@@ -104,12 +104,6 @@ namespace MemStache
             this.Plan = plan;
             this.AppId = appId;
 
-            // this.DatabasePath = GetBasePath("memstache.db");
-            // if (appId != null)
-            // {
-            //    this.DatabasePath = GetBasePath(appId);
-            //    Debug.WriteLine("DEVICE DB PATH: " + this.DatabasePath.ToUpper());
-            // }
             this.DB = new StashRepo(appId, filename, password);
             ServiceCollection svcs = services ?? new ServiceCollection();
             this.Services = svcs;
@@ -192,6 +186,7 @@ namespace MemStache
         // #endif
         //            return Path.Combine(path, applicationId);
         //        }
+#pragma warning disable SA1204 // Static elements should appear before instance elements
         public static DateTime GetExpiration(TimeSpan timeSpan)
         {
             try
@@ -208,6 +203,7 @@ namespace MemStache
                 return DateTime.MaxValue;
             }
         }
+#pragma warning restore SA1204 // Static elements should appear before instance elements
 
         #region IDisposable Support
         private bool disposedValue = false; // To detect redundant calls

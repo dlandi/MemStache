@@ -1,6 +1,5 @@
 ﻿// <copyright file="StashRepo.cs" company="Dennis Landi">
 // Copyright (c) Dennis Landi. All rights reserved.
-// NOTE: This unit is based on the LiteDB implementation from MonkeyCache
 // </copyright>
 
 using System;
@@ -22,13 +21,6 @@ namespace MemStache.LiteDB
     /// </summary>
     public class StashRepo
     {
-        private static readonly Lazy<string> BaseCacheDir = new Lazy<string>(() =>
-        {
-            // string path = Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
-            string path = Utils.GetBasePath(ApplicationId);
-            return path;
-        });
-
         private static LiteCollection<Stash> col;
 
         private static StashRepo instance = null;
@@ -40,6 +32,13 @@ namespace MemStache.LiteDB
         public static string ApplicationId { get; set; } = string.Empty;
 
         public static string EncryptionKey { get; set; } = string.Empty;
+
+        private static readonly Lazy<string> BaseCacheDir = new Lazy<string>(() =>
+        {
+            // string path = Path.Combine(Utils.GetBasePath(ApplicationId), "memstache");
+            string path = Utils.GetBasePath(ApplicationId);
+            return path;
+        });
 
         public static void Delete(string key)
         {
