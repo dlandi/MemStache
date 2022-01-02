@@ -1,9 +1,0 @@
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\bin\Release\netstandard2.0\MemStache.deps.json
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\bin\Release\netstandard2.0\MemStache.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\bin\Release\netstandard2.0\MemStache.pdb
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.csprojAssemblyReference.cache
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.AssemblyInfoInputs.cache
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.AssemblyInfo.cs
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.dll
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.pdb
-D:\GitHub\dlandi\MemStache\MemStache\MemStache\obj\Release\netstandard2.0\MemStache.csproj.CoreCompileInputs.cache
