@@ -25,7 +25,6 @@ namespace Lib.MemStache.WebAPI.Commands
         public override int Execute([NotNull] CommandContext context, [NotNull] Settings settings)
         {
             AnsiConsole.MarkupLine("Getting Key");
-            string temp = $@"{settings.Key}";
             string url = @$"http://localhost:5000/stash/{settings.Key}";
             var client = new RestClient(url);
             var request = new RestRequest();

@@ -1,5 +1,11 @@
 
-MemStache/MemStache/bin/Debug/netstandard2.0/MemStache.pdb
+**/MemStache/MemStache/bin/
+**/MemStache/MemStache/obj/
+**.vs/
+**MemStache/.vs/
+**MemStache/Lib.MemStache.WebAPI/obj
+**MemStache/Lib.MemStache.WebAPI/bin
+**MemStache/MemStache.UnitTests/bin/
 .vs/MemStache/v15/.suo
 .vs/ProjectSettings.json
 .vs/slnx.sqlite
