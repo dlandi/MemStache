@@ -1,4 +1,4 @@
-# MemStache (THIS VERSION IS ABSOLETE)
+# MemStache (THIS VERSION IS OBSOLETE)
 A Flexible, Powerful Cache Library with these features
 
 		- In-Memory Resiliency (memory management)
