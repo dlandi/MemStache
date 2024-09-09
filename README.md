@@ -1,4 +1,6 @@
 # MemStache (THIS VERSION IS OBSOLETE)
+(Use the new library: https://github.com/Rebel-Alliance-2023/Memstache.Distributed)
+
 A Flexible, Powerful Cache Library with these features
 
 		- In-Memory Resiliency (memory management)
